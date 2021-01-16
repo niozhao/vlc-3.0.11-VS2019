@@ -1,0 +1,1 @@
+copy from MaxWall3\Onvif\EventAnalytics

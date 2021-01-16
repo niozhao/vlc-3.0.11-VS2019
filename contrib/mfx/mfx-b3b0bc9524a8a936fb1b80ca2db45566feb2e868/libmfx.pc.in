@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libmfx
+Description: Intel Media SDK Dispatched static library
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lmfx -lstdc++ @DLLIB@ @LIBVA_DRM_LIBS@ @LIBVA_X11_LIBS@
+Libs.private:
+Cflags: -I${includedir}

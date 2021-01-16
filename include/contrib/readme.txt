@@ -1,0 +1,1 @@
+this folder are contrib header files for vlc, copy from vlc-3.0.11/contrib/x86_64-w64-mingw32/include in Ubuntu Env

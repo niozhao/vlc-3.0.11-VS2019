@@ -1,0 +1,1 @@
+include file and pthread_lib.lib are come from https://github.com/GerHobbelt/pthread-win32

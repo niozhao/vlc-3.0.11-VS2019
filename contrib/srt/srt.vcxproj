@@ -19,33 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\contrib\srt\common\srt_compat.c" />
-    <ClCompile Include="..\..\contrib\srt\common\win_time.cpp" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt-gnutls.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_ctx_rx.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_ctx_tx.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_rx.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_sa.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_tx.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_xpt_srt.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_xpt_sta.c" />
-    <ClCompile Include="..\..\contrib\srt\haicrypt\hc_nettle_aes.c" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\api.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\buffer.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\cache.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\ccc.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\channel.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\common.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\core.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\csrtcc.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\epoll.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\list.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\md5.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\packet.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\queue.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\srt_c_api.cpp" />
-    <ClCompile Include="..\..\contrib\srt\srtcore\window.cpp" />
+    <ClCompile Include=".\srt-1.2.3\common\srt_compat.c" />
+    <ClCompile Include=".\srt-1.2.3\common\win_time.cpp" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt-gnutls.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_ctx_rx.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_ctx_tx.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_rx.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_sa.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_tx.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_xpt_srt.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hcrypt_xpt_sta.c" />
+    <ClCompile Include=".\srt-1.2.3\haicrypt\hc_nettle_aes.c" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\api.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\buffer.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\cache.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\ccc.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\channel.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\common.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\core.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\csrtcc.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\epoll.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\list.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\md5.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\packet.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\queue.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\srt_c_api.cpp" />
+    <ClCompile Include=".\srt-1.2.3\srtcore\window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

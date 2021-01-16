@@ -19,24 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\AmbisonicBase.cpp" />
-    <ClCompile Include="source\AmbisonicBinauralizer.cpp" />
-    <ClCompile Include="source\AmbisonicCommons.cpp" />
-    <ClCompile Include="source\AmbisonicDecoder.cpp" />
-    <ClCompile Include="source\AmbisonicEncoder.cpp" />
-    <ClCompile Include="source\AmbisonicEncoderDist.cpp" />
-    <ClCompile Include="source\AmbisonicMicrophone.cpp" />
-    <ClCompile Include="source\AmbisonicProcessor.cpp" />
-    <ClCompile Include="source\AmbisonicSource.cpp" />
-    <ClCompile Include="source\AmbisonicSpeaker.cpp" />
-    <ClCompile Include="source\AmbisonicZoomer.cpp" />
-    <ClCompile Include="source\BFormat.cpp" />
-    <ClCompile Include="source\hrtf\mit_hrtf.cpp" />
-    <ClCompile Include="source\hrtf\sofa_hrtf.cpp" />
-    <ClCompile Include="source\kiss_fft\kiss_fft.c" />
-    <ClCompile Include="source\kiss_fft\kiss_fftr.c" />
-    <ClCompile Include="source\mit_hrtf_lib.c" />
-    <ClCompile Include="source\SpeakersBinauralizer.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicBase.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicBinauralizer.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicCommons.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicDecoder.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicEncoder.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicEncoderDist.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicMicrophone.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicProcessor.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicSource.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicSpeaker.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\AmbisonicZoomer.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\BFormat.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\hrtf\mit_hrtf.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\hrtf\sofa_hrtf.cpp" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\kiss_fft\kiss_fft.c" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\kiss_fft\kiss_fftr.c" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\mit_hrtf_lib.c" />
+    <ClCompile Include=".\spatialaudio-0.3.0\source\SpeakersBinauralizer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

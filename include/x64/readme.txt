@@ -1,0 +1,1 @@
+those files are auto generated when cross-compile vlc for windows in Ubuntu Env.
