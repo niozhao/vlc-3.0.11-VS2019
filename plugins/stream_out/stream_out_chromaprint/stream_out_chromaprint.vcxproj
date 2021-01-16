@@ -22,7 +22,7 @@
         <ResourceCompile Include="..\..\module.rc" />
     </ItemGroup>
     <ItemGroup>
-        <ClCompile Include="..\..\..\x64\modules\dummy.cpp" />
+        <ClCompile Include="..\..\..\win64\modules\dummy.cpp" />
         <ClCompile Include="..\..\dllmain.cpp" />
         <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromaprint.c" />
     </ItemGroup>

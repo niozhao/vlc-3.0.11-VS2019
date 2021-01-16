@@ -50,7 +50,7 @@
     <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromecast\chromecast_communication.cpp">
       <Filter>Source Files\modules\stream_out\chromecast</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\x64\modules\stream_out\chromecast\cast_channel.pb.cc">
+    <ClCompile Include="..\..\..\win64\modules\stream_out\chromecast\cast_channel.pb.cc">
       <Filter>Source Files\modules\stream_out\chromecast</Filter>
     </ClCompile>
   </ItemGroup>

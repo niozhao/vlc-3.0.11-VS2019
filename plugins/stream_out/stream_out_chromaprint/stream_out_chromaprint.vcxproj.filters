@@ -32,7 +32,7 @@
     <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromaprint.c">
       <Filter>Source Files\modules\stream_out</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\x64\modules\dummy.cpp">
+    <ClCompile Include="..\..\..\win64\modules\dummy.cpp">
       <Filter>Source Files\modules</Filter>
     </ClCompile>
   </ItemGroup>
