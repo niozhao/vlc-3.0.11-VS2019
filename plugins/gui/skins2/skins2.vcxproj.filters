@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{3192174F-BEBF-4025-B9B2-D2D4C2386D7C}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui">
+            <UniqueIdentifier>{AFC0B933-2CFD-468D-A6A9-3B8DD1F3E9E2}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2">
+            <UniqueIdentifier>{740FA84C-9581-4AE0-9A6F-8A112448D966}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\commands">
+            <UniqueIdentifier>{D88F2FCC-33C9-4BE7-89CD-0174ACCB2BA2}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\controls">
+            <UniqueIdentifier>{971D897F-F656-4D72-8115-FBCD7652296B}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\events">
+            <UniqueIdentifier>{709AA3AD-28E7-4208-874C-2FD731934EBB}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\parser">
+            <UniqueIdentifier>{66486801-9E0F-4E2A-9F2A-10E4D170CFEB}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\src">
+            <UniqueIdentifier>{4855473B-2CEC-486A-834B-E6736D94B444}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\utils">
+            <UniqueIdentifier>{875D4EDE-1F75-41D7-B756-2B6AF11A8D1B}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\vars">
+            <UniqueIdentifier>{18402D94-9A24-487D-95EA-2021720801E5}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\gui\skins2\win32">
+            <UniqueIdentifier>{B7DB0D1F-BAFC-4910-9A4F-04C2DB9D0488}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\async_queue.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_add_item.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_audio.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_dvd.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_change_skin.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_fullscreen.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_input.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_layout.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_muxer.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_on_top.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_playlist.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_playtree.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_minimize.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_quit.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_resize.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_snapshot.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\commands\cmd_vars.cpp">
+            <Filter>Source Files\modules\gui\skins2\commands</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_button.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_checkbox.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_generic.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_image.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_list.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_tree.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_move.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_resize.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_slider.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_radialslider.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_text.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\controls\ctrl_video.cpp">
+            <Filter>Source Files\modules\gui\skins2\controls</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\events\evt_input.cpp">
+            <Filter>Source Files\modules\gui\skins2\events</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\events\evt_key.cpp">
+            <Filter>Source Files\modules\gui\skins2\events</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\events\evt_mouse.cpp">
+            <Filter>Source Files\modules\gui\skins2\events</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\events\evt_special.cpp">
+            <Filter>Source Files\modules\gui\skins2\events</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\events\evt_scroll.cpp">
+            <Filter>Source Files\modules\gui\skins2\events</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\parser\builder.cpp">
+            <Filter>Source Files\modules\gui\skins2\parser</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\parser\expr_evaluator.cpp">
+            <Filter>Source Files\modules\gui\skins2\parser</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\parser\interpreter.cpp">
+            <Filter>Source Files\modules\gui\skins2\parser</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\parser\skin_parser.cpp">
+            <Filter>Source Files\modules\gui\skins2\parser</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\parser\xmlparser.cpp">
+            <Filter>Source Files\modules\gui\skins2\parser</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\anchor.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\anim_bitmap.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\bitmap_font.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\dialogs.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\file_bitmap.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\art_manager.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\ft2_bitmap.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\ft2_font.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\ft2_err.c">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\generic_bitmap.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\generic_layout.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\generic_window.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\ini_file.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\logger.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\os_factory.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\popup.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\scaled_bitmap.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\skin_main.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\theme.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\theme_loader.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\theme_repository.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\tooltip.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\top_window.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\fsc_window.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\var_manager.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\vlcproc.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\vout_window.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\vout_manager.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\src\window_manager.cpp">
+            <Filter>Source Files\modules\gui\skins2\src</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\bezier.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\fsm.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\position.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\ustring.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_bool.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_list.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_percent.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_text.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_string.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\utils\var_tree.cpp">
+            <Filter>Source Files\modules\gui\skins2\utils</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\vars\equalizer.cpp">
+            <Filter>Source Files\modules\gui\skins2\vars</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\vars\playtree.cpp">
+            <Filter>Source Files\modules\gui\skins2\vars</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\vars\time.cpp">
+            <Filter>Source Files\modules\gui\skins2\vars</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\vars\volume.cpp">
+            <Filter>Source Files\modules\gui\skins2\vars</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_dragdrop.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_factory.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_graphics.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_loop.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_popup.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_timer.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_tooltip.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\skins2\win32\win32_window.cpp">
+            <Filter>Source Files\modules\gui\skins2\win32</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{32C3AE59-19E0-4429-BF38-B915992AD8BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\hw">
+      <UniqueIdentifier>{68C927D8-28FE-4288-97BE-F4D18BA28465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\hw\d3d9">
+      <UniqueIdentifier>{D4693ABA-955B-484B-B678-AB611C7F7F00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_chroma">
+      <UniqueIdentifier>{b2c9f880-5ab8-4d39-98b6-c76c7acaab1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_filter">
+      <UniqueIdentifier>{c3375204-7868-44fc-8924-30a1f9111691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_filter\deinterlace">
+      <UniqueIdentifier>{fd643689-9314-43e6-b117-7e6d4404c3b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\hw\d3d9\d3d9_filters.c">
+      <Filter>Source Files\modules\hw\d3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\hw\d3d9\dxva2_deinterlace.c">
+      <Filter>Source Files\modules\hw\d3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\hw\d3d9\dxa9.c">
+      <Filter>Source Files\modules\hw\d3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\hw\d3d9\d3d9_instance.c">
+      <Filter>Source Files\modules\hw\d3d9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_chroma\d3d9_fmt.c">
+      <Filter>Source Files\modules\video_chroma</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_chroma\copy.c">
+      <Filter>Source Files\modules\video_chroma</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_filter\deinterlace\common.c">
+      <Filter>Source Files\modules\video_filter\deinterlace</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

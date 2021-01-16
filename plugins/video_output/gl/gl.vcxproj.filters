@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{1B3ECBDD-82AF-4651-9453-E6657FE15B04}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\video_output">
+            <UniqueIdentifier>{7C02BC82-96D5-43B1-B875-BA19CB147F83}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\video_output\opengl">
+            <UniqueIdentifier>{CD4F55C1-DCB6-4888-B16D-FE7DCE5836B7}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\vout_helper.c">
+            <Filter>Source Files\modules\video_output\opengl</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\fragment_shaders.c">
+            <Filter>Source Files\modules\video_output\opengl</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\converter_sw.c">
+            <Filter>Source Files\modules\video_output\opengl</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\display.c">
+            <Filter>Source Files\modules\video_output\opengl</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

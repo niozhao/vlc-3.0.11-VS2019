@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="asdcplib-2.7.19\src\asdcp-wrap.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_AES.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_ATMOS.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_DCData.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_JP2K.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_MPEG2.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_MXF.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_PCM.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AS_DCP_TimedText.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AtmosSyncChannel_Generator.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\AtmosSyncChannel_Mixer.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\CRC16.c" />
+    <ClCompile Include="asdcplib-2.7.19\src\DCData_ByteStream_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\DCData_Sequence_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\Dict.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\h__Reader.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\h__Writer.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\Index.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\JP2K.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\JP2K_Codestream_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\JP2K_Sequence_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KLV.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_fileio.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_log.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_prng.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_tai.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_util.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\KM_xml.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\MDD.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\Metadata.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\MPEG.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\MPEG2_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\MXF.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\MXFTypes.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\PCMDataProviders.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\PCMParserList.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\PCM_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\ST2095_PinkNoise.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\SyncEncoder.c" />
+    <ClCompile Include="asdcplib-2.7.19\src\TimedText_Parser.cpp" />
+    <ClCompile Include="asdcplib-2.7.19\src\UUIDInformation.c" />
+    <ClCompile Include="asdcplib-2.7.19\src\Wav.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3ccb3304-5eac-4f91-b908-14408762367a}</ProjectGuid>
+    <RootNamespace>libasdcp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;ASDCP_PLATFORM="win32";PACKAGE_NAME="asdcplib";PACKAGE_TARNAME="asdcplib";PACKAGE_VERSION="2.7.19";PACKAGE_STRING="asdcplib 2.7.19";PACKAGE_BUGREPORT="asdcplib@cinecert.com";PACKAGE_URL="";PACKAGE="asdcplib";VERSION="2.7.19";STDC_HEADERS=1;HAVE_SYS_TYPES_H=1;HAVE_SYS_STAT_H=1;HAVE_STDLIB_H=1;HAVE_STRING_H=1;HAVE_MEMORY_H=1;HAVE_STRINGS_H=1;HAVE_INTTYPES_H=1;HAVE_STDINT_H=1;HAVE_UNISTD_H=1;LT_OBJDIR=".libs";_FILE_OFFSET_BITS=64;HAVE_LIBPTHREAD=1;KM_WIN32;HAVE_SSL=1;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>./asdcplib-2.7.19/src;$(SolutionDir)include\contrib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

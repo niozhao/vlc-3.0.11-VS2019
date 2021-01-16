@@ -1,0 +1,25 @@
+error:
+	interface_widgets.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl QLinkedListData::QLinkedListData(void)" (__imp_??0QLinkedListData@@QEAA@XZ) referenced in function "private: class QLinkedList<struct EasterEggBackgroundWidget::flake *>::iterator __cdecl QLinkedList<struct EasterEggBackgroundWidget::flake *>::detach_helper2(class QLinkedList<struct EasterEggBackgroundWidget::flake *>::iterator)" (?detach_helper2@?$QLinkedList@PEAUflake@EasterEggBackgroundWidget@@@@AEAA?AViterator@1@V21@@Z)
+fix:
+     modify qlinkedlist.h
+from:
+struct Q_CORE_EXPORT QLinkedListData
+{
+	QLinkedListData* n, * p;
+	QtPrivate::RefCount ref;
+	int size;
+	uint sharable : 1;
+
+	static const QLinkedListData shared_null;
+};
+
+to:
+struct  QLinkedListData
+{
+	QLinkedListData* n, * p;
+	QtPrivate::RefCount ref;
+	int size;
+	uint sharable : 1;
+
+	Q_CORE_EXPORT static const QLinkedListData shared_null;
+};

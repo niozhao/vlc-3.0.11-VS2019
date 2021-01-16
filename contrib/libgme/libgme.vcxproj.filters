@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\gme">
+      <UniqueIdentifier>{e88a62cb-6291-4faa-bf29-620adbcf1edf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Blip_Buffer.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Classic_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Data_Reader.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Dual_Resampler.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Effects_Buffer.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Fir_Resampler.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Oscs.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gbs_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\gme.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gme_File.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gym_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Scc_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\M3u_Playlist.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Multi_Buffer.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Music_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Fme7_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Namco_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Oscs.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Vrc6_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nsf_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nsfe_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sms_Apu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Snes_Spc.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Cpu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Dsp.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Filter.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Vgm_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Vgm_Emu_Impl.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ym2413_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ym2612_Emu.cpp">
+      <Filter>Source Files\gme</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

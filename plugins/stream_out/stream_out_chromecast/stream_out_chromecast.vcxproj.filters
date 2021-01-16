@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{C15FD5C8-3417-4FFA-9E10-F99DDED8F44E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\stream_out">
+      <UniqueIdentifier>{1FB98E66-4D71-484F-BFF1-2DF7C61BE570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\stream_out\chromecast">
+      <UniqueIdentifier>{D684A99A-991D-4324-B22D-2B9D538106B3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\misc">
+      <UniqueIdentifier>{FB44625A-F94C-4526-A5E3-867E8B9F5309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\misc\webservices">
+      <UniqueIdentifier>{235D65A5-E0C7-41E5-BA08-2896870C31E5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromecast\cast.cpp">
+      <Filter>Source Files\modules\stream_out\chromecast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromecast\chromecast_ctrl.cpp">
+      <Filter>Source Files\modules\stream_out\chromecast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\misc\webservices\json.c">
+      <Filter>Source Files\modules\misc\webservices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\stream_out\chromecast\chromecast_communication.cpp">
+      <Filter>Source Files\modules\stream_out\chromecast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\x64\modules\stream_out\chromecast\cast_channel.pb.cc">
+      <Filter>Source Files\modules\stream_out\chromecast</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

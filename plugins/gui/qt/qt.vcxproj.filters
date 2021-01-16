@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{A3F99DC8-A08B-4E05-B29C-F905EFDF5416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui">
+      <UniqueIdentifier>{CCF65AD5-E16C-4A2B-A056-60B91F784C25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt">
+      <UniqueIdentifier>{361F5D7D-8C08-4A59-AFC9-11E00101DC70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\managers">
+      <UniqueIdentifier>{81A50BE0-F75E-420E-8385-EA19783DF024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\adapters">
+      <UniqueIdentifier>{96378D27-B4B0-4F83-818D-369C34520603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\dialogs">
+      <UniqueIdentifier>{B675C059-DE0B-464E-86FF-954A5B2BBABC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\components">
+      <UniqueIdentifier>{20E8232B-C78B-4CF1-B09B-E32921D9C92A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\components\epg">
+      <UniqueIdentifier>{4DBB2CD0-766D-4A15-BF3D-F007FA8C1028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\components\playlist">
+      <UniqueIdentifier>{6D2C5F1A-F681-4433-BF5F-A93CBB1B7936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\components\sout">
+      <UniqueIdentifier>{1C51F250-68FD-46C1-B8CA-8DAF6344838B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\util">
+      <UniqueIdentifier>{E6CE8C9E-DD40-4715-ACE2-5A02F0CBB29B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\util\buttons">
+      <UniqueIdentifier>{B4F38D6F-E873-42BF-9E87-239171870D6E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\gui\qt\styles">
+      <UniqueIdentifier>{05716D5C-628A-4CC1-B445-78AF789758A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\qt.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\menus.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\main_interface.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs_provider.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\input_manager.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\actions_manager.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\extensions_manager.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\managers\addons_manager.cpp">
+      <Filter>Source Files\modules\gui\qt\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\recents.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\seekpoints.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\chromaprint.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\variables.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\playlist.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\bookmarks.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\preferences.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\mediainfo.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\epg.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\extended.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\messages.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\errors.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\external.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\plugins.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\sout.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\convert.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\help.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\gototime.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\toolbar.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\open.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\openurl.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\vlm.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\firstrun.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\podcast_configuration.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\extensions.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\fingerprintdialog.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\extended_panels.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\info_panels.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\info_widgets.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\preferences_widgets.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\complete_preferences.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\simple_preferences.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\open_panels.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\interface_widgets.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\controller.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\controller_widget.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGChannels.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGItem.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGProgram.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGRuler.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGView.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGWidget.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\views.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\vlc_model.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist_model.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist_item.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\standardpanel.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\selector.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\sout\profile_selector.cpp">
+      <Filter>Source Files\modules\gui\qt\components\sout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\sout\sout_widgets.cpp">
+      <Filter>Source Files\modules\gui\qt\components\sout</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\animators.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\input_slider.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\timetooltip.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\customwidgets.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\searchlineedit.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\registry.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\qmenuview.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\qt_dirs.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\pictureflow.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\validators.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\BrowseButton.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\DeckButtonsLayout.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\RoundButton.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\imagehelper.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\styles\seekstyle.cpp">
+      <Filter>Source Files\modules\gui\qt\styles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\main_interface_win32.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="main_interface.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="menus.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs_provider.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="input_manager.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="actions_manager.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="extensions_manager.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="managers\addons_manager.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="recents.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="adapters\seekpoints.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="adapters\chromaprint.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="adapters\variables.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\adapters</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\playlist.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\bookmarks.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\mediainfo.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\extended.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\messages.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\epg.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\errors.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\external.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\plugins.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\preferences.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\sout.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\convert.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\help.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\gototime.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\toolbar.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\open.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\openurl.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\podcast_configuration.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\firstrun.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\extensions.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\fingerprintdialog.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="components\extended_panels.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\info_panels.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\info_widgets.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\preferences_widgets.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\complete_preferences.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\simple_preferences.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\open_panels.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\interface_widgets.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\controller.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\controller_widget.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\epg\EPGChannels.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="components\epg\EPGProgram.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="components\epg\EPGRuler.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="components\epg\EPGView.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="components\epg\EPGWidget.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\epg</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\views.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\vlc_model.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\playlist_model.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\playlist.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\standardpanel.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\playlist\selector.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="components\sout\profile_selector.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\sout</Filter>
+    </ClCompile>
+    <ClCompile Include="components\sout\sout_widgets.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\components\sout</Filter>
+    </ClCompile>
+    <ClCompile Include="util\animators.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\input_slider.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\timetooltip.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\customwidgets.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\searchlineedit.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\qmenuview.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\qvlcapp.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\pictureflow.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\validators.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util</Filter>
+    </ClCompile>
+    <ClCompile Include="util\buttons\RoundButton.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="util\buttons\DeckButtonsLayout.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="util\buttons\BrowseButton.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\util\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="styles\seekstyle.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\styles</Filter>
+    </ClCompile>
+    <ClCompile Include="main_interface_win32.moc.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="resources.cpp">
+      <Filter>Source Files\modules\gui\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\vlm.moc.cpp">
+      <Filter>Source Files\modules\gui\qt\dialogs</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

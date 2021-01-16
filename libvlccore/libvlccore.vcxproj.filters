@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{78c2c992-9761-49d2-9b7a-0ea864eee39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\config">
+      <UniqueIdentifier>{3b3b0989-70e2-424a-b6ec-6fc71117407f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\extras">
+      <UniqueIdentifier>{06b3db0f-7b63-46ae-a6d4-7f5f4892a77a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\modules">
+      <UniqueIdentifier>{ee4ee801-a739-4769-84de-aa430e58fd8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\interface">
+      <UniqueIdentifier>{863e28f2-52b1-464f-adb8-239f4a34531b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\playlist">
+      <UniqueIdentifier>{4614a3db-65fe-4514-bc40-def379fc6dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\input">
+      <UniqueIdentifier>{471bc184-43e6-4be0-928b-03c6a4bc6e60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\audio_output">
+      <UniqueIdentifier>{2d46e408-cdde-40af-9781-22ab3508deb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\video_output">
+      <UniqueIdentifier>{0576c8fb-9e97-45d0-a393-5eddb8e44cfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\network">
+      <UniqueIdentifier>{091dab2b-e038-470c-8447-216da5184033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\text">
+      <UniqueIdentifier>{189f9b7f-2a20-47b5-8677-fe89fcecec96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\misc">
+      <UniqueIdentifier>{e35416e1-81c5-42da-a817-b3a60e88f6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\win32">
+      <UniqueIdentifier>{c6194a24-f5c0-4422-8638-985f54381371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\stream_output">
+      <UniqueIdentifier>{8d37a581-abb5-4280-90a3-99dba3982b25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vlc-3.0.11\src\libvlc.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\libvlc-module.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\missing.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\revision.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\version.c">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\chain.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\cmdline.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\core.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\file.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\getopt.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\help.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\config\intf.c">
+      <Filter>Source Files\src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\extras\libc.c">
+      <Filter>Source Files\src\extras</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\modules\bank.c">
+      <Filter>Source Files\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\modules\cache.c">
+      <Filter>Source Files\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\modules\entry.c">
+      <Filter>Source Files\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\modules\modules.c">
+      <Filter>Source Files\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\modules\textdomain.c">
+      <Filter>Source Files\src\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\interface\dialog.c">
+      <Filter>Source Files\src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\interface\interface.c">
+      <Filter>Source Files\src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\aout.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\art.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\control.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\engine.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\fetcher.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\item.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\loadsave.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\preparser.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\renderer.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\search.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\services_discovery.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\sort.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\thread.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\tree.c">
+      <Filter>Source Files\src\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\access.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\clock.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\control.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\decoder.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\demux.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\demux_chained.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\es_out.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\es_out_timeshift.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\event.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\input.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\item.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\meta.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\resource.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\services_discovery.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stats.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_extractor.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_fifo.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_filter.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_memory.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\subtitles.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\var.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\common.c">
+      <Filter>Source Files\src\audio_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\dec.c">
+      <Filter>Source Files\src\audio_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\filters.c">
+      <Filter>Source Files\src\audio_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\output.c">
+      <Filter>Source Files\src\audio_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\volume.c">
+      <Filter>Source Files\src\audio_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\control.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\display.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\inhibit.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\interlacing.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\opengl.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\snapshot.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_epg.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_output.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_text.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_widgets.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_intf.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_subpictures.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_wrapper.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\window.c">
+      <Filter>Source Files\src\video_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\getaddrinfo.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\http_auth.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\httpd.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\io.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\rootbind.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\tcp.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\tls.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\network\udp.c">
+      <Filter>Source Files\src\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\charset.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\filesystem.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\iso_lang.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\memstream.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\strings.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\unicode.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\text\url.c">
+      <Filter>Source Files\src\text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\actions.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\addons.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\background_worker.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\block.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\cpu.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\epg.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\error.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\es_format.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\events.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\exit.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fifo.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\filter.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\filter_chain.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fingerprinter.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fourcc.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\httpcookies.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\image.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\interrupt.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\keystore.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\md5.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\messages.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\mime.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\mtime.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\objects.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\objres.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture_fifo.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture_pool.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\probe.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\rand.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\renderer_discovery.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\subpicture.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\text_style.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\threads.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\variables.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\xml.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\dirs.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\error.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\filesystem.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\netconf.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\plugin.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\rand.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\specific.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\thread.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\timer.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\win32\winsock.c">
+      <Filter>Source Files\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\sap.c">
+      <Filter>Source Files\src\stream_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\sdp.c">
+      <Filter>Source Files\src\stream_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\stream_output.c">
+      <Filter>Source Files\src\stream_output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlm.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlm_event.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlmshell.c">
+      <Filter>Source Files\src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\update.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\src\misc\update_crypto.c">
+      <Filter>Source Files\src\misc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libvlccore.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

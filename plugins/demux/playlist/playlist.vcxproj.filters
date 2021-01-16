@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{E85C403C-0EDD-49F1-AC50-F9A00F32D1FD}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\demux">
+            <UniqueIdentifier>{6F238D9F-DA73-4542-AAA7-9B249B8928DC}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\demux\playlist">
+            <UniqueIdentifier>{EFF09104-15F7-4026-A771-0BE7E87A24AC}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\asx.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\b4s.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\dvb.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\ifo.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\itml.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\m3u.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\pls.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\podcast.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\qtl.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\ram.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\sgimb.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\shoutcast.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\wpl.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\xspf.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\playlist\playlist.c">
+            <Filter>Source Files\modules\demux\playlist</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

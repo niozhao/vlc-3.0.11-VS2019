@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sidplay-libs-2.1.1\builders\resid-builder\src\resid-builder.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\builders\resid-builder\src\resid.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\config.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\event.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mixer.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos6510\mos6510.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos6526\mos6526.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos656x\mos656x.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\player.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\psiddrv.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\reloc65.c" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sid6526\sid6526.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidplay2.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\IconInfo.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\InfoFile.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\MUS.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\p00.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\PP20.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\prg.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\PSID.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\SidTune.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\SidTuneTools.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\xsid\xsid.cpp" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\envelope.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\extfilt.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\filter.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\pot.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\sid.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\version.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\voice.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_PST.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_PS_.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_P_T.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581__ST.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_PST.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_PS_.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_P_T.cc" />
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580__ST.cc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e35ee528-3868-4fbf-91fe-50834d3a2486}</ProjectGuid>
+    <RootNamespace>libsidplay</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;HAVE_CONFIG_H;HAVE_MSWINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;PACKAGE="resid";VERSION="0.16";STDC_HEADERS=1;HAVE_SYS_TYPES_H=1;HAVE_SYS_STAT_H=1;HAVE_STDLIB_H=1;HAVE_STRING_H=1;HAVE_MEMORY_H=1;HAVE_INTTYPES_H=1;HAVE_STDINT_H=1;HAVE_UNISTD_H=1;SIZEOF_INT=4;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>./sidplay-libs-2.1.1/libsidplay/include/sidplay;./sidplay-libs-2.1.1/libsidplay/win/VC;./sidplay-libs-2.1.1/libsidplay/include;.\sidplay-libs-2.1.1\builders\resid-builder\include\sidplay\builders\;./sidplay-libs-2.1.1</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

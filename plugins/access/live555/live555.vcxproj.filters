@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{15584326-8073-45da-b31d-cca4ceec7c12}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\access">
+            <UniqueIdentifier>{764f18bf-ed31-48ad-814d-3c88312480b5}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\access\mms">
+            <UniqueIdentifier>{60ef7ee0-0107-4416-a398-5ee00eb18b71}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28">
+            <UniqueIdentifier>{502959a7-7722-40a3-9008-2d20c81cb3b9}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28\BasicUsageEnvironment">
+            <UniqueIdentifier>{fc4c031f-3e88-4c58-935d-f722e65a2fc4}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28\groupsock">
+            <UniqueIdentifier>{d5ed89e3-2269-4ee0-a94a-948a896d3e1c}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28\liveMedia">
+            <UniqueIdentifier>{f0ae7b4d-3598-4496-8cd9-4690cabd8520}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28\UsageEnvironment">
+            <UniqueIdentifier>{e5e87491-a87b-4bab-842b-6a29cac6b82d}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\live555_2016.11.28\liveMedia\fec">
+            <UniqueIdentifier>{34ced483-a08d-43b8-a179-a2e307573f3a}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\access\live555.cpp">
+            <Filter>Source Files\modules\access</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\access\mms\asf.c">
+            <Filter>Source Files\modules\access\mms</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\access\mms\buffer.c">
+            <Filter>Source Files\modules\access\mms</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\BasicHashTable.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\BasicTaskScheduler.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\BasicTaskScheduler0.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\BasicUsageEnvironment.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\BasicUsageEnvironment0.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\BasicUsageEnvironment\DelayQueue.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\BasicUsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\inet.c">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\GroupEId.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\Groupsock.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\GroupsockHelper.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\IOHandlers.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\NetAddress.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\groupsock\NetInterface.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\groupsock</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\UsageEnvironment\HashTable.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\UsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\UsageEnvironment\strDup.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\UsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\UsageEnvironment\UsageEnvironment.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\UsageEnvironment</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FEC2DParityMultiplexor.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECCluster.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECDecoder.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECEncoder.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECGroupsock.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECInterleavedSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECMultiplexor.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECNonInterleavedSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECPacket.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\FECSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\fec\RTPPacket.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia\fec</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AC3AudioFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AC3AudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AC3AudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AC3AudioStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ADTSAudioFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ADTSAudioFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioFileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AMRAudioSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AudioInputDevice.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\AVIFileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\Base64.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\BasicUDPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\BasicUDPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\BitVector.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ByteStreamFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ByteStreamMemoryBufferSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ByteStreamMultiFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DeviceSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DigestAuthentication.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DVVideoFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DVVideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DVVideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\DVVideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\EBMLNumber.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\FileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\FileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\FramedFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\FramedFilter.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\FramedSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\GenericMediaServer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\GSMAudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H261VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H263plusVideoFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H263plusVideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H263plusVideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H263plusVideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H263plusVideoStreamParser.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264or5VideoFileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264or5VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264or5VideoStreamDiscreteFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264or5VideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoFileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoStreamDiscreteFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H264VideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H265VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H265VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\H265VideoStreamDiscreteFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\InputFile.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\JPEGVideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\JPEGVideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\JPEGVideoSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\Locale.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MatroskaDemuxedTrack.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MatroskaFile.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MatroskaFileParser.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MatroskaFileServerDemux.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MatroskaFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\Media.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MediaSession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MediaSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MediaSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADU.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADUdescriptor.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADUinterleaving.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADURTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADURTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3ADUTranscoder.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3AudioFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3AudioMatroskaFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3FileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3Internals.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3InternalsHuffman.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3InternalsHuffmanTable.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3StreamState.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MP3Transcoder.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2AudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2AudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2AudioStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2Demux.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2DemuxedElementaryStream.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2DemuxedServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2FileServerDemux.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2VideoFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2VideoStreamDiscreteFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG1or2VideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2IndexFromTransportStream.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamFromESSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamFromPESSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamIndexFile.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamMultiplexor.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG2TransportStreamTrickModeFilter.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4ESVideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4ESVideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4GenericRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4GenericRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4LATMAudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4LATMAudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4VideoFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4VideoStreamDiscreteFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEG4VideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEGVideoStreamFramer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MPEGVideoStreamParser.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MultiFramedRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\MultiFramedRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\OnDemandServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ourMD5.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\OutputFile.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\PassiveServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ProxyServerMediaSession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\QCELPAudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\QuickTimeFileSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\QuickTimeGenericRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTCP.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\rtcp_from_spec.c">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTPInterface.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPClient.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPCommon.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPRegisterSender.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPServer.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPServerRegister.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\RTSPServerSupportingHTTPStreaming.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\ServerMediaSession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\SimpleRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\SimpleRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\SIPClient.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\StreamParser.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\T140TextRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\TCPStreamSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\TextRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\TheoraVideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\TheoraVideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\uLawAudioFilter.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VorbisAudioRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VorbisAudioRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VP8VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VP8VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VP9VideoRTPSink.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\VP9VideoRTPSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\WAVAudioFileServerMediaSubsession.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+        <ClCompile Include="live555_2016.11.28\liveMedia\WAVAudioFileSource.cpp">
+            <Filter>Source Files\modules\live555_2016.11.28\liveMedia</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

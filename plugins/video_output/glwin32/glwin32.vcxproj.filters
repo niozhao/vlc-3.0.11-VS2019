@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{D475EA94-BC4E-46DE-A229-D58A6CF194A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_output">
+      <UniqueIdentifier>{E4D4720E-241B-4CEE-B9D4-939054A8299C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_output\win32">
+      <UniqueIdentifier>{A7C95464-4D36-45C3-8CD6-712D81FFB441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_output\opengl">
+      <UniqueIdentifier>{CD7710AF-33B2-413F-914D-FB1EE500D7F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\video_chroma">
+      <UniqueIdentifier>{032891d1-c6cc-4c97-ac28-308ab4242888}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\win32\glwin32.c">
+      <Filter>Source Files\modules\video_output\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\vout_helper.c">
+      <Filter>Source Files\modules\video_output\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\fragment_shaders.c">
+      <Filter>Source Files\modules\video_output\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\opengl\converter_sw.c">
+      <Filter>Source Files\modules\video_output\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\win32\common.c">
+      <Filter>Source Files\modules\video_output\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\win32\events.c">
+      <Filter>Source Files\modules\video_output\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\win32\win32touch.c">
+      <Filter>Source Files\modules\video_output\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_output\win32\sensors.cpp">
+      <Filter>Source Files\modules\video_output\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\video_chroma\copy.c">
+      <Filter>Source Files\modules\video_chroma</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

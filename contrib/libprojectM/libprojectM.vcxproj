@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="projectM-2.0.1\ConfigFile.cpp" />
+    <ClCompile Include="projectM-2.0.1\fftsg.cpp" />
+    <ClCompile Include="projectM-2.0.1\KeyHandler.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\BuiltinFuncs.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\BuiltinParams.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\CustomShape.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\CustomWave.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Eval.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Expr.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Func.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\IdlePreset.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\InitCond.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\MilkdropPreset.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\MilkdropPresetFactory.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Param.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Parser.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerFrameEqn.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerPixelEqn.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerPointEqn.cpp" />
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PresetFrameIO.cpp" />
+    <ClCompile Include="projectM-2.0.1\PCM.cpp" />
+    <ClCompile Include="projectM-2.0.1\PipelineMerger.cpp" />
+    <ClCompile Include="projectM-2.0.1\Preset.cpp" />
+    <ClCompile Include="projectM-2.0.1\PresetChooser.cpp" />
+    <ClCompile Include="projectM-2.0.1\PresetFactory.cpp" />
+    <ClCompile Include="projectM-2.0.1\PresetFactoryManager.cpp" />
+    <ClCompile Include="projectM-2.0.1\PresetLoader.cpp" />
+    <ClCompile Include="projectM-2.0.1\projectM.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\BeatDetect.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\FBO.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Filters.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\MilkdropWaveform.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\PerlinNoise.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\PerPixelMesh.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Pipeline.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\PipelineContext.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Renderable.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Renderer.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\RenderItemDistanceMetric.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\RenderItemMatcher.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Shader.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\ShaderEngine.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\image_DXT.c" />
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\image_helper.c" />
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\SOIL.c" />
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\stb_image_aug.c" />
+    <ClCompile Include="projectM-2.0.1\Renderer\TextureManager.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\UserTexture.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\VideoEcho.cpp" />
+    <ClCompile Include="projectM-2.0.1\Renderer\Waveform.cpp" />
+    <ClCompile Include="projectM-2.0.1\TimeKeeper.cpp" />
+    <ClCompile Include="projectM-2.0.1\timer.cpp" />
+    <ClCompile Include="projectM-2.0.1\win32-dirent.cpp" />
+    <ClCompile Include="projectM-2.0.1\wipemalloc.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0c688d79-9162-4f30-926a-402c2c0fee04}</ProjectGuid>
+    <RootNamespace>libprojectM</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;USE_FBO;CMAKE_INSTALL_PREFIX;PTW32_STATIC_LIB;HAVE_STRUCT_TIMESPEC;DISABLE_NATIVE_PRESETS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>./projectM-2.0.1;$(SolutionDir)include/contrib;./projectM-2.0.1/Renderer;./projectM-2.0.1/MilkdropPresetFactory;./projectM-2.0.1/Renderer/SOIL</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

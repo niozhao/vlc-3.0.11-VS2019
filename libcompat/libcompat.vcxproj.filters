@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\compat">
+      <UniqueIdentifier>{6c23a2c6-a3de-4354-b844-4353c743c83e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dummy.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\aligned_alloc.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\dirfd.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\ffsll.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\flockfile.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\fsync.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\getdelim.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\memrchr.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\nrand48.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\pathconf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\poll.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\realpath.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\recvmsg.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\sendmsg.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\setenv.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strcasestr.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strlcpy.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strndup.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strnstr.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strsep.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strverscmp.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\tdestroy.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\timegm.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\tfind.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\vasprintf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\asprintf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\gettimeofday.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\gmtime_r.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\localtime_r.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\sincos.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strcasecmp.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vlc-3.0.11\compat\strtok_r.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="vsnprintf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="fwprintf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="vfprintf.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+    <ClCompile Include="mingw32_copy.c">
+      <Filter>Source Files\compat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libcompat.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

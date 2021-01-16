@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{cc5bb00d-a476-4db7-9d5f-a154cadcf2dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NativePresetFactory">
+      <UniqueIdentifier>{0ee15ba7-c27b-4aa6-8d07-326babf9ab13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MilkdropPresetFactory">
+      <UniqueIdentifier>{ca6924b0-dce3-45bb-95d5-fa9b72d22887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer\SOIL">
+      <UniqueIdentifier>{e8477677-d026-4a49-8f9e-3fc0e5ba75fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="projectM-2.0.1\Renderer\BeatDetect.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\FBO.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Filters.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\MilkdropWaveform.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\PerlinNoise.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\PerPixelMesh.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Pipeline.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\PipelineContext.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Renderable.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Renderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\RenderItemDistanceMetric.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\RenderItemMatcher.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Shader.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\ShaderEngine.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\TextureManager.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\UserTexture.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\VideoEcho.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\Waveform.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\image_DXT.c">
+      <Filter>Source Files\Renderer\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\image_helper.c">
+      <Filter>Source Files\Renderer\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\SOIL.c">
+      <Filter>Source Files\Renderer\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Renderer\SOIL\stb_image_aug.c">
+      <Filter>Source Files\Renderer\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\BuiltinFuncs.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\BuiltinParams.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\CustomShape.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\CustomWave.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Eval.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Expr.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Func.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\IdlePreset.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\InitCond.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\MilkdropPreset.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\MilkdropPresetFactory.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Param.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\Parser.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerFrameEqn.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerPixelEqn.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PerPointEqn.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\MilkdropPresetFactory\PresetFrameIO.cpp">
+      <Filter>Source Files\MilkdropPresetFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\ConfigFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\fftsg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\KeyHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PCM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PipelineMerger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\Preset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PresetChooser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PresetFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PresetFactoryManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\PresetLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\projectM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\TimeKeeper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\wipemalloc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projectM-2.0.1\win32-dirent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

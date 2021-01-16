@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{5AFF397F-BDC8-44D4-9D55-71320D7C3024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\codec">
+      <UniqueIdentifier>{648BB8DB-CACE-4E83-8EFA-5219C6141C27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\codec\webvtt">
+      <UniqueIdentifier>{7B730F2A-2BC9-408E-8185-D0FD72509F1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux">
+      <UniqueIdentifier>{CB1C6B84-5D9B-4CD4-A1F5-E57B7EED8ACE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\webvtt\subsvtt.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\webvtt\webvtt.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\webvtt.c">
+      <Filter>Source Files\modules\demux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\webvtt\css_parser.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\webvtt\css_style.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+    <ClCompile Include="webvtt\CSSGrammar.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+    <ClCompile Include="webvtt\CSSLexer.c">
+      <Filter>Source Files\modules\codec\webvtt</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

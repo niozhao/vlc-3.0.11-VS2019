@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{1035AD09-D801-46D8-9780-EDFDD329386B}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\lua">
+            <UniqueIdentifier>{FCDCD1DB-0C07-433B-9871-4C3241CC3C0B}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\lua\libs">
+            <UniqueIdentifier>{023109E7-E3AE-4831-9B01-6A17501F403C}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\extension.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\extension_thread.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\intf.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\meta.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\demux.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\services_discovery.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\configuration.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\vlc.c">
+            <Filter>Source Files\modules\lua</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\equalizer.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\gettext.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\dialog.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\httpd.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\input.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\messages.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\misc.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\net.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\objects.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\osd.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\playlist.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\sd.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\stream.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\strings.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\variables.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\video.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\vlm.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\volume.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\xml.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\io.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\errno.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\lua\libs\win.c">
+            <Filter>Source Files\modules\lua\libs</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

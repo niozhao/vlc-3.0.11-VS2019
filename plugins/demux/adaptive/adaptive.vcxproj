@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup Label="ProjectConfigurations">
+        <ProjectConfiguration Include="Debug|Win32">
+            <Configuration>Debug</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|Win32">
+            <Configuration>Release</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|x64">
+            <Configuration>Debug</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|x64">
+            <Configuration>Release</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc" />
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mp4\libmp4.c" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\packetizer\h264_nal.c" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\packetizer\hevc_nal.c" />
+        <ClCompile Include="..\..\dllmain.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\AbstractPlaylist.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BaseAdaptationSet.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BasePeriod.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BaseRepresentation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\CommonAttributesElements.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Inheritables.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Role.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Segment.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentBase.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentChunk.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentInfoCommon.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentList.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentTimeline.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentInformation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentTemplate.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Url.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\encryption\CommonEncryption.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\encryption\Keyring.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AbstractAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AlwaysBestAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AlwaysLowestAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\BufferingLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\NearOptimalAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\PredictiveAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\RateBasedAdaptationLogic.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\Representationselectors.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\mp4\AtomsReader.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\AuthStorage.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\BytesRange.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Chunk.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\ConnectionParams.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Downloader.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\HTTPConnection.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\HTTPConnectionManager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Transport.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\CommandsQueue.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\Demuxer.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\FakeESOut.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\FakeESOutID.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\SourceStream.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\ID.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\PlaylistManager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\SegmentTracker.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\SharedResources.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\StreamFormat.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\Streams.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Conversions.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\FormatNamespace.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Helper.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Retrieve.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\DOMHelper.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\DOMParser.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\Node.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\M3U8.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Parser.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Representation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\HLSSegment.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Tags.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\HLSManager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\HLSStreams.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\AdaptationSet.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\DASHCommonAttributesElements.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\DASHSegment.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\ContentDescription.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\IsoffMainParser.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\MPD.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Period.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Profile.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\ProgramInformation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Representation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\TrickModeType.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mp4\IndexReader.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\DASHManager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\DASHStream.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\mp4\IndexReader.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\ForgedInitSegment.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Manifest.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\MemoryChunk.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Parser.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Representation.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\SmoothSegment.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\SmoothManager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\SmoothStream.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\mux\mp4\libmp4mux.c" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\adaptive.cpp" />
+    </ItemGroup>
+    <PropertyGroup Label="Globals">
+        <VCProjectVersion>16.0</VCProjectVersion>
+        <Keyword>Win32Proj</Keyword>
+        <ProjectGuid>{E3971C33-E406-4023-B1ED-174565DD23E8}</ProjectGuid>
+        <RootNamespace>adaptive</RootNamespace>
+        <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <ImportGroup Label="ExtensionSettings" />
+    <ImportGroup Label="Shared" />
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <PropertyGroup Label="UserMacros" />
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>WIN32;_DEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <FunctionLevelLinking>true</FunctionLevelLinking>
+            <IntrinsicFunctions>true</IntrinsicFunctions>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>WIN32;NDEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <EnableCOMDATFolding>true</EnableCOMDATFolding>
+            <OptimizeReferences>true</OptimizeReferences>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;__PLUGIN__;HAVE_CONFIG_H;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;ADAPTIVE_EXPORTS;MODULE_STRING=&quot;adaptive&quot;;MODULE_NAME=adaptive;MODULE_NAME_IS_adaptive;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>NotUsing</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+            <AdditionalIncludeDirectories>$(SolutionDir)vlc-3.0.11/include;$(SolutionDir)include/$(Platform);$(SolutionDir)include/util;./;$(SolutionDir)include/contrib;$(SolutionDir)vlc-3.0.11/modules/demux/adaptive;$(SolutionDir)vlc-3.0.11/modules/demux;$(SolutionDir)include/mingw32;</AdditionalIncludeDirectories>
+            <LanguageStandard_C>stdc11</LanguageStandard_C>
+            <MultiProcessorCompilation>true</MultiProcessorCompilation>
+            <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+            <AdditionalDependencies>libcompat.lib;libvlccore.lib;libgcrypt.a;libgpg-error.a;libgcc.a;libmingwex.a;libmingw32.a;legacy_stdio_definitions.lib;libz.a;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\$(Platform)\</AdditionalLibraryDirectories>
+            <OutputFile>$(OutDir)vlc/plugins/demux/lib$(ProjectName)_plugin$(TargetExt)</OutputFile>
+            <ModuleDefinitionFile>../../plugins.def</ModuleDefinitionFile>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <FunctionLevelLinking>true</FunctionLevelLinking>
+            <IntrinsicFunctions>true</IntrinsicFunctions>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>NDEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <EnableCOMDATFolding>true</EnableCOMDATFolding>
+            <OptimizeReferences>true</OptimizeReferences>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+    <ImportGroup Label="ExtensionTargets" />
+</Project>

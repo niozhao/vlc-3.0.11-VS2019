@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-aat-layout.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-aat-map.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-blob.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-buffer-serialize.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-buffer.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-common.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-face.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-fallback-shape.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-font.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ft.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-map.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-number.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-cff1-table.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-cff2-table.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-color.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-face.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-font.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-layout.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-map.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-math.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-meta.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-metrics.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-name.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-arabic.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-default.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-hangul.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-hebrew.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-indic-table.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-indic.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-khmer.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-myanmar.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-thai.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-use-table.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-use.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-complex-vowel-constraints.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-fallback.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape-normalize.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-shape.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-tag.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ot-var.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-set.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-shape-plan.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-shape.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-shaper.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-static.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-ucd.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\hb-unicode.cc" />
+    <ClCompile Include="harfbuzz-2.6.4\src\main.cc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6c259630-1949-4fef-87a3-468a61edeb3a}</ProjectGuid>
+    <RootNamespace>harfbuzz</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;HAVE_CONFIG_H;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\contrib;.\;$(SolutionDir)include\contrib\freetype2</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

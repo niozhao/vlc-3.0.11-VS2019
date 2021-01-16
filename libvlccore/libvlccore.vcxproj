@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d80d0849-24ec-45c5-9792-ba536c1c0073}</ProjectGuid>
+    <RootNamespace>libvlccore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;LIBVLCCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LIBVLCCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;LIBVLCCORE_EXPORTS;_WINDOWS;_USRDLL;HAVE_CONFIG_H;UPDATE_CHECK;HAVE_DYNAMIC_PLUGINS;_CRT_HAS_C11;MODULE_STRING="core";_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../vlc-3.0.11/src;../include/x64;../include/util;../vlc-3.0.11/include;../include/contrib;$(SolutionDir)include/mingw32</AdditionalIncludeDirectories>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\$(Platform)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcompat.lib;Ws2_32.lib;Iphlpapi.lib;Normaliz.lib;Synchronization.lib;libiconv.a;libintl.a;libgcc.a;libgcrypt.a;libgpg-error.a;legacy_stdio_definitions.lib;libmingwex.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>./libvlccore.def</ModuleDefinitionFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <ForceFileOutput>
+      </ForceFileOutput>
+      <OutputFile>$(OutDir)vlc/$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;LIBVLCCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\common.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\dec.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\filters.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\output.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\audio_output\volume.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\chain.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\cmdline.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\core.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\file.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\getopt.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\help.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\config\intf.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\extras\libc.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\access.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\clock.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\control.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\decoder.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\demux.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\demux_chained.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\es_out.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\es_out_timeshift.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\event.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\input.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\item.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\meta.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\resource.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\services_discovery.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stats.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_extractor.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_fifo.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_filter.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\stream_memory.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\subtitles.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\var.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlm.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlmshell.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\input\vlm_event.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\interface\dialog.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\interface\interface.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\libvlc-module.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\libvlc.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\actions.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\addons.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\background_worker.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\block.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\cpu.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\epg.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\error.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\es_format.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\events.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\exit.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fifo.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\filter.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\filter_chain.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fingerprinter.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\fourcc.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\httpcookies.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\image.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\interrupt.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\keystore.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\md5.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\messages.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\mime.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\mtime.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\objects.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\objres.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture_fifo.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\picture_pool.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\probe.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\rand.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\renderer_discovery.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\subpicture.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\text_style.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\threads.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\update.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\update_crypto.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\variables.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\misc\xml.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\missing.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\modules\bank.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\modules\cache.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\modules\entry.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\modules\modules.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\modules\textdomain.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\getaddrinfo.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\httpd.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\http_auth.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\io.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\rootbind.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\tcp.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\tls.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\network\udp.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\aout.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\art.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\control.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\engine.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\fetcher.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\item.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\loadsave.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\preparser.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\renderer.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\search.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\services_discovery.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\sort.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\thread.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\playlist\tree.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\revision.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\sap.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\sdp.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\stream_output\stream_output.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\charset.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\filesystem.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\iso_lang.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\memstream.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\strings.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\unicode.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\text\url.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\version.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\control.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\display.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\inhibit.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\interlacing.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\opengl.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\snapshot.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_epg.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_output.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_text.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\video_widgets.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_intf.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_subpictures.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\vout_wrapper.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\video_output\window.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\dirs.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\error.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\filesystem.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\netconf.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\plugin.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\rand.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\specific.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\thread.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\timer.c" />
+    <ClCompile Include="..\vlc-3.0.11\src\win32\winsock.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libvlccore.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{b5212138-cfe4-4366-a6d4-b4caf8c1cf93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\haicrypt">
+      <UniqueIdentifier>{e1ef13fe-f598-4ace-9043-b53e3da38589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\srtcore">
+      <UniqueIdentifier>{8edcfb2b-08ec-4597-a292-3f0b91693568}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\contrib\srt\common\srt_compat.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\common\win_time.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hc_nettle_aes.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_ctx_rx.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_ctx_tx.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_rx.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_sa.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_tx.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_xpt_srt.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt_xpt_sta.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\haicrypt\hcrypt-gnutls.c">
+      <Filter>Source Files\haicrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\api.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\buffer.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\cache.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\ccc.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\channel.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\common.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\core.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\csrtcc.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\epoll.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\list.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\md5.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\packet.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\queue.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\srt_c_api.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\contrib\srt\srtcore\window.cpp">
+      <Filter>Source Files\srtcore</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

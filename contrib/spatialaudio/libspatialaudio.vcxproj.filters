@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\source">
+      <UniqueIdentifier>{6a40a09b-851e-451d-a34d-7e883fa800c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\source\hrtf">
+      <UniqueIdentifier>{c3bf23f3-4b4c-44fb-ba34-8e80bd721663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\source\kiss_fft">
+      <UniqueIdentifier>{3facfae4-3fdc-4a0f-9852-562a0e88dff1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\AmbisonicBase.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicBinauralizer.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicCommons.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicDecoder.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicEncoder.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicEncoderDist.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicMicrophone.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicProcessor.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicSource.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicSpeaker.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmbisonicZoomer.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BFormat.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mit_hrtf_lib.c">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SpeakersBinauralizer.cpp">
+      <Filter>Source Files\source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\hrtf\mit_hrtf.cpp">
+      <Filter>Source Files\source\hrtf</Filter>
+    </ClCompile>
+    <ClCompile Include="source\hrtf\sofa_hrtf.cpp">
+      <Filter>Source Files\source\hrtf</Filter>
+    </ClCompile>
+    <ClCompile Include="source\kiss_fft\kiss_fft.c">
+      <Filter>Source Files\source\kiss_fft</Filter>
+    </ClCompile>
+    <ClCompile Include="source\kiss_fft\kiss_fftr.c">
+      <Filter>Source Files\source\kiss_fft</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

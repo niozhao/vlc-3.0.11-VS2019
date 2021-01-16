@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\libsidplay">
+      <UniqueIdentifier>{d3a9cd5c-90bc-47c0-9364-b9a02b3357d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src">
+      <UniqueIdentifier>{64ff9fc4-493c-4e8c-bfae-ea144a7b4d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\mos6510">
+      <UniqueIdentifier>{6979be3e-40ca-4570-a9da-e0a691d9abc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\mos6526">
+      <UniqueIdentifier>{35087300-8747-4bf4-9d72-34c7c3690c34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\mos656x">
+      <UniqueIdentifier>{51d61db2-1b53-404e-aae4-12829f34b17d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\xsid">
+      <UniqueIdentifier>{0693099a-bb8c-4b1b-8e0c-a6584cb62cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\sid6526">
+      <UniqueIdentifier>{137163e7-1671-458a-98d2-8aa3852004b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libsidplay\src\sidtune">
+      <UniqueIdentifier>{50ae9010-2f00-4a41-8f01-685a2ccaff86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\builders">
+      <UniqueIdentifier>{a031e532-fa32-446d-a94c-4049493340b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\builders\resid-builder">
+      <UniqueIdentifier>{d58e7042-99a8-4b69-9686-66c326f78ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\builders\resid-builder\src">
+      <UniqueIdentifier>{eda0e06c-6638-449e-b52b-7e804e47f087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resid">
+      <UniqueIdentifier>{9f1223d7-1c78-4349-a26b-0db665cb4d3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos6510\mos6510.cpp">
+      <Filter>Source Files\libsidplay\src\mos6510</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos6526\mos6526.cpp">
+      <Filter>Source Files\libsidplay\src\mos6526</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mos656x\mos656x.cpp">
+      <Filter>Source Files\libsidplay\src\mos656x</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\xsid\xsid.cpp">
+      <Filter>Source Files\libsidplay\src\xsid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sid6526\sid6526.cpp">
+      <Filter>Source Files\libsidplay\src\sid6526</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\IconInfo.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\InfoFile.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\MUS.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\p00.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\PP20.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\prg.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\PSID.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\SidTune.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidtune\SidTuneTools.cpp">
+      <Filter>Source Files\libsidplay\src\sidtune</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\reloc65.c">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\config.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\event.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\mixer.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\player.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\psiddrv.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\libsidplay\src\sidplay2.cpp">
+      <Filter>Source Files\libsidplay\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\builders\resid-builder\src\resid.cpp">
+      <Filter>Source Files\builders\resid-builder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\builders\resid-builder\src\resid-builder.cpp">
+      <Filter>Source Files\builders\resid-builder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\envelope.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\extfilt.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\filter.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\pot.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\sid.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\version.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\voice.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581__ST.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_P_T.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_PS_.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave6581_PST.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580__ST.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_P_T.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_PS_.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+    <ClCompile Include="sidplay-libs-2.1.1\resid\wave8580_PST.cc">
+      <Filter>Source Files\resid</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

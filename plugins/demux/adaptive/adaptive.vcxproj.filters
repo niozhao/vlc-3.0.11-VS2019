@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{CB334A01-200D-4E62-8F7F-1BB38210A09B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux">
+      <UniqueIdentifier>{FA391296-E0F4-48D9-9E2F-C9431EB6B1C8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive">
+      <UniqueIdentifier>{317ACDB0-1382-4ABA-ACF8-A52242C230E2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\playlist">
+      <UniqueIdentifier>{6D16030C-F13A-4964-A95A-0916224E7A59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\encryption">
+      <UniqueIdentifier>{7433B2B7-9E6C-4427-94B6-5E97B9422399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\logic">
+      <UniqueIdentifier>{20E9C982-2824-418A-AFF5-E53ADE3FEE41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\mp4">
+      <UniqueIdentifier>{9D139D7A-F409-4179-BF3A-6C80538F34DB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\http">
+      <UniqueIdentifier>{C96F7453-1207-4D07-8A6B-615FE2E9283C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\plumbing">
+      <UniqueIdentifier>{ED45534D-82FE-4F9F-A7AF-401E0B8CEED5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\tools">
+      <UniqueIdentifier>{09B593C2-3A00-45E3-A55F-2EAE78565B7F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\adaptive\xml">
+      <UniqueIdentifier>{C06C1443-5105-4F08-AB4C-AB7F9AF6086F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\hls">
+      <UniqueIdentifier>{CAE6ABDC-7044-44F1-B93C-00B85579BE99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\hls\playlist">
+      <UniqueIdentifier>{3BFEC8BE-B926-4342-A8B2-B541945124A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\dash">
+      <UniqueIdentifier>{B88E2B26-E9B4-4515-824D-08A317AE13CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\dash\mpd">
+      <UniqueIdentifier>{3F71AA2C-ACC3-48DB-8758-5F68900603E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\dash\mp4">
+      <UniqueIdentifier>{7E903E5A-1D02-4944-98D9-F3AA47315EEB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\smooth">
+      <UniqueIdentifier>{E7AF6B1C-3643-4DA7-8B75-DF50A819D55C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\smooth\mp4">
+      <UniqueIdentifier>{A2B6A05B-FBC6-4B9B-B479-BA50BA085933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\smooth\playlist">
+      <UniqueIdentifier>{3B2B9EA2-BF37-4FD9-9EBB-65241E4DF09C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\mux">
+      <UniqueIdentifier>{36F94F5A-A4BF-4A11-AFF2-697837342FF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\mux\mp4">
+      <UniqueIdentifier>{531AFE25-7877-4A14-B1CF-8AAB30ADE913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\packetizer">
+      <UniqueIdentifier>{415697f7-20de-4a82-883d-2419b6fd72de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\demux\mp4">
+      <UniqueIdentifier>{3a751ce3-2a09-46c3-b695-b3c16151e149}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\module.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\AbstractPlaylist.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BaseAdaptationSet.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BasePeriod.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\BaseRepresentation.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\CommonAttributesElements.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Inheritables.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Role.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Segment.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentBase.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentChunk.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentInfoCommon.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentList.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentTimeline.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentInformation.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\SegmentTemplate.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\playlist\Url.cpp">
+      <Filter>Source Files\modules\demux\adaptive\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\encryption\CommonEncryption.cpp">
+      <Filter>Source Files\modules\demux\adaptive\encryption</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\encryption\Keyring.cpp">
+      <Filter>Source Files\modules\demux\adaptive\encryption</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AbstractAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AlwaysBestAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\AlwaysLowestAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\BufferingLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\NearOptimalAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\PredictiveAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\RateBasedAdaptationLogic.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\logic\Representationselectors.cpp">
+      <Filter>Source Files\modules\demux\adaptive\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\mp4\AtomsReader.cpp">
+      <Filter>Source Files\modules\demux\adaptive\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\AuthStorage.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\BytesRange.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Chunk.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\ConnectionParams.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Downloader.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\HTTPConnection.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\HTTPConnectionManager.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\http\Transport.cpp">
+      <Filter>Source Files\modules\demux\adaptive\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\CommandsQueue.cpp">
+      <Filter>Source Files\modules\demux\adaptive\plumbing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\Demuxer.cpp">
+      <Filter>Source Files\modules\demux\adaptive\plumbing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\FakeESOut.cpp">
+      <Filter>Source Files\modules\demux\adaptive\plumbing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\FakeESOutID.cpp">
+      <Filter>Source Files\modules\demux\adaptive\plumbing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\plumbing\SourceStream.cpp">
+      <Filter>Source Files\modules\demux\adaptive\plumbing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\ID.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\PlaylistManager.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\SegmentTracker.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\SharedResources.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\StreamFormat.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\Streams.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Conversions.cpp">
+      <Filter>Source Files\modules\demux\adaptive\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\FormatNamespace.cpp">
+      <Filter>Source Files\modules\demux\adaptive\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Helper.cpp">
+      <Filter>Source Files\modules\demux\adaptive\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\tools\Retrieve.cpp">
+      <Filter>Source Files\modules\demux\adaptive\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\DOMHelper.cpp">
+      <Filter>Source Files\modules\demux\adaptive\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\DOMParser.cpp">
+      <Filter>Source Files\modules\demux\adaptive\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\xml\Node.cpp">
+      <Filter>Source Files\modules\demux\adaptive\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\M3U8.cpp">
+      <Filter>Source Files\modules\demux\hls\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Parser.cpp">
+      <Filter>Source Files\modules\demux\hls\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Representation.cpp">
+      <Filter>Source Files\modules\demux\hls\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\HLSSegment.cpp">
+      <Filter>Source Files\modules\demux\hls\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\playlist\Tags.cpp">
+      <Filter>Source Files\modules\demux\hls\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\HLSManager.cpp">
+      <Filter>Source Files\modules\demux\hls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\hls\HLSStreams.cpp">
+      <Filter>Source Files\modules\demux\hls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\AdaptationSet.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\DASHCommonAttributesElements.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\DASHSegment.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\ContentDescription.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\IsoffMainParser.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\MPD.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Period.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Profile.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\ProgramInformation.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\Representation.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mpd\TrickModeType.cpp">
+      <Filter>Source Files\modules\demux\dash\mpd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\mp4\IndexReader.cpp">
+      <Filter>Source Files\modules\demux\dash\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\DASHManager.cpp">
+      <Filter>Source Files\modules\demux\dash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\dash\DASHStream.cpp">
+      <Filter>Source Files\modules\demux\dash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\mp4\IndexReader.cpp">
+      <Filter>Source Files\modules\demux\smooth\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\ForgedInitSegment.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Manifest.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\MemoryChunk.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Parser.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\Representation.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\playlist\SmoothSegment.cpp">
+      <Filter>Source Files\modules\demux\smooth\playlist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\SmoothManager.cpp">
+      <Filter>Source Files\modules\demux\smooth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\smooth\SmoothStream.cpp">
+      <Filter>Source Files\modules\demux\smooth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\mux\mp4\libmp4mux.c">
+      <Filter>Source Files\modules\mux\mp4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\adaptive\adaptive.cpp">
+      <Filter>Source Files\modules\demux\adaptive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\packetizer\h264_nal.c">
+      <Filter>Source Files\modules\packetizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\packetizer\hevc_nal.c">
+      <Filter>Source Files\modules\packetizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mp4\libmp4.c">
+      <Filter>Source Files\modules\demux\mp4</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

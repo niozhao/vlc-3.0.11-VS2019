@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{2989cd48-49f9-4966-82db-c3081775f88c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\encoder">
+      <UniqueIdentifier>{3cb21506-febe-4e84-ae01-d99852e073f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\x86">
+      <UniqueIdentifier>{566eeca9-0d36-4403-a6b9-17676a8d1c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\vec">
+      <UniqueIdentifier>{a97e9e81-c597-4b62-a521-4ad2e66aef5a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\analysis.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\api.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\bitcost.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\dpb.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\encoder.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\entropy.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\frameencoder.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\framefilter.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\level.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\motion.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\nal.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\ratecontrol.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\reference.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\sao.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\search.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\sei.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\slicetype.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\weightPrediction.cpp">
+      <Filter>Source Files\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-sse3.cpp">
+      <Filter>Source Files\common\vec</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-sse41.cpp">
+      <Filter>Source Files\common\vec</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-ssse3.cpp">
+      <Filter>Source Files\common\vec</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\vec-primitives.cpp">
+      <Filter>Source Files\common\vec</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\asm-primitives.cpp">
+      <Filter>Source Files\common\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\bitstream.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\common.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\constants.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\cpu.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\cudata.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\dct.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\deblock.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\frame.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\framedata.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\intrapred.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\ipfilter.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\loopfilter.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\lowpassdct.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\lowres.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\md5.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\param.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\piclist.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\picyuv.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\pixel.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\predict.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\primitives.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\quant.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\scalinglist.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\shortyuv.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\slice.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\threading.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\threadpool.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\version.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\wavefront.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\winxp.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\yuv.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\blockcopy8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\const-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\cpu-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\dct8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\h-ipfilter8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\intrapred8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\intrapred8_allangs.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\ipfilter8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\loopfilter.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\mc-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\mc-a2.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixel-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixeladd8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixel-util8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\sad-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\seaintegral.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\ssd-a.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\v4-ipfilter8.asm">
+      <Filter>Source Files\common\x86</Filter>
+    </MASM>
+  </ItemGroup>
+</Project>

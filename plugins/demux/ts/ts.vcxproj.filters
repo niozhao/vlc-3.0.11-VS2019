@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{D7AA0FBF-EA57-4C52-9AE6-310A88E76E1D}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\demux">
+            <UniqueIdentifier>{CEEAEBB0-AAF5-4A0E-B19D-E9317F6FBBA7}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\demux\mpeg">
+            <UniqueIdentifier>{1F686622-6E8A-48C5-8D7D-FC8D5CB31ECA}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\mux">
+            <UniqueIdentifier>{2F1AD151-E983-42BE-9ACD-2B7A31EA05C5}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\mux\mpeg">
+            <UniqueIdentifier>{2DF00CED-9778-4B07-B8BF-E89618AB5C62}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\codec">
+            <UniqueIdentifier>{E20EBD62-1E6F-49C6-B347-28CDFF42E8D3}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_pid.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_psi.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_si.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_psip.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_psip_dvbpsi_fixes.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_decoders.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_streams.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_scte.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\sections.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\mpeg4_iod.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_arib.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_sl.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_metadata.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\mpeg\ts_hotfixes.c">
+            <Filter>Source Files\modules\demux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\mux\mpeg\csa.c">
+            <Filter>Source Files\modules\mux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\mux\mpeg\tables.c">
+            <Filter>Source Files\modules\mux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\mux\mpeg\tsutil.c">
+            <Filter>Source Files\modules\mux\mpeg</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\atsc_a65.c">
+            <Filter>Source Files\modules\codec</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\opus_header.c">
+            <Filter>Source Files\modules\codec</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

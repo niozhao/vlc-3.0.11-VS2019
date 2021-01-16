@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\bitstream.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\common.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\constants.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\cpu.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\cudata.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\dct.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\deblock.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\frame.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\framedata.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\intrapred.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\ipfilter.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\loopfilter.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\lowpassdct.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\lowres.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\md5.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\param.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\piclist.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\picyuv.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\pixel.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\predict.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\primitives.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\quant.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\scalinglist.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\shortyuv.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\slice.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\threading.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\threadpool.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-sse3.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-sse41.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\dct-ssse3.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\vec\vec-primitives.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\version.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\wavefront.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\winxp.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\asm-primitives.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\yuv.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\analysis.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\api.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\bitcost.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\dpb.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\encoder.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\entropy.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\frameencoder.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\framefilter.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\level.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\motion.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\nal.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\ratecontrol.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\reference.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\sao.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\search.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\sei.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\slicetype.cpp" />
+    <ClCompile Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\encoder\weightPrediction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\blockcopy8.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ml /c /coff %(fileName).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(fileName).obj;%(OutPuts)</Outputs>
+      <IncludePaths Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./;C:\Code\OpenSource\VLC\VLC-Windows\vlc-3.0.11_VS2019\contrib\libx265\x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\;%(IncludePaths)</IncludePaths>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\const-a.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ml /c /coff %(fileName).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(fileName).obj;%(OutPuts)</Outputs>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\cpu-a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\dct8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\h-ipfilter8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\intrapred8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\intrapred8_allangs.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\ipfilter8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\loopfilter.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\mc-a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\mc-a2.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixel-a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixel-util8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\pixeladd8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\sad-a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\seaintegral.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\ssd-a.asm">
+      <FileType>Document</FileType>
+    </MASM>
+    <MASM Include="x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86\v4-ipfilter8.asm">
+      <FileType>Document</FileType>
+    </MASM>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{9cee9d68-a87e-4ae3-8701-4a9e99c55fe4}</ProjectGuid>
+    <RootNamespace>libx265</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <MASM>
+      <IncludePaths>$(ProjectDir)\x265-2.7\multicoreware-x265-e41a9bf2bac4\source\common\x86</IncludePaths>
+    </MASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

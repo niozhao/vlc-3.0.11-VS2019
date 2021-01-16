@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ay_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Blip_Buffer.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Classic_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Data_Reader.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Dual_Resampler.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Effects_Buffer.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Fir_Resampler.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gbs_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gb_Oscs.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\gme.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gme_File.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Gym_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Hes_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Kss_Scc_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\M3u_Playlist.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Multi_Buffer.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Music_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Fme7_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Namco_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Oscs.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nes_Vrc6_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nsfe_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Nsf_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sap_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Sms_Apu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Snes_Spc.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Cpu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Dsp.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Spc_Filter.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Vgm_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Vgm_Emu_Impl.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ym2413_Emu.cpp" />
+    <ClCompile Include="game-music-emu-0.6.1\gme\Ym2612_Emu.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{72ece94f-ab34-4fae-878d-b24065714bd0}</ProjectGuid>
+    <RootNamespace>libgme</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

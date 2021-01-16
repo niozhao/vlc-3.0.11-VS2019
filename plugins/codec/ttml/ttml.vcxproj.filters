@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+            <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+        </Filter>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+            <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+            <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+        </Filter>
+        <Filter Include="Source Files\modules">
+            <UniqueIdentifier>{D323CF60-BD21-448E-A527-6DD0C3856CB9}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\codec">
+            <UniqueIdentifier>{BFF703AE-1A6A-4276-B541-F8573E5B710A}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\codec\ttml">
+            <UniqueIdentifier>{ED1F69A9-CF7D-407D-A6A7-5EA1FCAFE68E}</UniqueIdentifier>
+        </Filter>
+        <Filter Include="Source Files\modules\demux">
+            <UniqueIdentifier>{D02FC816-39FD-445C-9421-679412F14BBB}</UniqueIdentifier>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc">
+            <Filter>Resource Files</Filter>
+        </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\ttml\substtml.c">
+            <Filter>Source Files\modules\codec\ttml</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\demux\ttml.c">
+            <Filter>Source Files\modules\demux</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\codec\ttml\ttml.c">
+            <Filter>Source Files\modules\codec\ttml</Filter>
+        </ClCompile>
+    </ItemGroup>
+</Project>

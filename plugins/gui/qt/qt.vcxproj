@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup Label="ProjectConfigurations">
+        <ProjectConfiguration Include="Debug|Win32">
+            <Configuration>Debug</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|Win32">
+            <Configuration>Release</Configuration>
+            <Platform>Win32</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|x64">
+            <Configuration>Debug</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|x64">
+            <Configuration>Release</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+    </ItemGroup>
+    <ItemGroup>
+        <ResourceCompile Include="..\..\module.rc" />
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\dllmain.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\qt.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\menus.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\main_interface.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs_provider.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\input_manager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\actions_manager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\extensions_manager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\managers\addons_manager.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\recents.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\seekpoints.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\chromaprint.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\adapters\variables.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\playlist.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\bookmarks.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\preferences.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\mediainfo.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\epg.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\extended.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\messages.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\errors.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\external.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\plugins.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\sout.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\convert.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\help.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\gototime.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\toolbar.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\open.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\openurl.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\vlm.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\firstrun.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\podcast_configuration.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\extensions.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\dialogs\fingerprintdialog.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\extended_panels.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\info_panels.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\info_widgets.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\preferences_widgets.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\complete_preferences.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\simple_preferences.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\open_panels.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\interface_widgets.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\controller.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\controller_widget.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGChannels.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGItem.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGProgram.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGRuler.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGView.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\epg\EPGWidget.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\views.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\vlc_model.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist_model.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist_item.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\standardpanel.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\playlist.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\playlist\selector.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\sout\profile_selector.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\components\sout\sout_widgets.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\animators.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\input_slider.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\timetooltip.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\customwidgets.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\searchlineedit.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\registry.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\qmenuview.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\qt_dirs.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\pictureflow.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\validators.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\BrowseButton.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\DeckButtonsLayout.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\buttons\RoundButton.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\util\imagehelper.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\styles\seekstyle.cpp" />
+        <ClCompile Include="..\..\..\vlc-3.0.11\modules\gui\qt\main_interface_win32.cpp" />
+        <ClCompile Include="main_interface.moc.cpp" />
+        <ClCompile Include="menus.moc.cpp" />
+        <ClCompile Include="dialogs_provider.moc.cpp" />
+        <ClCompile Include="input_manager.moc.cpp" />
+        <ClCompile Include="actions_manager.moc.cpp" />
+        <ClCompile Include="extensions_manager.moc.cpp" />
+        <ClCompile Include="managers\addons_manager.moc.cpp" />
+        <ClCompile Include="recents.moc.cpp" />
+        <ClCompile Include="adapters\seekpoints.moc.cpp" />
+        <ClCompile Include="adapters\chromaprint.moc.cpp" />
+        <ClCompile Include="adapters\variables.moc.cpp" />
+        <ClCompile Include="dialogs\playlist.moc.cpp" />
+        <ClCompile Include="dialogs\bookmarks.moc.cpp" />
+        <ClCompile Include="dialogs\mediainfo.moc.cpp" />
+        <ClCompile Include="dialogs\extended.moc.cpp" />
+        <ClCompile Include="dialogs\messages.moc.cpp" />
+        <ClCompile Include="dialogs\epg.moc.cpp" />
+        <ClCompile Include="dialogs\errors.moc.cpp" />
+        <ClCompile Include="dialogs\external.moc.cpp" />
+        <ClCompile Include="dialogs\plugins.moc.cpp" />
+        <ClCompile Include="dialogs\preferences.moc.cpp" />
+        <ClCompile Include="dialogs\sout.moc.cpp" />
+        <ClCompile Include="dialogs\convert.moc.cpp" />
+        <ClCompile Include="dialogs\help.moc.cpp" />
+        <ClCompile Include="dialogs\gototime.moc.cpp" />
+        <ClCompile Include="dialogs\toolbar.moc.cpp" />
+        <ClCompile Include="dialogs\open.moc.cpp" />
+        <ClCompile Include="dialogs\openurl.moc.cpp" />
+        <ClCompile Include="dialogs\podcast_configuration.moc.cpp" />
+        <ClCompile Include="dialogs\firstrun.moc.cpp" />
+        <ClCompile Include="dialogs\extensions.moc.cpp" />
+        <ClCompile Include="dialogs\fingerprintdialog.moc.cpp" />
+        <ClCompile Include="components\extended_panels.moc.cpp" />
+        <ClCompile Include="components\info_panels.moc.cpp" />
+        <ClCompile Include="components\info_widgets.moc.cpp" />
+        <ClCompile Include="components\preferences_widgets.moc.cpp" />
+        <ClCompile Include="components\complete_preferences.moc.cpp" />
+        <ClCompile Include="components\simple_preferences.moc.cpp" />
+        <ClCompile Include="components\open_panels.moc.cpp" />
+        <ClCompile Include="components\interface_widgets.moc.cpp" />
+        <ClCompile Include="components\controller.moc.cpp" />
+        <ClCompile Include="components\controller_widget.moc.cpp" />
+        <ClCompile Include="components\epg\EPGChannels.moc.cpp" />
+        <ClCompile Include="components\epg\EPGProgram.moc.cpp" />
+        <ClCompile Include="components\epg\EPGRuler.moc.cpp" />
+        <ClCompile Include="components\epg\EPGView.moc.cpp" />
+        <ClCompile Include="components\epg\EPGWidget.moc.cpp" />
+        <ClCompile Include="components\playlist\views.moc.cpp" />
+        <ClCompile Include="components\playlist\vlc_model.moc.cpp" />
+        <ClCompile Include="components\playlist\playlist_model.moc.cpp" />
+        <ClCompile Include="components\playlist\playlist.moc.cpp" />
+        <ClCompile Include="components\playlist\standardpanel.moc.cpp" />
+        <ClCompile Include="components\playlist\selector.moc.cpp" />
+        <ClCompile Include="components\sout\profile_selector.moc.cpp" />
+        <ClCompile Include="components\sout\sout_widgets.moc.cpp" />
+        <ClCompile Include="util\animators.moc.cpp" />
+        <ClCompile Include="util\input_slider.moc.cpp" />
+        <ClCompile Include="util\timetooltip.moc.cpp" />
+        <ClCompile Include="util\customwidgets.moc.cpp" />
+        <ClCompile Include="util\searchlineedit.moc.cpp" />
+        <ClCompile Include="util\qmenuview.moc.cpp" />
+        <ClCompile Include="util\qvlcapp.moc.cpp" />
+        <ClCompile Include="util\pictureflow.moc.cpp" />
+        <ClCompile Include="util\validators.moc.cpp" />
+        <ClCompile Include="util\buttons\RoundButton.moc.cpp" />
+        <ClCompile Include="util\buttons\DeckButtonsLayout.moc.cpp" />
+        <ClCompile Include="util\buttons\BrowseButton.moc.cpp" />
+        <ClCompile Include="styles\seekstyle.moc.cpp" />
+        <ClCompile Include="main_interface_win32.moc.cpp" />
+        <ClCompile Include="resources.cpp" />
+        <ClCompile Include="dialogs\vlm.moc.cpp" />
+    </ItemGroup>
+    <PropertyGroup Label="Globals">
+        <VCProjectVersion>16.0</VCProjectVersion>
+        <Keyword>Win32Proj</Keyword>
+        <ProjectGuid>{440C6CF3-972F-4501-AFAC-024BC4BD2591}</ProjectGuid>
+        <RootNamespace>qt</RootNamespace>
+        <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>true</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;" Label="Configuration">
+        <ConfigurationType>DynamicLibrary</ConfigurationType>
+        <UseDebugLibraries>false</UseDebugLibraries>
+        <PlatformToolset>v142</PlatformToolset>
+        <WholeProgramOptimization>true</WholeProgramOptimization>
+        <CharacterSet>Unicode</CharacterSet>
+    </PropertyGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <ImportGroup Label="ExtensionSettings" />
+    <ImportGroup Label="Shared" />
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <ImportGroup Label="PropertySheets" Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" Label="LocalAppDataPlatform" />
+    </ImportGroup>
+    <PropertyGroup Label="UserMacros" />
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <LinkIncremental>true</LinkIncremental>
+    </PropertyGroup>
+    <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <LinkIncremental>false</LinkIncremental>
+    </PropertyGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>WIN32;_DEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <FunctionLevelLinking>true</FunctionLevelLinking>
+            <IntrinsicFunctions>true</IntrinsicFunctions>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>WIN32;NDEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <EnableCOMDATFolding>true</EnableCOMDATFolding>
+            <OptimizeReferences>true</OptimizeReferences>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;__PLUGIN__;HAVE_CONFIG_H;_CRT_NONSTDC_NO_DEPRECATE;QT_EXPORTS;MODULE_STRING=&quot;qt&quot;;MODULE_NAME=qt;MODULE_NAME_IS_qt;UPDATE_CHECK;_CRT_SECURE_NO_WARNINGS;QT_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>NotUsing</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+            <AdditionalIncludeDirectories>$(SolutionDir)vlc-3.0.11/include;$(SolutionDir)include/$(Platform);$(SolutionDir)include/util;./;$(SolutionDir)include/contrib;$(SolutionDir)vlc-3.0.11/modules/gui/qt;$(SolutionDir)include/contrib/QtCore;$(SolutionDir)include/contrib/QtWidgets;$(SolutionDir)include/contrib/QtGui;$(SolutionDir)vlc-3.0.11/;$(SolutionDir)include/contrib/QtSvg;$(SolutionDir)include/mingw32;</AdditionalIncludeDirectories>
+            <LanguageStandard_C>stdc11</LanguageStandard_C>
+            <MultiProcessorCompilation>true</MultiProcessorCompilation>
+            <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+            <AdditionalDependencies>libcompat.lib;libvlccore.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5Svgd.lib;Winmm.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\$(Platform)\;$(SolutionDir)libs\$(Platform)\qt_5.12.4\</AdditionalLibraryDirectories>
+            <OutputFile>$(OutDir)vlc/plugins/gui/lib$(ProjectName)_plugin$(TargetExt)</OutputFile>
+            <ModuleDefinitionFile>../../plugins.def</ModuleDefinitionFile>
+        </Link>
+    </ItemDefinitionGroup>
+    <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|x64&apos;">
+        <ClCompile>
+            <WarningLevel>Level3</WarningLevel>
+            <FunctionLevelLinking>true</FunctionLevelLinking>
+            <IntrinsicFunctions>true</IntrinsicFunctions>
+            <SDLCheck>true</SDLCheck>
+            <PreprocessorDefinitions>NDEBUG;IDUMMY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <ConformanceMode>true</ConformanceMode>
+            <PrecompiledHeader>Use</PrecompiledHeader>
+            <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+        </ClCompile>
+        <Link>
+            <SubSystem>Windows</SubSystem>
+            <EnableCOMDATFolding>true</EnableCOMDATFolding>
+            <OptimizeReferences>true</OptimizeReferences>
+            <GenerateDebugInformation>true</GenerateDebugInformation>
+            <EnableUAC>false</EnableUAC>
+        </Link>
+    </ItemDefinitionGroup>
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+    <ImportGroup Label="ExtensionTargets" />
+</Project>
