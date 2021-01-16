@@ -491,6 +491,7 @@ bool matroska_segment_c::PreloadClusters(uint64 i_cluster_pos)
 
     } payload = { this, false };
 
+    typedef DispatcherTag<494> ClusterHandler_tag_t;   
     MKV_SWITCH_CREATE(EbmlTypeDispatcher, ClusterHandler, ClusterHandlerPayload )
     {
         MKV_SWITCH_INIT();
@@ -806,7 +807,7 @@ bool matroska_segment_c::Seek( demux_t &demuxer, mtime_t i_absolute_mk_date, mti
 {
     SegmentSeeker::tracks_seekpoint_t seekpoints;
 
-    SegmentSeeker::fptr_t i_seek_position = std::numeric_limits<SegmentSeeker::fptr_t>::max();
+    SegmentSeeker::fptr_t i_seek_position = (std::numeric_limits<SegmentSeeker::fptr_t>::max)();
     mtime_t i_mk_seek_time = -1;
     mtime_t i_mk_date = i_absolute_mk_date - i_mk_time_offset;
     SegmentSeeker::track_ids_t selected_tracks;
@@ -818,7 +819,7 @@ bool matroska_segment_c::Seek( demux_t &demuxer, mtime_t i_absolute_mk_date, mti
     {
         mkv_track_t &track = *it->second;
 
-        track.i_skip_until_fpos = std::numeric_limits<uint64_t>::max();
+        track.i_skip_until_fpos = (std::numeric_limits<uint64_t>::max)();
         if( track.i_last_dts > VLC_TS_INVALID )
             track.b_discontinuity = true;
         track.i_last_dts        = VLC_TS_INVALID;
@@ -875,14 +876,14 @@ bool matroska_segment_c::Seek( demux_t &demuxer, mtime_t i_absolute_mk_date, mti
         if ( b_accurate )
             trackit->second->i_skip_until_fpos = it->second.fpos;
         else
-            trackit->second->i_skip_until_fpos = std::numeric_limits<uint64_t>::max();
+            trackit->second->i_skip_until_fpos = (std::numeric_limits<uint64_t>::max)();
         trackit->second->i_last_dts        = it->second.pts + i_mk_time_offset;
 
         msg_Dbg( &sys.demuxer, "seek: preroll{ track: %u, pts: %" PRId64 ", fpos: %" PRIu64 " skip: %" PRIu64 "} ",
           it->first, it->second.pts, it->second.fpos, trackit->second->i_skip_until_fpos );
     }
 
-    if ( i_seek_position == std::numeric_limits<SegmentSeeker::fptr_t>::max() )
+    if ( i_seek_position == (std::numeric_limits<SegmentSeeker::fptr_t>::max)() )
         return false;
 
     // propogate seek information //
@@ -1082,7 +1083,7 @@ void matroska_segment_c::EnsureDuration()
             if( MKV_CHECKED_PTR_DECL ( block, KaxSimpleBlock, l ) )
             {
                 block->SetParent( *p_last_cluster );
-                i_last_timecode = std::max(i_last_timecode, block->GlobalTimecode());
+                i_last_timecode = (std::max)(i_last_timecode, block->GlobalTimecode());
             }
             else if( MKV_CHECKED_PTR_DECL ( group, KaxBlockGroup, l ) )
             {
@@ -1101,7 +1102,7 @@ void matroska_segment_c::EnsureDuration()
                         i_group_timecode += static_cast<uint64>( *kbd_ptr );
                     }
                 }
-                i_last_timecode = std::max(i_last_timecode, i_group_timecode);
+                i_last_timecode = (std::max)(i_last_timecode, i_group_timecode);
             }
         }
 
@@ -1201,6 +1202,7 @@ int matroska_segment_c::BlockGet( KaxBlock * & pp_block, KaxSimpleBlock * & pp_s
         *pi_duration, *pb_key_picture, *pb_discardable_picture, true
     };
 
+    typedef DispatcherTag<1206> BlockGetHandler_l1_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, BlockGetHandler_l1, BlockPayload )
     {
         MKV_SWITCH_INIT();
@@ -1222,6 +1224,7 @@ int matroska_segment_c::BlockGet( KaxBlock * & pp_block, KaxSimpleBlock * & pp_s
         }
     };
 
+    typedef DispatcherTag<1228> BlockGetHandler_l2_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, BlockGetHandler_l2, BlockPayload )
     {
         MKV_SWITCH_INIT();
@@ -1266,6 +1269,7 @@ int matroska_segment_c::BlockGet( KaxBlock * & pp_block, KaxSimpleBlock * & pp_s
         }
     };
 
+    typedef DispatcherTag<1273> BlockGetHandler_l3_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, BlockGetHandler_l3, BlockPayload )
     {
         MKV_SWITCH_INIT();

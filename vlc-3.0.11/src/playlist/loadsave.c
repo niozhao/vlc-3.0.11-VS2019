@@ -188,24 +188,38 @@ int playlist_MLDump( playlist_t *p_playlist )
         return VLC_EGENERIC;
     }
 
+#ifdef __STDC_NO_VLA__
+    char* psz_dirname = (char*)malloc(strlen(psz_temp) + sizeof(DIR_SEP "ml.xspf"));
+#else
     char psz_dirname[ strlen( psz_temp ) + sizeof( DIR_SEP "ml.xspf")];
+#endif
     strcpy( psz_dirname, psz_temp );
     free( psz_temp );
     if( config_CreateDir( (vlc_object_t *)p_playlist, psz_dirname ) )
     {
+#ifdef __STDC_NO_VLA__
+        free(psz_dirname);
+#endif
         return VLC_EGENERIC;
     }
 
     strcat( psz_dirname, DIR_SEP "ml.xspf" );
 
     if ( asprintf( &psz_temp, "%s.tmp%"PRIu32, psz_dirname, (uint32_t)getpid() ) < 1 )
+    {
+#ifdef __STDC_NO_VLA__
+		free(psz_dirname);
+#endif
         return VLC_EGENERIC;
-
+    }
     int i_ret = playlist_Export( p_playlist, psz_temp, false, "export-xspf" );
     if ( i_ret != VLC_SUCCESS )
     {
         vlc_unlink( psz_temp );
         free( psz_temp );
+#ifdef __STDC_NO_VLA__
+		free(psz_dirname);
+#endif
         return i_ret;
     }
 
@@ -215,7 +229,13 @@ int playlist_MLDump( playlist_t *p_playlist )
     {
         msg_Err( p_playlist, "could not rename %s.tmp: %s",
                  psz_dirname, vlc_strerror_c(errno) );
+#ifdef __STDC_NO_VLA__
+		free(psz_dirname);
+#endif
         return VLC_EGENERIC;
     }
+#ifdef __STDC_NO_VLA__
+	free(psz_dirname);
+#endif
     return VLC_SUCCESS;
 }

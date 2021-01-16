@@ -539,7 +539,7 @@ static int ExecuteLoad( vlm_t *p_vlm, const char *psz_path, vlm_message_t **pp_s
     char *psz_buffer = NULL;
 
     if( fstat( fd, &st ) || !S_ISREG( st.st_mode )
-     || st.st_size >= SSIZE_MAX
+     || st.st_size >= /*SSIZE_MAX*/SIZE_MAX
      || ((psz_buffer = malloc( st.st_size + 1 )) == NULL)
      || read( fd, psz_buffer, st.st_size ) < (ssize_t)st.st_size )
     {

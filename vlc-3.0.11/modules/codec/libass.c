@@ -477,12 +477,19 @@ static void SubpictureUpdate( subpicture_t *p_subpic,
      * it looks ugly (text unaligned).
      */
     const int i_max_region = 4;
+#ifdef __STDC_NO_VLA__
+    rectangle_t* region = (rectangle_t*)malloc(sizeof(rectangle_t) * i_max_region);
+#else
     rectangle_t region[i_max_region];
+#endif
     const int i_region = BuildRegions( region, i_max_region, p_img, fmt.i_width, fmt.i_height );
 
     if( i_region <= 0 )
     {
         vlc_mutex_unlock( &p_sys->lock );
+#ifdef __STDC_NO_VLA__
+        free(region);
+#endif
         return;
     }
 
@@ -516,6 +523,9 @@ static void SubpictureUpdate( subpicture_t *p_subpic,
         pp_region_last = &r->p_next;
     }
     vlc_mutex_unlock( &p_sys->lock );
+#ifdef __STDC_NO_VLA__
+	free(region);
+#endif
 
 }
 static void SubpictureDestroy( subpicture_t *p_subpic )
@@ -582,7 +592,11 @@ static int BuildRegions( rectangle_t *p_region, int i_max_region, ASS_Image *p_i
     int i_maxh = i_w_inc;
     int i_maxw = i_h_inc;
     int i_region;
+#ifdef __STDC_NO_VLA__
+    rectangle_t* region = (rectangle_t*)malloc(sizeof(rectangle_t) * (i_max_region + 1));
+#elif
     rectangle_t region[i_max_region+1];
+#endif
 
     i_region = 0;
     for( int i_used = 0; i_used < i_count; )
@@ -677,7 +691,9 @@ static int BuildRegions( rectangle_t *p_region, int i_max_region, ASS_Image *p_i
 #endif
 
     free( pp_img );
-
+#ifdef __STDC_NO_VLA__
+    free(region);
+#endif
     return i_region;
 }
 

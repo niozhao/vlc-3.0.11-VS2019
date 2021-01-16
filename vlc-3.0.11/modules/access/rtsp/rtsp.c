@@ -525,12 +525,19 @@ int rtsp_connect( rtsp_client_t *rtsp, const char *psz_mrl,
     if( pathbegin < strlen(mrl_ptr) ) s->path = strdup(mrl_ptr+pathbegin+1);
     if( colon != slash )
     {
+#ifdef __STDC_NO_VLA__
+        char* buffer = (char*)malloc(pathbegin - hostend);
+#else
         char buffer[pathbegin-hostend];
+#endif
 
         strncpy( buffer, mrl_ptr+hostend+1, pathbegin-hostend-1 );
         buffer[pathbegin-hostend-1] = 0;
         s->port = atoi(buffer);
         if( s->port < 0 || s->port > 65535 ) s->port = 554;
+#ifdef __STDC_NO_VLA__
+        free(buffer);
+#endif
     }
 
     free( mrl_ptr );

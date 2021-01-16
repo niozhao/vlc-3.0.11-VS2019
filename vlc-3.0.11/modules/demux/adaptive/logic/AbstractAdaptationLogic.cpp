@@ -34,8 +34,8 @@ using namespace adaptive::logic;
 AbstractAdaptationLogic::AbstractAdaptationLogic    (vlc_object_t *obj)
 {
     p_obj = obj;
-    maxwidth = std::numeric_limits<int>::max();
-    maxheight = std::numeric_limits<int>::max();
+    maxwidth = (std::numeric_limits<int>::max)();
+    maxheight = (std::numeric_limits<int>::max)();
 }
 
 AbstractAdaptationLogic::~AbstractAdaptationLogic   ()
@@ -48,6 +48,6 @@ void AbstractAdaptationLogic::updateDownloadRate    (const adaptive::ID &, size_
 
 void AbstractAdaptationLogic::setMaxDeviceResolution (int w, int h)
 {
-    maxwidth = (w > 0) ? w : std::numeric_limits<int>::max();
-    maxheight = (h > 0) ? h : std::numeric_limits<int>::max();
+    maxwidth = (w > 0) ? w : (std::numeric_limits<int>::max)();
+    maxheight = (h > 0) ? h : (std::numeric_limits<int>::max)();
 }

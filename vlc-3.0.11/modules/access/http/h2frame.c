@@ -542,15 +542,30 @@ static int vlc_h2_parse_headers_end(struct vlc_h2_parser *p)
 
     if (s != NULL)
     {
+#ifdef __STDC_NO_VLA__
+        const char** ch = (char**)malloc(sizeof(char*) * (n ? n : 1) * 2);
+
+#else
         const char *ch[n ? n : 1][2];
+#endif
 
         for (int i = 0; i < n; i++)
+        {
+#ifdef __STDC_NO_VLA__
+            ch[i * 2 + 0] = headers[i][0], ch[i * 2 + 1] = headers[i][1];
+#elif
             ch[i][0] = headers[i][0], ch[i][1] = headers[i][1];
+#endif
+        }
 
         p->cbs->stream_headers(s, n, ch);
 
         if (p->headers.eos)
             p->cbs->stream_end(s);
+
+#ifdef __STDC_NO_VLA__
+        free(ch);
+#endif
     }
     else
         /* NOTE: The specification implies that the error should be sent for

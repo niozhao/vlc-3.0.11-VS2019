@@ -294,7 +294,7 @@ AbstractStream::status PlaylistManager::dequeue(mtime_t i_floor, mtime_t *pi_nzb
             i_return = i_ret;
 
         if( i_pcr > i_floor )
-            *pi_nzbarrier = std::min( *pi_nzbarrier, i_pcr - VLC_TS_0 );
+            *pi_nzbarrier = (std::min)( *pi_nzbarrier, i_pcr - VLC_TS_0 );
     }
 
     return i_return;
@@ -334,7 +334,7 @@ mtime_t PlaylistManager::getPCR() const
         if(minpcr == VLC_TS_INVALID)
             minpcr = pcr;
         else if(pcr > VLC_TS_INVALID)
-            minpcr = std::min(minpcr, pcr);
+            minpcr = (std::min)(minpcr, pcr);
     }
     return minpcr;
 }
@@ -349,7 +349,7 @@ mtime_t PlaylistManager::getFirstDTS() const
         if(mindts == VLC_TS_INVALID)
             mindts = dts;
         else if(dts > VLC_TS_INVALID)
-            mindts = std::min(mindts, dts);
+            mindts = (std::min)(mindts, dts);
     }
     return mindts;
 }
@@ -498,7 +498,7 @@ int PlaylistManager::doDemux(int64_t increment)
         if( demux.i_nzpcr != VLC_TS_INVALID && i_nzbarrier != demux.i_nzpcr )
         {
             demux.i_nzpcr = i_nzbarrier;
-            mtime_t pcr = VLC_TS_0 + std::max(INT64_C(0), demux.i_nzpcr - CLOCK_FREQ / 10);
+            mtime_t pcr = VLC_TS_0 + (std::max)(INT64_C(0), demux.i_nzpcr - CLOCK_FREQ / 10);
             es_out_Control(p_demux->out, ES_OUT_SET_GROUP_PCR, 0, pcr);
         }
         vlc_mutex_unlock(&demux.lock);

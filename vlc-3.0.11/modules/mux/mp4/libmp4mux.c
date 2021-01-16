@@ -586,7 +586,8 @@ static bo_t *GetHvcCTag(es_format_t *p_fmt, bool b_completeness)
         return hvcC;
     }
 
-    struct hevc_dcr_params params = { };
+    //struct hevc_dcr_params params = { };
+    struct hevc_dcr_params params;
     const uint8_t *p_nal;
     size_t i_nal;
 

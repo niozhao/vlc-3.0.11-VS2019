@@ -416,7 +416,7 @@ static int NextChunk( demux_t *p_demux, vlc_fourcc_t *p_fcc, uint64_t *pi_size )
 
     if( i_size > INT64_MAX )
     {
-        if( *p_fcc == VLC_FOURCC( 'd', 'a', 't', 'a' ) && i_size == UINT64_C( -1 ))
+        if( *p_fcc == VLC_FOURCC( 'd', 'a', 't', 'a' ) && i_size == UINT64_C(0 - 1 ))  //error C4146:unary minus operator applied to unsigned type, result still unsigned
             i_size = kCHUNK_SIZE_EOF;
         else
             return VLC_EGENERIC;
@@ -696,7 +696,7 @@ static int ReadKukiChunk( demux_t *p_demux, uint64_t i_size )
     demux_sys_t *p_sys = p_demux->p_sys;
     const uint8_t *p_peek;
 
-    if( i_size > SSIZE_MAX )
+    if( i_size > /*SSIZE_MAX*/ SIZE_MAX)
     {
         msg_Err( p_demux, "Magic Cookie chunk too big" );
         return VLC_EGENERIC;

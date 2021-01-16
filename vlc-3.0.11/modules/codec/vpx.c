@@ -405,7 +405,8 @@ static int OpenEncoder(vlc_object_t *p_this)
         return VLC_EGENERIC;
     }
 
-    struct vpx_codec_enc_cfg enccfg = {};
+    //struct vpx_codec_enc_cfg enccfg = {};
+    struct vpx_codec_enc_cfg enccfg;
     vpx_codec_enc_config_default(iface, &enccfg, 0);
     enccfg.g_threads = __MIN(vlc_GetCPUCount(), 4);
     enccfg.g_w = p_enc->fmt_in.video.i_visible_width;
@@ -451,7 +452,8 @@ static block_t *Encode(encoder_t *p_enc, picture_t *p_pict)
 
     if (!p_pict) return NULL;
 
-    vpx_image_t img = {};
+    //vpx_image_t img = {};
+    vpx_image_t img;
     unsigned i_w = p_enc->fmt_in.video.i_visible_width;
     unsigned i_h = p_enc->fmt_in.video.i_visible_height;
 

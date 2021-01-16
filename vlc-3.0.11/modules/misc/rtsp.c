@@ -1001,7 +1001,7 @@ static int RtspCallback( httpd_callback_sys_t *p_args, httpd_client_t *cl,
                         answer->p_body = NULL;
                         break;
                     }
-#warning Should use secure randomness here! (spoofing risk)
+//#warning Should use secure randomness here! (spoofing risk)
                     if( asprintf( &psz_new, "%lu", vlc_mrand48() ) < 0 )
                         return VLC_ENOMEM;
                     psz_session = psz_new;
@@ -1327,7 +1327,7 @@ static int RtspCallbackES( httpd_callback_sys_t *p_args, httpd_client_t *cl,
                         answer->p_body = NULL;
                         break;
                     }
-#warning Session ID should be securely random (spoofing risk)
+//#warning Session ID should be securely random (spoofing risk)
                     if( asprintf( &psz_new, "%lu", vlc_mrand48() ) < 0 )
                         return VLC_ENOMEM;
                     psz_session = psz_new;

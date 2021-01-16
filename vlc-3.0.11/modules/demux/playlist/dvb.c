@@ -60,8 +60,11 @@ int Import_DVB(vlc_object_t *p_this)
     if (eol == NULL)
         return VLC_EGENERIC;
     len = eol - peek;
-
+#ifdef __STDC_NO_VLA__
+    char* line = (char*)malloc(sizeof(char) * (len + 1));
+#else
     char line[len + 1];
+#endif
     memcpy(line, peek, len);
     line[len] = '\0';
 
@@ -74,6 +77,9 @@ int Import_DVB(vlc_object_t *p_this)
     demux->pf_control = access_vaDirectoryControlHelper;
     demux->pf_readdir = ReadDir;
 
+#ifdef __STDC_NO_VLA__
+    free(line);
+#endif
     return VLC_SUCCESS;
 }
 

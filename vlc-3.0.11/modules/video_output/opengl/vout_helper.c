@@ -181,7 +181,7 @@ static const GLfloat identity[] = {
 };
 
 /* rotation around the Z axis */
-static void getZRotMatrix(float theta, GLfloat matrix[static 16])
+static void getZRotMatrix(float theta, GLfloat matrix[/*static */16])
 {
     float st, ct;
 
@@ -199,7 +199,7 @@ static void getZRotMatrix(float theta, GLfloat matrix[static 16])
 }
 
 /* rotation around the Y axis */
-static void getYRotMatrix(float theta, GLfloat matrix[static 16])
+static void getYRotMatrix(float theta, GLfloat matrix[/*static */16])
 {
     float st, ct;
 
@@ -217,7 +217,7 @@ static void getYRotMatrix(float theta, GLfloat matrix[static 16])
 }
 
 /* rotation around the X axis */
-static void getXRotMatrix(float phi, GLfloat matrix[static 16])
+static void getXRotMatrix(float phi, GLfloat matrix[/*static */16])
 {
     float sp, cp;
 
@@ -234,7 +234,7 @@ static void getXRotMatrix(float phi, GLfloat matrix[static 16])
     memcpy(matrix, m, sizeof(m));
 }
 
-static void getZoomMatrix(float zoom, GLfloat matrix[static 16]) {
+static void getZoomMatrix(float zoom, GLfloat matrix[/*static */16]) {
 
     const GLfloat m[] = {
         /* x   y     z     w */
@@ -248,7 +248,7 @@ static void getZoomMatrix(float zoom, GLfloat matrix[static 16]) {
 }
 
 /* perspective matrix see https://www.opengl.org/sdk/docs/man2/xhtml/gluPerspective.xml */
-static void getProjectionMatrix(float sar, float fovy, GLfloat matrix[static 16]) {
+static void getProjectionMatrix(float sar, float fovy, GLfloat matrix[/*static */16]) {
 
     float zFar  = 1000;
     float zNear = 0.01;
@@ -289,7 +289,7 @@ static void getViewpointMatrixes(vout_display_opengl_t *vgl,
 }
 
 static void getOrientationTransformMatrix(video_orientation_t orientation,
-                                          GLfloat matrix[static 16])
+                                          GLfloat matrix[/*static */16])
 {
     memcpy(matrix, identity, sizeof(identity));
 
@@ -1522,8 +1522,9 @@ static int SetupCoords(vout_display_opengl_t *vgl,
                        const float *left, const float *top,
                        const float *right, const float *bottom)
 {
-    GLfloat *vertexCoord, *textureCoord;
-    GLushort *indices;
+    GLfloat* vertexCoord = NULL;
+    GLfloat* textureCoord = NULL;
+    GLushort* indices = NULL;;
     unsigned nbVertices, nbIndices;
 
     int i_ret;

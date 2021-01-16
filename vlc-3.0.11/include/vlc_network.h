@@ -49,6 +49,9 @@
 #   ifndef IPV6_V6ONLY
 #       define IPV6_V6ONLY 27
 #   endif
+# define SHUT_RD SD_RECEIVE
+# define SHUT_WR SD_SEND
+# define SHUT_RDWR SD_BOTH
 #else
 #   include <sys/socket.h>
 #   include <netinet/in.h>

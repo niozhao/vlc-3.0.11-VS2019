@@ -36,7 +36,9 @@
 #include <ole2.h>
 #include <limits.h>
 #include <strmif.h>
+#include <ks.h>
 #include <ksmedia.h>
+
 #include <wmcodecdsp.h>
 #include <ddraw.h>
 
@@ -49,12 +51,14 @@
  *****************************************************************************/
 
 /* IAM */
-DEFINE_GUID(PROPSETID_TUNER ,0x6a2e0605, 0x28e4, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+//DEFINE_GUID(PROPSETID_TUNER ,0x6a2e0605, 0x28e4, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
+DEFINE_GUID(PROPSETID_TUNER_IS_THIS_OK, 0x6a2e0605, 0x28e4, 0x11d0, 0xa1, 0x8c, 0x00, 0xa0, 0xc9, 0x11, 0x89, 0x56);
 DEFINE_GUID(IID_IAMBufferNegotiation ,0x56ed71a0, 0xaf5f, 0x11d0, 0xb3, 0xf0, 0x00, 0xaa, 0x00, 0x37, 0x61, 0xc5);
 DEFINE_GUID(IID_IAMTVAudio      ,0x83EC1C30, 0x23D1, 0x11d1, 0x99, 0xE6, 0x00, 0xA0, 0xC9, 0x56, 0x02, 0x66);
 DEFINE_GUID(IID_IAMCrossbar     ,0xC6E13380, 0x30AC, 0x11d0, 0xA1, 0x8C, 0x00, 0xA0, 0xC9, 0x11, 0x89, 0x56);
 DEFINE_GUID(IID_IAMTVTuner      ,0x211A8766, 0x03AC, 0x11d1, 0x8D, 0x13, 0x00, 0xAA, 0x00, 0xBD, 0x83, 0x39);
 
+#if !defined(_KS_) && !defined(_KSMEDIA_)
 /* Video Format
 MEDIASUBTYPEs and FORMAT */
 DEFINE_GUID(MEDIASUBTYPE_ARGB32 ,0x773c9ac0, 0x3274, 0x11d0, 0xb7, 0x24, 0x0, 0xaa, 0x0, 0x6c, 0x1a, 0x1);
@@ -71,7 +75,7 @@ DEFINE_GUID(FORMAT_MPEG2Video            ,0xe06d80e3, 0xdb46, 0x11cf, 0xb4, 0xd1
 
 /* float */
 DEFINE_GUID(MEDIASUBTYPE_IEEE_FLOAT ,0x00000003, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71);
-
+#endif
 
 /****************************************************************************
  * The following should be in ks.h and ksmedia.h, but since they are not in
@@ -79,6 +83,7 @@ DEFINE_GUID(MEDIASUBTYPE_IEEE_FLOAT ,0x00000003, 0x0000, 0x0010, 0x80, 0x00, 0x0
  ****************************************************************************/
 
 /* http://msdn.microsoft.com/en-us/library/ff567297%28VS.85%29.aspx */
+#if !defined(_KS_) && !defined(_KSMEDIA_)
 typedef enum  {
         KS_AnalogVideo_None          = 0x00000000,
         KS_AnalogVideo_NTSC_M        = 0x00000001,
@@ -369,6 +374,6 @@ DECLARE_INTERFACE_(IAMTVAudio, IUnknown)
     STDMETHOD(RegisterNotificationCallBack) (THIS_ IAMTunerNotification*, long);
     STDMETHOD(UnRegisterNotificationCallBack) (THIS_ IAMTunerNotification*);
 };
-
+#endif  /*#if !defined(_KS_) && !defined(_KSMEDIA_)*/
 #endif /* __MINGW64_VERSION_MAJOR */
 #endif /* VLC_DSHOW_H */

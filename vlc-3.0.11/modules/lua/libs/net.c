@@ -280,13 +280,20 @@ static int vlclua_net_recv( lua_State *L )
 {
     int fd = vlclua_fd_get( L, luaL_checkint( L, 1 ) );
     size_t i_len = (size_t)luaL_optinteger( L, 2, 1 );
+#ifdef __STDC_NO_VLA__
+    char* psz_buffer = (char*)malloc(sizeof(char) * i_len);
+#else
     char psz_buffer[i_len];
+#endif
 
     ssize_t i_ret = (fd != -1) ? recv( fd, psz_buffer, i_len, 0 ) : -1;
     if( i_ret > 0 )
         lua_pushlstring( L, psz_buffer, i_ret );
     else
         lua_pushnil( L );
+#ifdef __STDC_NO_VLA__
+    free(psz_buffer);
+#endif
     return 1;
 }
 

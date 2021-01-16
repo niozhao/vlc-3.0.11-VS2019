@@ -559,6 +559,8 @@ static int DxGetInputList(vlc_va_t *va, input_list_t *p_list)
 
 extern const GUID DXVA_ModeHEVC_VLD_Main10;
 extern const GUID DXVA_ModeVP9_VLD_10bit_Profile2;
+DEFINE_GUID(DXVA_ModeVP9_VLD_10bit_Profile2, 0xa4c749ef, 0x6ecf, 0x48aa, 0x84, 0x48, 0x50, 0xa7, 0xa1, 0x16, 0x5f, 0xf7);
+DEFINE_GUID(DXVA_ModeHEVC_VLD_Main10, 0x107af0e0, 0xef1a, 0x4d19, 0xab, 0xa8, 0x67, 0xa1, 0x63, 0x07, 0x3d, 0x13);
 
 static int DxSetupOutput(vlc_va_t *va, const GUID *input, const video_format_t *fmt)
 {
@@ -899,11 +901,18 @@ static int DxCreateDecoderSurfaces(vlc_va_t *va, int codec_id,
     }
 
     /* List all configurations available for the decoder */
+#ifdef __STDC_NO_VLA__
+    D3D11_VIDEO_DECODER_CONFIG* cfg_list = (D3D11_VIDEO_DECODER_CONFIG*)malloc(sizeof(D3D11_VIDEO_DECODER_CONFIG) * cfg_count);
+#else
     D3D11_VIDEO_DECODER_CONFIG cfg_list[cfg_count];
+#endif
     for (unsigned i = 0; i < cfg_count; i++) {
         hr = ID3D11VideoDevice_GetVideoDecoderConfig( dx_sys->d3ddec, &decoderDesc, i, &cfg_list[i] );
         if (FAILED(hr)) {
             msg_Err(va, "GetVideoDecoderConfig failed. (hr=0x%lX)", hr);
+#ifdef __STDC_NO_VLA__
+            free(cfg_list);
+#endif
             return VLC_EGENERIC;
         }
     }
@@ -935,6 +944,11 @@ static int DxCreateDecoderSurfaces(vlc_va_t *va, int codec_id,
             cfg_score = score;
         }
     }
+
+#ifdef __STDC_NO_VLA__
+	free(cfg_list);
+#endif
+
     if (cfg_score <= 0) {
         msg_Err(va, "Failed to find a supported decoder configuration");
         return VLC_EGENERIC;

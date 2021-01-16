@@ -87,7 +87,7 @@ static void MP4_ConvertDate2Str( char *psz, uint64_t i_date, bool b_relative )
 
 static char *mp4_getstringz( uint8_t **restrict in, uint64_t *restrict size )
 {
-    assert( *size <= SSIZE_MAX );
+    assert( *size <= /*SSIZE_MAX*/SIZE_MAX);
 
     size_t len = strnlen( (const char *)*in, *size );
     if( len == 0 || len >= *size )
@@ -115,7 +115,7 @@ static uint8_t *mp4_readbox_enter_common( stream_t *s, MP4_Box_t *box,
 {
     const size_t headersize = mp4_box_headersize( box );
 
-    if( unlikely(readsize < headersize) || unlikely(readsize > SSIZE_MAX) )
+    if( unlikely(readsize < headersize) || unlikely(readsize > /*SSIZE_MAX*/ SIZE_MAX))
         return NULL;
 
     uint8_t *buf = malloc( readsize );
@@ -1361,7 +1361,7 @@ static int MP4_ReadBox_hdlr( stream_t *p_stream, MP4_Box_t *p_box )
     MP4_GET4BYTES( i_reserved );
     p_box->data.p_hdlr->psz_name = NULL;
 
-    if( i_read >= SSIZE_MAX )
+    if( i_read >= /*SSIZE_MAX*/ SIZE_MAX )
         MP4_READBOX_EXIT( 0 );
 
     if( i_read > 0 )
@@ -1711,7 +1711,7 @@ static int MP4_ReadBox_esds( stream_t *p_stream, MP4_Box_t *p_box )
     if( i_type == 0x03 ) /* MP4ESDescrTag ISO/IEC 14496-1 8.3.3 */
     {
         i_len = MP4_ReadLengthDescriptor( &p_peek, &i_read );
-        if( unlikely(i_len == UINT64_C(-1)) )
+        if( unlikely(i_len == UINT64_C(0 - 1)) )
             MP4_READBOX_EXIT( 0 );
 
 #ifdef MP4_VERBOSE
@@ -1764,7 +1764,7 @@ static int MP4_ReadBox_esds( stream_t *p_stream, MP4_Box_t *p_box )
     }
 
     i_len = MP4_ReadLengthDescriptor( &p_peek, &i_read );
-    if( unlikely(i_len == UINT64_C(-1)) )
+    if( unlikely(i_len == UINT64_C(0 - 1)) )
         MP4_READBOX_EXIT( 0 );
 #ifdef MP4_VERBOSE
     msg_Dbg( p_stream, "found esds MP4DecConfigDescr (%"PRIu64" bytes)",
@@ -1792,7 +1792,7 @@ static int MP4_ReadBox_esds( stream_t *p_stream, MP4_Box_t *p_box )
     }
 
     i_len = MP4_ReadLengthDescriptor( &p_peek, &i_read );
-    if( unlikely(i_len == UINT64_C(-1)) )
+    if( unlikely(i_len == UINT64_C(0 - 1)) )
         MP4_READBOX_EXIT( 0 );
 #ifdef MP4_VERBOSE
     msg_Dbg( p_stream, "found esds MP4DecSpecificDescr (%"PRIu64" bytes)",

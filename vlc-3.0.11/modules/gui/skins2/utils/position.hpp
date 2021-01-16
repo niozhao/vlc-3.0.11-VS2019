@@ -260,8 +260,8 @@ public:
 
         return pRect->width > 0 && pRect->height > 0;
     }
-    static int min( int x, int y ) { return x < y ? x : y; }
-    static int max( int x, int y ) { return x < y ? y : x; }
+   // static int min( int x, int y ) { return x < y ? x : y; }
+    //static int max( int x, int y ) { return x < y ? y : x; }
 
     bool operator==( const rect& other ) const
     {

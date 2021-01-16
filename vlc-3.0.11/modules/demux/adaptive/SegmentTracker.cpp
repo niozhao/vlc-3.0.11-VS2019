@@ -87,7 +87,7 @@ SegmentTracker::SegmentTracker(SharedResources *res,
 {
     resources = res;
     first = true;
-    curNumber = next = std::numeric_limits<uint64_t>::max();
+    curNumber = next = (std::numeric_limits<uint64_t>::max)();
     initializing = true;
     index_sent = false;
     init_sent = false;
@@ -215,10 +215,10 @@ SegmentChunk * SegmentTracker::getNextChunk(bool switch_allowed,
     if(rep->needsUpdate())
         b_updated = rep->runLocalUpdates(resources);
 
-    if(curNumber == std::numeric_limits<uint64_t>::max())
+    if(curNumber == (std::numeric_limits<uint64_t>::max)())
     {
         next = bufferingLogic->getStartSegmentNumber(rep);
-        if(next == std::numeric_limits<uint64_t>::max())
+        if(next == (std::numeric_limits<uint64_t>::max)())
             return NULL;
     }
     else if(prevRep && !rep->consistentSegmentNumber())
@@ -390,9 +390,9 @@ mtime_t SegmentTracker::getMinAheadTime() const
             (void) rep->runLocalUpdates(resources);
 
         uint64_t startnumber = curNumber;
-        if(startnumber == std::numeric_limits<uint64_t>::max())
+        if(startnumber == (std::numeric_limits<uint64_t>::max)())
             startnumber = bufferingLogic->getStartSegmentNumber(rep);
-        if(startnumber != std::numeric_limits<uint64_t>::max())
+        if(startnumber != (std::numeric_limits<uint64_t>::max)())
             return rep->getMinAheadTime(startnumber);
     }
     return 0;

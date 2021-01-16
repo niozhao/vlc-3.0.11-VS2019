@@ -193,8 +193,11 @@ static void Display(vout_display_t *vd, picture_t *picture, subpicture_t *subpic
     int iovcnt = 1 + vd->fmt.i_height;
     if (unlikely(iovcnt > iovmax))
         return;
-
+#ifdef __STDC_NO_VLA__
+    struct iovec* iov = (struct iovec*)malloc(sizeof(struct iovec) * iovcnt);
+#else
     struct iovec iov[iovcnt];
+#endif
     iov[0].iov_base = buffer;
     iov[0].iov_len = header_len;
 
@@ -223,6 +226,10 @@ static void Display(vout_display_t *vd, picture_t *picture, subpicture_t *subpic
         /* we might want to drop some frames? */
 
     picture_Release(picture);
+
+#ifdef __STDC_NO_VLA__
+    free(iov);
+#endif
 }
 
 /**

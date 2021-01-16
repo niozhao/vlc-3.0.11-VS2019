@@ -252,7 +252,7 @@ ISegment * SegmentInformation::getNextSegment(SegmentInfoType type, uint64_t i_p
                 const SegmentTimeline *timeline = (templ) ? templ->inheritSegmentTimeline() : NULL;
                 if(timeline)
                 {
-                    *pi_newpos = std::max(timeline->minElementNumber(), i_pos);
+                    *pi_newpos = (std::max)(timeline->minElementNumber(), i_pos);
                     if(timeline->maxElementNumber() < i_pos)
                         return NULL;
                 }
@@ -279,7 +279,7 @@ ISegment * SegmentInformation::getNextSegment(SegmentInfoType type, uint64_t i_p
                     }
                     *pi_newpos = i_pos;
                     /* start number */
-                    *pi_newpos = std::max(templ->inheritStartNumber(), i_pos);
+                    *pi_newpos = (std::max)(templ->inheritStartNumber(), i_pos);
                 }
                 return seg;
             }
@@ -394,7 +394,7 @@ bool SegmentInformation::getPlaybackTimeDurationBySegmentNumber(uint64_t number,
     SegmentList *segList;
     MediaSegmentTemplate *mediaTemplate;
 
-    if(number == std::numeric_limits<uint64_t>::max())
+    if(number == (std::numeric_limits<uint64_t>::max)())
         return false;
 
     if( (mediaTemplate = inheritSegmentTemplate()) )

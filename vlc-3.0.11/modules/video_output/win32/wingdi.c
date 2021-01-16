@@ -284,7 +284,7 @@ static int Init(vout_display_t *vd,
                             sys->i_depth == 16) ? BI_BITFIELDS : BI_RGB;
     bih->biBitCount      = sys->i_depth;
     bih->biWidth         = fmt->i_width;
-    bih->biHeight        = -fmt->i_height;
+    bih->biHeight        = 0 - fmt->i_height;
     bih->biClrImportant  = 0;
     bih->biClrUsed       = 0;
     bih->biXPelsPerMeter = 0;

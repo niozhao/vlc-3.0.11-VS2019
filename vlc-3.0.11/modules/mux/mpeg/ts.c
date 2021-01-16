@@ -1945,7 +1945,11 @@ void GetPAT( sout_mux_t *p_mux, sout_buffer_chain_t *c )
 static void GetPMT( sout_mux_t *p_mux, sout_buffer_chain_t *c )
 {
     sout_mux_sys_t *p_sys = p_mux->p_sys;
+#ifdef __STDC_NO_VLA__
+    pes_mapped_stream_t* mappeds = (pes_mapped_stream_t*)malloc(sizeof(pes_mapped_stream_t) * p_mux->i_nb_inputs);
+#else
     pes_mapped_stream_t mappeds[p_mux->i_nb_inputs];
+#endif
 
     for (int i_stream = 0; i_stream < p_mux->i_nb_inputs; i_stream++ )
     {
@@ -1970,4 +1974,8 @@ static void GetPMT( sout_mux_t *p_mux, sout_buffer_chain_t *c )
               &p_sys->sdt,
               p_sys->i_num_pmt, p_sys->pmt, p_sys->i_pmt_program_number,
               p_mux->i_nb_inputs, mappeds );
+
+#ifdef __STDC_NO_VLA__
+    free(mappeds);
+#endif
 }

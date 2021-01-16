@@ -84,7 +84,7 @@ BaseRepresentation * RepresentationSelector::lower(BaseAdaptationSet *adaptSet, 
 
 BaseRepresentation * RepresentationSelector::select(BaseAdaptationSet *adaptSet) const
 {
-    return select(adaptSet, std::numeric_limits<uint64_t>::max());
+    return select(adaptSet, (std::numeric_limits<uint64_t>::max)());
 }
 BaseRepresentation * RepresentationSelector::select(BaseAdaptationSet *adaptSet, uint64_t bitrate) const
 {

@@ -485,13 +485,20 @@ static block_t * ConvertAVFrame( decoder_t *p_dec, AVFrame *frame )
         p_block = block_Alloc(frame->linesize[0] * ctx->channels);
         if ( likely(p_block) )
         {
+#ifdef __STDC_NO_VLA__
+            const void** planes = (void**)malloc(ctx->channels * sizeof(void*));
+#else
             const void *planes[ctx->channels];
+#endif
             for (int i = 0; i < ctx->channels; i++)
                 planes[i] = frame->extended_data[i];
 
             aout_Interleave(p_block->p_buffer, planes, frame->nb_samples,
                             ctx->channels, p_dec->fmt_out.audio.i_format);
             p_block->i_nb_samples = frame->nb_samples;
+#ifdef __STDC_NO_VLA__
+            free(planes);
+#endif
         }
         av_frame_free(&frame);
     }
@@ -588,7 +595,11 @@ static void SetupOutputFormat( decoder_t *p_dec, bool b_trust )
     }
 
     const unsigned i_order_max = sizeof(pi_channels_map)/sizeof(*pi_channels_map);
+#ifdef __STDC_NO_VLA__
+    uint32_t* pi_order_src = (uint32_t *)malloc(sizeof(uint32_t) * i_order_max);
+#else
     uint32_t pi_order_src[i_order_max];
+#endif
 
     int i_channels_src = 0;
     int64_t channel_layout =
@@ -640,5 +651,9 @@ static void SetupOutputFormat( decoder_t *p_dec, bool b_trust )
     }
 
     aout_FormatPrepare( &p_dec->fmt_out.audio );
+
+#ifdef __STDC_NO_VLA__
+    free(pi_order_src);
+#endif
 }
 

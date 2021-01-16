@@ -1110,7 +1110,11 @@ static text_segment_t * Eia608TextLine( struct eia608_screen *screen, int i_row 
 
     char utf8[4];
     const unsigned i_text_max = 4 * EIA608_SCREEN_COLUMNS + 1;
+#ifdef __STDC_NO_VLA__
+    char* psz_text = (char*)malloc(i_text_max + 1);
+#else
     char psz_text[i_text_max + 1];
+#endif
     psz_text[0] = '\0';
 
     /* Search the start */
@@ -1130,17 +1134,30 @@ static text_segment_t * Eia608TextLine( struct eia608_screen *screen, int i_row 
         i_end--;
 
     /* */
-    if( i_start > i_end ) /* Nothing to render */
+    if (i_start > i_end) /* Nothing to render */
+    {
+#ifdef __STDC_NO_VLA__
+        free(psz_text);
+#endif
         return NULL;
+    }
 
     text_segment_t *p_segment, *p_segments_head = p_segment = text_segment_New( NULL );
     if(!p_segment)
-        return NULL;
+	{
+#ifdef __STDC_NO_VLA__
+		free(psz_text);
+#endif
+		return NULL;
+	}
 
     p_segment->style = text_style_Create( STYLE_NO_DEFAULTS );
     if(!p_segment->style)
     {
         text_segment_Delete(p_segment);
+#ifdef __STDC_NO_VLA__
+		free(psz_text);
+#endif
         return NULL;
     }
     /* Ensure we get a monospaced font (required for accurate positioning */
@@ -1158,13 +1175,21 @@ static text_segment_t * Eia608TextLine( struct eia608_screen *screen, int i_row 
             psz_text[0] = '\0';
             p_segment->p_next = text_segment_New( NULL );
             p_segment = p_segment->p_next;
-            if(!p_segment)
-                return p_segments_head;
+            if (!p_segment) 
+            {
+#ifdef __STDC_NO_VLA__
+				free(psz_text);
+#endif
+				return p_segments_head;
+            }
 
             p_segment->style = text_style_Create( STYLE_NO_DEFAULTS );
             if(!p_segment->style)
             {
                 text_segment_Delete(p_segment);
+#ifdef __STDC_NO_VLA__
+				free(psz_text);
+#endif
                 return p_segments_head;
             }
             p_segment->style->i_style_flags |= STYLE_MONOSPACED;
@@ -1204,7 +1229,9 @@ static text_segment_t * Eia608TextLine( struct eia608_screen *screen, int i_row 
         EnsureUTF8(psz_text);
         p_segment->psz_text = strdup(psz_text);
     }
-
+#ifdef __STDC_NO_VLA__
+	free(psz_text);
+#endif
     return p_segments_head;
 }
 

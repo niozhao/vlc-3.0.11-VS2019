@@ -215,14 +215,24 @@ do_ctr_crypt (gcry_cipher_hd_t hd, const void *ctr, uint8_t *data, size_t len)
     if (d.rem)
     {
         /* Truncated last block */
+#ifdef __STDC_NO_VLA__
+        uint8_t* dummy = (uint8_t*)malloc(sizeof(uint8_t) * ctrlen);
+#else
         uint8_t dummy[ctrlen];
+#endif
         data += d.quot * ctrlen;
         memcpy (dummy, data, d.rem);
         memset (dummy + d.rem, 0, ctrlen - d.rem);
 
-        if (gcry_cipher_encrypt (hd, dummy, ctrlen, data, ctrlen))
+        gcry_error_t failed = 0;
+        failed = gcry_cipher_encrypt(hd, dummy, ctrlen, data, ctrlen);
+        if (!failed)
+            memcpy (data, dummy, d.rem);
+#ifdef __STDC_NO_VLA__
+        free(dummy);
+#endif
+        if (failed)
             return -1;
-        memcpy (data, dummy, d.rem);
     }
 
     return 0;

@@ -2314,12 +2314,12 @@ static void ConfigTuner( vlc_object_t *p_this, ICaptureGraphBuilder2 *p_graph,
         memset(&Standard,0,sizeof(KSPROPERTY_TUNER_STANDARD_S));
         ModeCaps.Mode = AMTUNER_MODE_TV;
 
-        hr = pKs->QuerySupported(PROPSETID_TUNER,
+        hr = pKs->QuerySupported(PROPSETID_TUNER_IS_THIS_OK,
                 KSPROPERTY_TUNER_MODE_CAPS,&dw_supported);
         if(SUCCEEDED(hr) && dw_supported&KSPROPERTY_SUPPORT_GET)
         {
             DWORD cbBytes=0;
-            hr = pKs->Get(PROPSETID_TUNER,KSPROPERTY_TUNER_MODE_CAPS,
+            hr = pKs->Get(PROPSETID_TUNER_IS_THIS_OK,KSPROPERTY_TUNER_MODE_CAPS,
                 INSTANCEDATA_OF_PROPERTY_PTR(&ModeCaps),
                 INSTANCEDATA_OF_PROPERTY_SIZE(ModeCaps),
                 &ModeCaps,
@@ -2350,7 +2350,7 @@ static void ConfigTuner( vlc_object_t *p_this, ICaptureGraphBuilder2 *p_graph,
             if(i_frequency>=ModeCaps.MinFrequency && i_frequency<=ModeCaps.MaxFrequency)
             {
 
-                hr = pKs->Set(PROPSETID_TUNER,
+                hr = pKs->Set(PROPSETID_TUNER_IS_THIS_OK,
                     KSPROPERTY_TUNER_FREQUENCY,
                     INSTANCEDATA_OF_PROPERTY_PTR(&Frequency),
                     INSTANCEDATA_OF_PROPERTY_SIZE(Frequency),
@@ -2373,7 +2373,7 @@ static void ConfigTuner( vlc_object_t *p_this, ICaptureGraphBuilder2 *p_graph,
             if(i_standard & ModeCaps.StandardsSupported )
             {
                 Standard.Standard = i_standard;
-                hr = pKs->Set(PROPSETID_TUNER,
+                hr = pKs->Set(PROPSETID_TUNER_IS_THIS_OK,
                     KSPROPERTY_TUNER_STANDARD,
                     INSTANCEDATA_OF_PROPERTY_PTR(&Standard),
                     INSTANCEDATA_OF_PROPERTY_SIZE(Standard),

@@ -161,9 +161,9 @@ void CtrlText::draw( OSGraphics &rImage, int xDest, int yDest, int w, int h )
     if( m_pCurrImg )
     {
         // Compute the dimensions to draw
-        int width = std::min( m_pCurrImg->getWidth() + m_xPos,
+        int width = (std::min)( m_pCurrImg->getWidth() + m_xPos,
                          getPosition()->getWidth() );
-        int height = std::min( m_pCurrImg->getHeight(), getPosition()->getHeight() );
+        int height = (std::min)( m_pCurrImg->getHeight(), getPosition()->getHeight() );
         // Draw the current image
         if( width > 0 && height > 0 )
         {

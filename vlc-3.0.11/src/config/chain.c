@@ -280,9 +280,13 @@ void config_ChainParse( vlc_object_t *p_this, const char *psz_prefix,
         const char *optname = ppsz_options[i];
         if (optname[0] == '*')
             optname++;
-
-        char name[plen + strlen( optname )];
-        snprintf( name, sizeof (name), "%s%s", psz_prefix, optname );
+        int arraySize = plen + strlen(optname);
+#ifdef __STDC_NO_VLA__
+        char* name = (char*)malloc(arraySize * sizeof(char));
+#elif
+        char name[arraySize];
+#endif
+        snprintf( name, arraySize, "%s%s", psz_prefix, optname );
         if( var_Create( p_this, name,
                         config_GetType( name ) | VLC_VAR_DOINHERIT ) )
             return /* VLC_xxx */;
@@ -304,6 +308,10 @@ void config_ChainParse( vlc_object_t *p_this, const char *psz_prefix,
                     break;
             }
         }
+
+#ifdef __STDC_NO_VLA__
+        free(name);
+#endif
     }
 
     /* Now parse options and set value */
@@ -350,9 +358,14 @@ void config_ChainParse( vlc_object_t *p_this, const char *psz_prefix,
         }
 
         /* create name */
-        char name[plen + strlen( ppsz_options[i] )];
+        int arraySize = plen + strlen(ppsz_options[i]);
+#ifdef __STDC_NO_VLA__
+		char* name = (char*)malloc(arraySize);
+#else
+        char name[arraySize];
+#endif
         const char *psz_name = name;
-        snprintf( name, sizeof (name), "%s%s", psz_prefix,
+        snprintf( name, arraySize, "%s%s", psz_prefix,
                   b_once ? (ppsz_options[i] + 1) : ppsz_options[i] );
 
         /* Check if the option is deprecated */
@@ -430,6 +443,10 @@ void config_ChainParse( vlc_object_t *p_this, const char *psz_prefix,
         var_Set( p_this, psz_name, val );
         msg_Dbg( p_this, "set config option: %s to %s", psz_name,
                  cfg->psz_value ? cfg->psz_value : "(null)" );
+
+#ifdef __STDC_NO_VLA__
+		free(name);
+#endif
     }
 }
 

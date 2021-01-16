@@ -41,6 +41,8 @@
 #define INITGUID
 
 #include <windows.h>
+#include <initguid.h>
+#include <cguid.h>
 #include <sapi.h>
 #include <sphelper.h>
 

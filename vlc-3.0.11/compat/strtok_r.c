@@ -26,6 +26,9 @@
 
 char *strtok_r(char *s, const char *delim, char **save_ptr)
 {
+#ifdef _WIN32
+    return strtok_s(s, delim, save_ptr);
+#else
     char *token;
 
     if (s == NULL)
@@ -49,4 +52,5 @@ char *strtok_r(char *s, const char *delim, char **save_ptr)
         *save_ptr = s + 1;
     }
     return token;
+#endif
 }

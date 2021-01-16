@@ -182,7 +182,7 @@ SegmentSeeker::get_first_seekpoint_around( mtime_t pts, seekpoints_t const& seek
 
     typedef seekpoints_t::const_iterator iterator;
 
-    Seekpoint const needle ( std::numeric_limits<fptr_t>::max(), pts );
+    Seekpoint const needle ( (std::numeric_limits<fptr_t>::max)(), pts );
 
     iterator const it_begin  = seekpoints.begin();
     iterator const it_end    = seekpoints.end();
@@ -209,7 +209,7 @@ SegmentSeeker::get_seekpoints_around( mtime_t pts, seekpoints_t const& seekpoint
 
     typedef seekpoints_t::const_iterator iterator;
 
-    Seekpoint const needle ( std::numeric_limits<fptr_t>::max(), pts );
+    Seekpoint const needle ( (std::numeric_limits<fptr_t>::max)(), pts );
 
     iterator const it_begin  = seekpoints.begin();
     iterator const it_end    = seekpoints.end();
@@ -311,10 +311,10 @@ SegmentSeeker::get_seekpoints( matroska_segment_c& ms, mtime_t target_pts,
         Seekpoint const& start = seekpoints.first;
         Seekpoint const& end   = seekpoints.second;
 
-        if ( start.fpos == std::numeric_limits<fptr_t>::max() )
+        if ( start.fpos == (std::numeric_limits<fptr_t>::max)() )
             return tracks_seekpoint_t();
 
-        if ( end.fpos != std::numeric_limits<fptr_t>::max() || !ms.b_cues )
+        if ( end.fpos != (std::numeric_limits<fptr_t>::max)() || !ms.b_cues )
             // do not read the whole (infinite?) file to get seek indexes
             index_range( ms, Range( start.fpos, end.fpos ), needle_pts );
 
@@ -415,7 +415,7 @@ SegmentSeeker::mark_range_as_searched( Range data )
 
                 if( it->start >= last_entry.start && it->end <= last_entry.end )
                 {
-                    last_entry.end = std::max( last_entry.end, it->end );
+                    last_entry.end = (std::max)( last_entry.end, it->end );
                     continue;
                 }
             }
@@ -447,7 +447,7 @@ SegmentSeeker::get_search_areas( fptr_t start, fptr_t end ) const
             needle.start = it->end + 1;
     }
 
-    needle.start = std::max( needle.start, start );
+    needle.start = (std::max)( needle.start, start );
     if( it == _ranges_searched.end() && needle.start < needle.end )
     {
         areas_to_search.push_back( needle );

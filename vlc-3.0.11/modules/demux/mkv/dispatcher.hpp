@@ -87,8 +87,19 @@ namespace {
 //       must be available in our fake "lambdas" (C++03 is a pain).
 // ----------------------------------------------------------------------------
 
-#define MKV_SWITCH_CREATE(DispatchType_, GroupName_, PayloadType_) \
+/*#define MKV_SWITCH_CREATE(DispatchType_, GroupName_, PayloadType_) \
   typedef DispatcherTag<__LINE__> GroupName_ ## _tag_t; \
+  struct GroupName_; \
+  struct GroupName_##_base : DispatchContainer<GroupName_##_tag_t, DispatchType_> { \
+      typedef      PayloadType_ payload_t;                         \
+      typedef     DispatchType_ dispatch_t;                        \
+      typedef struct GroupName_ handler_t;                         \
+  };                                                               \
+  struct GroupName_ : GroupName_ ## _base*/
+
+//fix build error C2975: 'unnamed-parameter': invalid template argument for '`anonymous-namespace'::DispatcherTag', expected compile-time constant expression
+//typedef DispatcherTag<number!!!> GroupName_ ## _tag_t;
+#define MKV_SWITCH_CREATE(DispatchType_, GroupName_, PayloadType_) \
   struct GroupName_; \
   struct GroupName_##_base : DispatchContainer<GroupName_##_tag_t, DispatchType_> { \
       typedef      PayloadType_ payload_t;                         \

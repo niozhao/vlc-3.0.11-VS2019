@@ -1442,7 +1442,11 @@ static void* ThreadSend( void *data )
 
         vlc_mutex_lock( &id->lock_sink );
         unsigned deadc = 0; /* How many dead sockets? */
+#ifdef __STDC_NO_VLA__
+        int* deadv = (int*)malloc(sizeof(int) * (id->sinkc ? id->sinkc : 1));
+#else
         int deadv[id->sinkc ? id->sinkc : 1]; /* Dead sockets list */
+#endif
 
         for( int i = 0; i < id->sinkc; i++ )
         {
@@ -1476,6 +1480,10 @@ static void* ThreadSend( void *data )
             rtp_del_sink( id, deadv[i] );
         }
         vlc_restorecancel (canc);
+
+#ifdef __STDC_NO_VLA__
+        free(deadv);
+#endif
     }
     return NULL;
 }

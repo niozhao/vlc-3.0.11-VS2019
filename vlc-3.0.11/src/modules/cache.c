@@ -138,7 +138,8 @@ static int vlc_cache_load_align(size_t align, block_t *file)
 {
     assert(align > 0);
 
-    size_t skip = (-(uintptr_t)file->p_buffer) % align;
+    //size_t skip = (-(uintptr_t)file->p_buffer) % align;
+    size_t skip = (0 - (uintptr_t)file->p_buffer) % align;
     if (skip == 0)
         return 0;
 
@@ -222,7 +223,8 @@ static int vlc_cache_load_config(module_config_t *cfg, block_t *file)
 
         if (cfg->list_count)
         {
-            LOAD_ALIGNOF(*cfg->list.i);
+            //LOAD_ALIGNOF(*cfg->list.i);
+            LOAD_ALIGNOF(int);
         }
         else
             LOAD_STRING(cfg->list_cb_name);
@@ -544,7 +546,8 @@ static int CacheSaveConfig (FILE *file, const module_config_t *cfg)
 
         if (cfg->list_count > 0)
         {
-            SAVE_ALIGNOF(*cfg->list.i);
+            //SAVE_ALIGNOF(*cfg->list.i);
+            SAVE_ALIGNOF(int);
         }
         else
             SAVE_STRING(cfg->list_cb_name);

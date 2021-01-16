@@ -202,12 +202,19 @@ static int Open( vlc_object_t *p_this )
             msg_Info( p_access, "Consider passing --http-host=IP on the "
                                 "command line instead." );
 
+#ifdef __STDC_NO_VLA__
+            char* host = (char*)malloc(sizeof(char) * (len + 1));
+#else
             char host[len + 1];
+#endif
             strncpy( host, p_access->psz_path, len );
             host[len] = '\0';
 
             var_Create( p_access, "http-host", VLC_VAR_STRING );
             var_SetString( p_access, "http-host", host );
+#ifdef __STDC_NO_VLA__
+            free(host);
+#endif
         }
         if( port != NULL )
         {

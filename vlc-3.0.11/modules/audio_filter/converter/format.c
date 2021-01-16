@@ -289,7 +289,7 @@ static block_t *Fl32toS32(filter_t *filter, block_t *b)
             *(dst++) = 2147483647;
         else
         if (s <= -2147483648.f)
-            *(dst++) = -2147483648;
+            *(dst++) = -2147483648.f;
         else
             *(dst++) = lroundf(s);
     }
@@ -430,7 +430,7 @@ static block_t *Fl64toS32(filter_t *filter, block_t *b)
             *(dst++) = 2147483647;
         else
         if (s <= -2147483648.f)
-            *(dst++) = -2147483648;
+            *(dst++) = -2147483648.f;
         else
             *(dst++) = lround(s);
     }

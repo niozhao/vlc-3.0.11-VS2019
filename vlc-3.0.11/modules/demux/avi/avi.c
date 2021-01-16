@@ -2358,7 +2358,7 @@ static int AVI_PacketNext( demux_t *p_demux )
         i_skip = __EVEN( avi_ck.i_size ) + 8;
     }
 
-    if( i_skip > SSIZE_MAX )
+    if( i_skip > /*SSIZE_MAX*/ SIZE_MAX)
         return VLC_EGENERIC;
 
     ssize_t i_ret = vlc_stream_Read( p_demux->s, NULL, i_skip );
@@ -2679,8 +2679,13 @@ static void AVI_IndexLoad( demux_t *p_demux )
 
     /* Load indexes */
     assert( p_sys->i_track <= 100 );
+#ifdef __STDC_NO_VLA__
+	avi_index_t* p_idx_indx = (avi_index_t*)malloc(sizeof(avi_index_t) * p_sys->i_track);
+	avi_index_t* p_idx_idx1 = (avi_index_t*)malloc(sizeof(avi_index_t) * p_sys->i_track);
+#else
     avi_index_t p_idx_indx[p_sys->i_track];
     avi_index_t p_idx_idx1[p_sys->i_track];
+#endif
     for( unsigned i = 0; i < p_sys->i_track; i++ )
     {
         avi_index_Init( &p_idx_indx[i] );
@@ -2730,6 +2735,10 @@ static void AVI_IndexLoad( demux_t *p_demux )
         msg_Dbg( p_demux, "stream[%d] created %d index entries",
                  i, p_index->i_size );
     }
+#ifdef __STDC_NO_VLA__
+    free(p_idx_indx);
+    free(p_idx_idx1);
+#endif
 }
 
 static void AVI_IndexCreate( demux_t *p_demux )

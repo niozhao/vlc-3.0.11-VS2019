@@ -53,7 +53,7 @@ MediaSegmentTemplate::MediaSegmentTemplate( SegmentInformation *parent ) :
 {
     debugName = "SegmentTemplate";
     classId = Segment::CLASSID_SEGMENT;
-    startNumber = std::numeric_limits<uint64_t>::max();
+    startNumber = (std::numeric_limits<uint64_t>::max)();
     segmentTimeline = NULL;
     initialisationSegment.Set( NULL );
     templated = true;
@@ -102,7 +102,7 @@ uint64_t MediaSegmentTemplate::inheritStartNumber() const
     {
         if( ulevel->mediaSegmentTemplate &&
             ulevel->mediaSegmentTemplate->startNumber !=
-                std::numeric_limits<uint64_t>::max() )
+                (std::numeric_limits<uint64_t>::max)() )
             return ulevel->mediaSegmentTemplate->startNumber;
     }
     return 1;

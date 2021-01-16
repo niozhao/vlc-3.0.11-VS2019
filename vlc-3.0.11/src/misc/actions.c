@@ -599,7 +599,11 @@ size_t
 vlc_actions_get_keycodes(vlc_object_t *p_obj, const char *psz_key_name,
                         bool b_global, uint_fast32_t **pp_keycodes)
 {
+#ifdef __STDC_NO_VLA__
+    char* varname = (char*)malloc(12 /* "global-key-" */ + strlen(psz_key_name));
+#else
     char varname[12 /* "global-key-" */ + strlen( psz_key_name )];
+#endif
     sprintf( varname, "%skey-%s", b_global ? "global-" : "", psz_key_name );
 
     *pp_keycodes = NULL;
@@ -630,6 +634,9 @@ vlc_actions_get_keycodes(vlc_object_t *p_obj, const char *psz_key_name,
     }
     assert( i == i_nb_keycodes );
     free( psz_keys );
+#ifdef __STDC_NO_VLA__
+    free(varname);
+#endif
     return i_nb_keycodes;
 }
 

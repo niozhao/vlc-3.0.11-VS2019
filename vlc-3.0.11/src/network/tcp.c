@@ -278,8 +278,11 @@ int net_Accept (vlc_object_t *p_this, int *pi_fd)
     unsigned n = 0;
     while (pi_fd[n] != -1)
         n++;
-
+#ifdef __STDC_NO_VLA__
+    struct pollfd* ufd = (struct pollfd*)malloc(sizeof(struct pollfd) * n);
+#else
     struct pollfd ufd[n];
+#endif
     /* Initialize file descriptor set */
     for (unsigned i = 0; i < n; i++)
     {
@@ -314,9 +317,15 @@ int net_Accept (vlc_object_t *p_this, int *pi_fd)
              */
             memmove (pi_fd + i, pi_fd + i + 1, n - (i + 1));
             pi_fd[n - 1] = sfd;
+#ifdef __STDC_NO_VLA__
+            free(ufd);
+#endif
             return fd;
         }
     }
+#ifdef __STDC_NO_VLA__
+	free(ufd);
+#endif
     return -1;
 }
 

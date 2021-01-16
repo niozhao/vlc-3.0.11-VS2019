@@ -94,9 +94,9 @@ BaseRepresentation *PredictiveAdaptationLogic::getNextRepresentation(BaseAdaptat
                     continue;
 
                 const PredictiveStats &other = (*it2).second;
-                f_min_buffering_level = std::min((double)other.buffering_level / other.buffering_target,
+                f_min_buffering_level = (std::min)((double)other.buffering_level / other.buffering_target,
                                                  f_min_buffering_level);
-                i_max_bitrate = std::max(i_max_bitrate, other.last_download_rate);
+                i_max_bitrate = (std::max)(i_max_bitrate, other.last_download_rate);
             }
         }
 
@@ -113,7 +113,7 @@ BaseRepresentation *PredictiveAdaptationLogic::getNextRepresentation(BaseAdaptat
             }
             else if(f_buffering_level > 0.8)
             {
-                rep = selector.select(adaptSet, std::max((uint64_t) i_available_bw,
+                rep = selector.select(adaptSet, (std::max)((uint64_t) i_available_bw,
                                                          (uint64_t) prevRep->getBandwidth()));
             }
             else if(f_buffering_level > 0.5)

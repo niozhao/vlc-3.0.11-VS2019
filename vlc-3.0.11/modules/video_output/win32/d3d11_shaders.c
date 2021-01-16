@@ -39,7 +39,7 @@
 #include "d3d11_shaders.h"
 
 #if !VLC_WINSTORE_APP
-# define D3DCompile(args...)                    hd3d->OurD3DCompile(args)
+# define D3DCompile(...)                    hd3d->OurD3DCompile(__VA_ARGS__)
 #endif
 
 #define ST2084_PQ_CONSTANTS  "const float ST2084_m1 = 2610.0 / (4096.0 * 4);\n\
@@ -210,7 +210,7 @@ HRESULT D3D11_CompilePixelShader(vlc_object_t *o, d3d11_handle_t *hd3d, bool leg
                                  ID3D11PixelShader **output)
 {
     static const char *DEFAULT_NOOP = "return rgb";
-    const char *psz_sampler;
+    const char *psz_sampler = NULL;
     const char *psz_src_transform     = DEFAULT_NOOP;
     const char *psz_display_transform = DEFAULT_NOOP;
     const char *psz_primaries_transform = DEFAULT_NOOP;

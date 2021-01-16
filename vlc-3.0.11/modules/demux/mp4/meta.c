@@ -221,8 +221,8 @@ static bool AtomXA9ToMeta( uint32_t i_type,
 
 static bool SetMeta( vlc_meta_t* p_meta, int i_type, char const* name, MP4_Box_t* p_box )
 {
-    vlc_meta_type_t const* type;
-    char const* key;
+    vlc_meta_type_t const* type = NULL;
+    char const* key = NULL;
 
     if( ( name != NULL && !AppleNameToMeta( name, &type, &key ) ) ||
         ( name == NULL && !AtomXA9ToMeta( i_type, &type, &key ) ) )

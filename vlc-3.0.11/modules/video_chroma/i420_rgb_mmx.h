@@ -355,6 +355,61 @@ movq      %%mm2, 24(%3) # Store ABGR7 ABGR6                                 \n\
 
 #include <mmintrin.h>
 
+/************************************************************************/
+/* add _mm_set_pi64x to fix build error: error C2440: 'type cast': cannot convert from 'const uint64_t' to '__m64'   */
+/* from https://stackoverflow.com/questions/9061293/how-to-convert-long-long-or-int64-to-m64  */
+/************************************************************************/
+// 
+ #define N2M64(a) \
+     _Generic(a, \
+              int     : _mm_cvtsi32_si64, \
+              uint64_t     : _mm_set_pi64x, \
+              const uint64_t  : _mm_set_pi64x_c)(a)
+
+#define M642N(a) (_m_to_int64(a))
+//#define N2M64(a) (_mm_set_pi64x_c(a))
+
+
+VLC_USED
+static inline __m64 _mm_set_pi64x_c(const uint64_t i) {
+	union {
+		uint64_t i;
+		__m64 v;
+	} u;
+	u.i = i;
+	return u.v;
+}
+
+VLC_USED
+static inline __m64 _mm_set_pi64x(uint64_t i) {
+	union {
+		uint64_t i;
+		__m64 v;
+	} u;
+	u.i = i;
+	return u.v;
+}
+
+VLC_USED
+static inline __m64 _mm_cvtsi32_si64(int i) {
+	union {
+		uint64_t i;
+		__m64 v;
+	} u;
+	u.i = i;
+	return u.v;
+}
+
+inline __m64 _mm_setzero_si64()
+{
+    return N2M64((int)0);
+}
+
+VLC_USED
+static inline uint64_t _m_to_int64(__m64 m) {
+	return m.m64_u64;
+}
+
 #define MMX_CALL(MMX_INSTRUCTIONS)  \
     do {                            \
         __m64 mm0, mm1, mm2, mm3,   \
@@ -365,41 +420,41 @@ movq      %%mm2, 24(%3) # Store ABGR7 ABGR6                                 \n\
 #define MMX_END _mm_empty()
  
 #define MMX_INIT_16                     \
-    mm0 = _mm_cvtsi32_si64(*(int*)p_u); \
-    mm1 = _mm_cvtsi32_si64(*(int*)p_v); \
-    mm4 = _mm_setzero_si64();           \
-    mm6 = (__m64)*(uint64_t *)p_y;
+    mm0 = N2M64(*(int*)p_u); \
+    mm1 = N2M64(*(int*)p_v); \
+    mm4 = N2M64((int)0);           \
+    mm6 = (__m64)N2M64(*(uint64_t *)p_y);
 
 #define MMX_INIT_32                     \
-    mm0 = _mm_cvtsi32_si64(*(int*)p_u); \
+    mm0 = N2M64(*(int*)p_u); \
     *(uint16_t *)p_buffer = 0;          \
-    mm1 = _mm_cvtsi32_si64(*(int*)p_v); \
-    mm4 = _mm_setzero_si64();           \
-    mm6 = (__m64)*(uint64_t *)p_y;
+    mm1 = N2M64(*(int*)p_v); \
+    mm4 = N2M64((int)0);           \
+    mm6 = (__m64)N2M64(*(uint64_t *)p_y);
 
 #define MMX_YUV_MUL                                 \
     mm0 = _mm_unpacklo_pi8(mm0, mm4);               \
     mm1 = _mm_unpacklo_pi8(mm1, mm4);               \
-    mm0 = _mm_subs_pi16(mm0, (__m64)mmx_80w);       \
-    mm1 = _mm_subs_pi16(mm1, (__m64)mmx_80w);       \
+    mm0 = _mm_subs_pi16(mm0, (__m64)N2M64(mmx_80w));       \
+    mm1 = _mm_subs_pi16(mm1, (__m64)N2M64(mmx_80w));       \
     mm0 = _mm_slli_pi16(mm0, 3);                    \
     mm1 = _mm_slli_pi16(mm1, 3);                    \
     mm2 = mm0;                                      \
     mm3 = mm1;                                      \
-    mm2 = _mm_mulhi_pi16(mm2, (__m64)mmx_U_green);  \
-    mm3 = _mm_mulhi_pi16(mm3, (__m64)mmx_V_green);  \
-    mm0 = _mm_mulhi_pi16(mm0, (__m64)mmx_U_blue);   \
-    mm1 = _mm_mulhi_pi16(mm1, (__m64)mmx_V_red);    \
+    mm2 = _mm_mulhi_pi16(mm2, (__m64)N2M64(mmx_U_green));  \
+    mm3 = _mm_mulhi_pi16(mm3, (__m64)N2M64(mmx_V_green));  \
+    mm0 = _mm_mulhi_pi16(mm0, (__m64)N2M64(mmx_U_blue));   \
+    mm1 = _mm_mulhi_pi16(mm1, (__m64)N2M64(mmx_V_red));    \
     mm2 = _mm_adds_pi16(mm2, mm3);                  \
     \
-    mm6 = _mm_subs_pu8(mm6, (__m64)mmx_10w);        \
+    mm6 = _mm_subs_pu8(mm6, (__m64)N2M64(mmx_10w));        \
     mm7 = mm6;                                      \
-    mm6 = _mm_and_si64(mm6, (__m64)mmx_00ffw);      \
+    mm6 = _mm_and_si64(mm6, (__m64)N2M64(mmx_00ffw));      \
     mm7 = _mm_srli_pi16(mm7, 8);                    \
     mm6 = _mm_slli_pi16(mm6, 3);                    \
     mm7 = _mm_slli_pi16(mm7, 3);                    \
-    mm6 = _mm_mulhi_pi16(mm6, (__m64)mmx_Y_coeff);  \
-    mm7 = _mm_mulhi_pi16(mm7, (__m64)mmx_Y_coeff);
+    mm6 = _mm_mulhi_pi16(mm6, (__m64)N2M64(mmx_Y_coeff));  \
+    mm7 = _mm_mulhi_pi16(mm7, (__m64)N2M64(mmx_Y_coeff));
 
 #define MMX_YUV_ADD                     \
     mm3 = mm0;                          \
@@ -425,12 +480,12 @@ movq      %%mm2, 24(%3) # Store ABGR7 ABGR6                                 \n\
     mm2 = _mm_unpacklo_pi8(mm2, mm5);
 
 #define MMX_UNPACK_15                               \
-    mm0 = _mm_and_si64(mm0, (__m64)mmx_mask_f8);    \
+    mm0 = _mm_and_si64(mm0, (__m64)N2M64(mmx_mask_f8));    \
     mm0 = _mm_srli_pi16(mm0, 3);                    \
-    mm2 = _mm_and_si64(mm2, (__m64)mmx_mask_f8);    \
-    mm1 = _mm_and_si64(mm1, (__m64)mmx_mask_f8);    \
+    mm2 = _mm_and_si64(mm2, (__m64)N2M64(mmx_mask_f8));    \
+    mm1 = _mm_and_si64(mm1, (__m64)N2M64(mmx_mask_f8));    \
     mm1 = _mm_srli_pi16(mm1, 1);                    \
-    mm4 = _mm_setzero_si64();                       \
+    mm4 = N2M64((int)0);                       \
     mm5 = mm0;                                      \
     mm7 = mm2;                                      \
     \
@@ -438,23 +493,23 @@ movq      %%mm2, 24(%3) # Store ABGR7 ABGR6                                 \n\
     mm0 = _mm_unpacklo_pi8(mm0, mm1);               \
     mm2 = _mm_slli_pi16(mm2, 2);                    \
     mm0 = _mm_or_si64(mm0, mm2);                    \
-    mm6 = (__m64)*(uint64_t *)(p_y + 8);            \
-    *(uint64_t *)p_buffer = (uint64_t)mm0;          \
+    mm6 = (__m64)N2M64(*(uint64_t *)(p_y + 8));            \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm0);          \
     \
     mm7 = _mm_unpackhi_pi8(mm7, mm4);               \
     mm5 = _mm_unpackhi_pi8(mm5, mm1);               \
     mm7 = _mm_slli_pi16(mm7, 2);                    \
-    mm0 = _mm_cvtsi32_si64((int)*(uint32_t *)(p_u + 4)); \
+    mm0 = N2M64((int)*(uint32_t *)(p_u + 4)); \
     mm5 = _mm_or_si64(mm5, mm7);                    \
-    mm1 = _mm_cvtsi32_si64((int)*(uint32_t *)(p_v + 4)); \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm5;
+    mm1 = N2M64((int)*(uint32_t *)(p_v + 4)); \
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm5);
 
 #define MMX_UNPACK_16                               \
-    mm0 = _mm_and_si64(mm0, (__m64)mmx_mask_f8);    \
-    mm2 = _mm_and_si64(mm2, (__m64)mmx_mask_fc);    \
-    mm1 = _mm_and_si64(mm1, (__m64)mmx_mask_f8);    \
+    mm0 = _mm_and_si64(mm0, (__m64)N2M64(mmx_mask_f8));    \
+    mm2 = _mm_and_si64(mm2, (__m64)N2M64(mmx_mask_fc));    \
+    mm1 = _mm_and_si64(mm1, (__m64)N2M64(mmx_mask_f8));    \
     mm0 = _mm_srli_pi16(mm0, 3);                    \
-    mm4 = _mm_setzero_si64();                       \
+    mm4 = N2M64((int)0);                       \
     mm5 = mm0;                                      \
     mm7 = mm2;                                      \
     \
@@ -462,92 +517,92 @@ movq      %%mm2, 24(%3) # Store ABGR7 ABGR6                                 \n\
     mm0 = _mm_unpacklo_pi8(mm0, mm1);               \
     mm2 = _mm_slli_pi16(mm2, 3);                    \
     mm0 = _mm_or_si64(mm0, mm2);                    \
-    mm6 = (__m64)*(uint64_t *)(p_y + 8);            \
-    *(uint64_t *)p_buffer = (uint64_t)mm0;          \
+    mm6 = (__m64)N2M64(*(uint64_t *)(p_y + 8));            \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm0);          \
     \
     mm7 = _mm_unpackhi_pi8(mm7, mm4);               \
     mm5 = _mm_unpackhi_pi8(mm5, mm1);               \
     mm7 = _mm_slli_pi16(mm7, 3);                    \
-    mm0 = _mm_cvtsi32_si64((int)*(uint32_t *)(p_u + 4)); \
+    mm0 = N2M64((int)*(uint32_t *)(p_u + 4)); \
     mm5 = _mm_or_si64(mm5, mm7);                    \
-    mm1 = _mm_cvtsi32_si64((int)*(uint32_t *)(p_v + 4)); \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm5;
+    mm1 = N2M64((int)*(uint32_t *)(p_v + 4)); \
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm5);
 
 #define MMX_UNPACK_32_ARGB                      \
-    mm3 = _mm_setzero_si64();                   \
+    mm3 = N2M64((int)0);                   \
     mm4 = mm0;                                  \
     mm4 = _mm_unpacklo_pi8(mm4, mm2);           \
     mm5 = mm1;                                  \
     mm5 = _mm_unpacklo_pi8(mm5, mm3);           \
     mm6 = mm4;                                  \
     mm4 = _mm_unpacklo_pi16(mm4, mm5);          \
-    *(uint64_t *)p_buffer = (uint64_t)mm4;      \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm4);      \
     mm6 = _mm_unpackhi_pi16(mm6, mm5);          \
-    *(uint64_t *)(p_buffer + 2) = (uint64_t)mm6;\
+    *(uint64_t *)(p_buffer + 2) = (uint64_t)M642N(mm6);\
     mm0 = _mm_unpackhi_pi8(mm0, mm2);           \
     mm1 = _mm_unpackhi_pi8(mm1, mm3);           \
     mm5 = mm0;                                  \
     mm5 = _mm_unpacklo_pi16(mm5, mm1);          \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm5;\
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm5);\
     mm0 = _mm_unpackhi_pi16(mm0, mm1);          \
-    *(uint64_t *)(p_buffer + 6) = (uint64_t)mm0;
+    *(uint64_t *)(p_buffer + 6) = (uint64_t)M642N(mm0);
 
 #define MMX_UNPACK_32_RGBA                      \
-    mm3 = _mm_setzero_si64();                   \
+    mm3 = N2M64((int)0);                   \
     mm4 = mm2;                                  \
     mm4 = _mm_unpacklo_pi8(mm4, mm1);           \
     mm3 = _mm_unpacklo_pi8(mm3, mm0);           \
     mm5 = mm3;                                  \
     mm3 = _mm_unpacklo_pi16(mm3, mm4);          \
-    *(uint64_t *)p_buffer = (uint64_t)mm3;      \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm3);      \
     mm5 = _mm_unpackhi_pi16(mm5, mm4);          \
-    *(uint64_t *)(p_buffer + 2) = (uint64_t)mm5;\
-    mm6 = _mm_setzero_si64();                   \
+    *(uint64_t *)(p_buffer + 2) = (uint64_t)M642N(mm5);\
+    mm6 = N2M64((int)0);                   \
     mm2 = _mm_unpackhi_pi8(mm2, mm1);           \
     mm6 = _mm_unpackhi_pi8(mm6, mm0);           \
     mm0 = mm6;                                  \
     mm6 = _mm_unpacklo_pi16(mm6, mm2);          \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm6;\
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm6);\
     mm0 = _mm_unpackhi_pi16(mm0, mm2);          \
-    *(uint64_t *)(p_buffer + 6) = (uint64_t)mm0;
+    *(uint64_t *)(p_buffer + 6) = (uint64_t)M642N(mm0);
 
 #define MMX_UNPACK_32_BGRA                      \
-    mm3 = _mm_setzero_si64();                   \
+    mm3 = N2M64((int)0);                   \
     mm4 = mm2;                                  \
     mm4 = _mm_unpacklo_pi8(mm4, mm0);           \
     mm3 = _mm_unpacklo_pi8(mm3, mm1);           \
     mm5 = mm3;                                  \
     mm3 = _mm_unpacklo_pi16(mm3, mm4);          \
-    *(uint64_t *)p_buffer = (uint64_t)mm3;      \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm3);      \
     mm5 = _mm_unpackhi_pi16(mm5, mm4);          \
-    *(uint64_t *)(p_buffer + 2) = (uint64_t)mm5;\
-    mm6 = _mm_setzero_si64();                   \
+    *(uint64_t *)(p_buffer + 2) = (uint64_t)M642N(mm5);\
+    mm6 = N2M64((int)0);                   \
     mm2 = _mm_unpackhi_pi8(mm2, mm0);           \
     mm6 = _mm_unpackhi_pi8(mm6, mm1);           \
     mm0 = mm6;                                  \
     mm6 = _mm_unpacklo_pi16(mm6, mm2);          \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm6;\
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm6);\
     mm0 = _mm_unpackhi_pi16(mm0, mm2);          \
-    *(uint64_t *)(p_buffer + 6) = (uint64_t)mm0;
+    *(uint64_t *)(p_buffer + 6) = (uint64_t)M642N(mm0);
 
 #define MMX_UNPACK_32_ABGR                      \
-    mm3 = _mm_setzero_si64();                   \
+    mm3 = N2M64((int)0);                   \
     mm4 = mm1;                                  \
     mm4 = _mm_unpacklo_pi8(mm4, mm2);           \
     mm5 = mm0;                                  \
     mm5 = _mm_unpacklo_pi8(mm5, mm3);           \
     mm6 = mm4;                                  \
     mm4 = _mm_unpacklo_pi16(mm4, mm5);          \
-    *(uint64_t *)p_buffer = (uint64_t)mm4;      \
+    *(uint64_t *)p_buffer = (uint64_t)M642N(mm4);      \
     mm6 = _mm_unpackhi_pi16(mm6, mm5);          \
-    *(uint64_t *)(p_buffer + 2) = (uint64_t)mm6;\
+    *(uint64_t *)(p_buffer + 2) = (uint64_t)M642N(mm6);\
     mm1 = _mm_unpackhi_pi8(mm1, mm2);           \
     mm0 = _mm_unpackhi_pi8(mm0, mm3);           \
     mm2 = mm1;                                  \
     mm1 = _mm_unpacklo_pi16(mm1, mm0);          \
-    *(uint64_t *)(p_buffer + 4) = (uint64_t)mm1;\
+    *(uint64_t *)(p_buffer + 4) = (uint64_t)M642N(mm1);\
     mm2 = _mm_unpackhi_pi16(mm2, mm0);          \
-    *(uint64_t *)(p_buffer + 6) = (uint64_t)mm2;
+    *(uint64_t *)(p_buffer + 6) = (uint64_t)M642N(mm2);
 
 #endif
 

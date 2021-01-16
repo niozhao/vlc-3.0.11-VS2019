@@ -358,7 +358,12 @@ static int recursive_mkdir( vlc_object_t *p_this, const char *psz_dirname )
         case ENOENT:
         {
             /* Let's try to create the parent directory */
-            char psz_parent[strlen( psz_dirname ) + 1], *psz_end;
+#ifdef __STDC_NO_VLA__
+            char* psz_parent = (char*)malloc(sizeof(char) * (strlen(psz_dirname) + 1));
+#else
+            char psz_parent[strlen(psz_dirname) + 1];
+#endif
+            char* psz_end;
             strcpy( psz_parent, psz_dirname );
 
             psz_end = strrchr( psz_parent, DIR_SEP_CHAR );
@@ -367,10 +372,18 @@ static int recursive_mkdir( vlc_object_t *p_this, const char *psz_dirname )
                 *psz_end = '\0';
                 if( recursive_mkdir( p_this, psz_parent ) == 0 )
                 {
-                    if( !vlc_mkdir( psz_dirname, 0700 ) )
+                    if (!vlc_mkdir(psz_dirname, 0700))
+                    {
+#ifdef __STDC_NO_VLA__
+                        free(psz_parent);
+#endif
                         return 0;
+                    }
                 }
             }
+#ifdef __STDC_NO_VLA__
+			free(psz_parent);
+#endif
         }
     }
 

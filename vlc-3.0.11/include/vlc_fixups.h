@@ -493,9 +493,12 @@ void *tsearch( const void *key, void **rootp, int(*cmp)(const void *, const void
 void *tfind( const void *key, const void **rootp, int(*cmp)(const void *, const void *) );
 void *tdelete( const void *key, void **rootp, int(*cmp)(const void *, const void *) );
 void twalk( const void *root, void(*action)(const void *nodep, VISIT which, int depth) );
-void *lfind( const void *key, const void *base, size_t *nmemb,
-             size_t size, int(*cmp)(const void *, const void *) );
 #endif /* HAVE_SEARCH_H */
+
+#ifndef HAVE_LFIND
+void *lfind( const void *key, const void *base, size_t *nmemb,size_t size, int(*cmp)(const void *, const void *) );
+#endif
+
 #ifndef HAVE_TDESTROY
 void tdestroy( void *root, void (*free_node)(void *nodep) );
 #endif
@@ -646,6 +649,15 @@ FILE *vlc_win32_tmpfile(void);
 #if defined(_WIN32) && defined(__MINGW64_VERSION_MAJOR)
 # define IN6_IS_ADDR_MULTICAST IN6_IS_ADDR_MULTICAST
 #endif
+
+/*add for mingwex*/
+int __ms_fwprintf(FILE* file, const wchar_t* fmt, ...);
+int __ms_vsnprintf(char* s, size_t n, const char* format, va_list arg);
+int  __mingw_vfprintf(FILE* stream, const char* fmt, va_list argv);
+int* __imp__timezone(void);
+long* __imp__daylight(void);
+void __mingw_raise_matherr(int typ, const char* name, double a1, double a2, double rslt);
+void __mingw_setusermatherr(int(__cdecl* f)(struct _exception*));
 
 #ifdef __APPLE__
 # define fdatasync fsync

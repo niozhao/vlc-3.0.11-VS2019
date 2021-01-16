@@ -454,7 +454,7 @@ static int AddStream( sout_mux_t *p_mux, sout_input_t *p_input )
                     p_bih->biCompression = VLC_FOURCC( 'X', 'V', 'I', 'D' );
                     break;
                 default:
-                    p_bih->biCompression = p_input->p_fmt->i_original_fourcc ?: p_input->p_fmt->i_codec;
+                    p_bih->biCompression = p_input->p_fmt->i_original_fourcc ? p_input->p_fmt->i_original_fourcc  : p_input->p_fmt->i_codec;
                     break;
             }
             p_stream->p_bih = p_bih;

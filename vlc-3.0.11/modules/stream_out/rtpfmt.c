@@ -473,11 +473,18 @@ int rtp_get_fmt( vlc_object_t *obj, const es_format_t *p_fmt, const char *mux,
             rtp_fmt->pf_packetize = rtp_packetize_split;
             if( p_fmt->i_extra > 0 )
             {
+#ifdef __STDC_NO_VLA__
+                char* hexa = (char*)malloc(sizeof(char) * (2 * p_fmt->i_extra + 1));
+#else
                 char hexa[2*p_fmt->i_extra +1];
+#endif
                 sprintf_hexa( hexa, p_fmt->p_extra, p_fmt->i_extra );
                 if( asprintf( &rtp_fmt->fmtp,
                               "profile-level-id=3; config=%s;", hexa ) == -1 )
                     rtp_fmt->fmtp = NULL;
+#ifdef __STDC_NO_VLA__
+                free(hexa);
+#endif
             }
             break;
         }
@@ -485,7 +492,11 @@ int rtp_get_fmt( vlc_object_t *obj, const es_format_t *p_fmt, const char *mux,
         {
             if( ! var_InheritBool( obj, "sout-rtp-mp4a-latm" ) )
             {
+#ifdef __STDC_NO_VLA__
+                char* hexa = (char*)malloc(sizeof(char) * (2 * p_fmt->i_extra + 1));
+#else
                 char hexa[2*p_fmt->i_extra +1];
+#endif
 
                 rtp_fmt->ptname = "mpeg4-generic";
                 rtp_fmt->pf_packetize = rtp_packetize_mp4a;
@@ -496,6 +507,9 @@ int rtp_get_fmt( vlc_object_t *obj, const es_format_t *p_fmt, const char *mux,
                               "IndexLength=3; IndexDeltaLength=3; Profile=1;",
                               hexa ) == -1 )
                     rtp_fmt->fmtp = NULL;
+#ifdef __STDC_NO_VLA__
+                free(hexa);
+#endif
             }
             else
             {

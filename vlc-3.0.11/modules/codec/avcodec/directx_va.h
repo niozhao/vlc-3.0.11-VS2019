@@ -40,7 +40,11 @@
 #include "va.h"
 
 #include <unknwn.h>
+#if __STDC_NO_ATOMICS__ != 1
 #include <stdatomic.h>
+#else
+#include <vlc_atomic.h>
+#endif
 
 #include "va_surface_internal.h"
 

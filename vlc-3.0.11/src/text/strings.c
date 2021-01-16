@@ -1,4 +1,4 @@
-/*****************************************************************************
+﻿/*****************************************************************************
  * strings.c: String related functions
  *****************************************************************************
  * Copyright (C) 2006 VLC authors and VideoLAN
@@ -55,6 +55,10 @@
 #include <libvlc.h>
 #include <errno.h>
 
+
+/*
+* change file encode to utf8 & BOM to fix build error:  [error C2001: newline in constant]
+*/
 static const struct xml_entity_s
 {
     char    psz_entity[8];

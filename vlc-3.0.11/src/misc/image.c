@@ -288,7 +288,7 @@ static picture_t *ImageReadUrl( image_handler_t *p_image, const char *psz_url,
         return NULL;
     }
 
-    if( vlc_stream_GetSize( p_stream, &i_size ) || i_size > SSIZE_MAX )
+    if( vlc_stream_GetSize( p_stream, &i_size ) || i_size > /*SSIZE_MAX*/SIZE_MAX)
     {
         msg_Dbg( p_image->p_parent, "could not read %s", psz_url );
         goto error;

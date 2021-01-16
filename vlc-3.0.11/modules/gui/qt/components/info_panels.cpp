@@ -645,11 +645,11 @@ void InputStatsPanel::update( input_item_t *p_item )
 
     vlc_mutex_lock( &p_item->p_stats->lock );
 
-#define UPDATE_INT( widget, calc... ) \
+#define UPDATE_INT( widget, calc) \
     { widget->setText( 1, QString::number( (qulonglong)calc ) ); }
 
-#define UPDATE_FLOAT( widget, format, calc... ) \
-    { QString str; widget->setText( 1 , str.sprintf( format, ## calc ) );  }
+#define UPDATE_FLOAT( widget, format, ... ) \
+    { QString str; widget->setText( 1 , str.sprintf( format, __VA_ARGS__ ) );  }
 
     UPDATE_INT( read_media_stat, (p_item->p_stats->i_read_bytes / 1024 ) );
     UPDATE_FLOAT( input_bitrate_stat,  "%6.0f", (float)(p_item->p_stats->f_input_bitrate *  8000 ));

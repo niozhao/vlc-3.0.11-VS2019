@@ -392,7 +392,7 @@ static ssize_t vlc_stream_ReadRaw(stream_t *s, void *buf, size_t len)
     stream_priv_t *priv = (stream_priv_t *)s;
     ssize_t ret;
 
-    assert(len <= SSIZE_MAX);
+    assert(len <= /*SSIZE_MAX*/SIZE_MAX);
 
     if (vlc_killed())
         return 0;
@@ -404,9 +404,16 @@ static ssize_t vlc_stream_ReadRaw(stream_t *s, void *buf, size_t len)
         {
             if (unlikely(len == 0))
                 return 0;
-
-            char dummy[(len <= 256 ? len : 256)];
-            ret = s->pf_read(s, dummy, sizeof (dummy));
+            int arraySize = len <= 256 ? len : 256;
+#ifdef __STDC_NO_VLA__
+            char* dummy = (char*)malloc(arraySize * sizeof(char));
+#else
+            char dummy[arraySize];
+#endif
+            ret = s->pf_read(s, dummy, arraySize);
+#ifdef __STDC_NO_VLA__
+            free(dummy);
+#endif
         }
         else
             ret = s->pf_read(s, buf, len);
@@ -699,7 +706,7 @@ int vlc_stream_vaControl(stream_t *s, int cmd, va_list args)
  */
 block_t *vlc_stream_Block( stream_t *s, size_t size )
 {
-    if( unlikely(size > SSIZE_MAX) )
+    if( unlikely(size > /*SSIZE_MAX*/SIZE_MAX) )
         return NULL;
 
     block_t *block = block_Alloc( size );

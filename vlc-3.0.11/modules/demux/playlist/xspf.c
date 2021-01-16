@@ -706,7 +706,7 @@ static bool skip_element COMPLEX_INTERFACE
 
     /* Const reference changes if we read again */
     char *psz_end = psz_element ? strdup(psz_element) : NULL;
-    const char *name;
+    const char *name = NULL;
     unsigned lvl = 1;
     bool b_ret = true;
     while(lvl > 0 && b_ret)

@@ -579,7 +579,9 @@ opengl_fragment_shader_init_impl(opengl_tex_converter_t *tc, GLenum tex_target,
     if (ret != VLC_SUCCESS)
         return 0;
 
-    const char *sampler, *lookup, *coord_name;
+    const char* sampler = NULL;
+    const char* lookup = NULL;
+    const char* coord_name = NULL;
     switch (tex_target)
     {
         case GL_TEXTURE_2D:

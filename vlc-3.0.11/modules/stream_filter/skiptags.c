@@ -97,7 +97,7 @@ static uint_fast32_t SkipAPETag(stream_t *s)
         return 0;
 
     uint_fast32_t size = GetDWLE(peek + 12);
-    if (size > SSIZE_MAX - 32u)
+    if (size > /*SSIZE_MAX*/SIZE_MAX - 32u)
         return 0; /* impossibly long tag */
 
     uint_fast32_t flags = GetDWLE(peek + 16);

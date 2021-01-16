@@ -108,8 +108,8 @@ mtime_t DefaultBufferingLogic::getMinBuffering(const AbstractPlaylist *p) const
     mtime_t buffering = userMinBuffering ? userMinBuffering
                                          : DEFAULT_MIN_BUFFERING;
     if(p->getMinBuffering())
-        buffering = std::max(buffering, p->getMinBuffering());
-    return std::max(buffering, BUFFERING_LOWEST_LIMIT);
+        buffering = (std::max)(buffering, p->getMinBuffering());
+    return (std::max)(buffering, BUFFERING_LOWEST_LIMIT);
 }
 
 mtime_t DefaultBufferingLogic::getMaxBuffering(const AbstractPlaylist *p) const
@@ -120,10 +120,10 @@ mtime_t DefaultBufferingLogic::getMaxBuffering(const AbstractPlaylist *p) const
     mtime_t buffering = userMaxBuffering ? userMaxBuffering
                                          : DEFAULT_MAX_BUFFERING;
     if(p->isLive())
-        buffering = std::min(buffering, getLiveDelay(p));
+        buffering = (std::min)(buffering, getLiveDelay(p));
     if(p->getMaxBuffering())
-        buffering = std::min(buffering, p->getMaxBuffering());
-    return std::max(buffering, getMinBuffering(p));
+        buffering = (std::min)(buffering, p->getMaxBuffering());
+    return (std::max)(buffering, getMinBuffering(p));
 }
 
 mtime_t DefaultBufferingLogic::getLiveDelay(const AbstractPlaylist *p) const
@@ -135,8 +135,8 @@ mtime_t DefaultBufferingLogic::getLiveDelay(const AbstractPlaylist *p) const
     if(p->suggestedPresentationDelay.Get())
         delay = p->suggestedPresentationDelay.Get();
     if(p->timeShiftBufferDepth.Get())
-        delay = std::min(delay, p->timeShiftBufferDepth.Get());
-    return std::max(delay, getMinBuffering(p));
+        delay = (std::min)(delay, p->timeShiftBufferDepth.Get());
+    return (std::max)(delay, getMinBuffering(p));
 }
 
 uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *rep) const
@@ -256,7 +256,7 @@ uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *re
             }
 
             const uint64_t max_safety_offset = playbacktime - minavailtime / duration;
-            const uint64_t safety_offset = std::min((uint64_t)SAFETY_BUFFERING_EDGE_OFFSET,
+            const uint64_t safety_offset = (std::min)((uint64_t)SAFETY_BUFFERING_EDGE_OFFSET,
                                                     max_safety_offset);
             if(startnumber + safety_offset <= start)
                 start -= safety_offset;
@@ -281,7 +281,7 @@ uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *re
         stime_t availableduration;
         if(playlist->timeShiftBufferDepth.Get())
         {
-            availableduration = std::min(totallistduration,
+            availableduration = (std::min)(totallistduration,
                     timescale.ToScaled(playlist->timeShiftBufferDepth.Get()));
         }
         else availableduration = totallistduration;
@@ -300,12 +300,12 @@ uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *re
         }
 
         uint64_t safeedgenumber = back->getSequenceNumber() -
-                        std::min((uint64_t)list.size() - 1,
+                        (std::min)((uint64_t)list.size() - 1,
                                  (uint64_t)SAFETY_BUFFERING_EDGE_OFFSET);
 
         uint64_t safestartnumber = availableliststartnumber;
         if(safeedgenumber > safestartnumber)
-            safestartnumber -= std::min(safeedgenumber-safestartnumber - 1,
+            safestartnumber -= (std::min)(safeedgenumber-safestartnumber - 1,
                                         (uint64_t)SAFETY_EXPURGING_OFFSET);
 
         stime_t maxbufferizable = 0;
@@ -320,7 +320,7 @@ uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *re
                 safeedgeduration += (*it)->duration.Get();
         }
 
-        stime_t tobuffer = std::min(maxbufferizable, timescale.ToScaled(i_buffering));
+        stime_t tobuffer = (std::min)(maxbufferizable, timescale.ToScaled(i_buffering));
         stime_t skipduration = totallistduration - safeedgeduration - tobuffer ;
         uint64_t start = safestartnumber;
         for(auto it = list.begin(); it != list.end(); ++it)
@@ -356,7 +356,7 @@ uint64_t DefaultBufferingLogic::getLiveStartSegmentNumber(BaseRepresentation *re
         return start;
     }
 
-    return std::numeric_limits<uint64_t>::max();
+    return (std::numeric_limits<uint64_t>::max)();
 }
 
 mtime_t DefaultBufferingLogic::getBufferingOffset(const AbstractPlaylist *p) const

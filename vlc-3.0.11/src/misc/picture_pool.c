@@ -123,7 +123,8 @@ picture_pool_t *picture_pool_NewExtended(const picture_pool_configuration_t *cfg
     picture_pool_t *pool;
     size_t size = sizeof (*pool) + cfg->picture_count * sizeof (picture_t *);
 
-    size += (-size) & (POOL_MAX - 1);
+    //size += (-size) & (POOL_MAX - 1); 
+    size += (0 - size) & (POOL_MAX - 1);
     pool = aligned_alloc(POOL_MAX, size);
     if (unlikely(pool == NULL))
         return NULL;
@@ -157,7 +158,11 @@ picture_pool_t *picture_pool_New(unsigned count, picture_t *const *tab)
 picture_pool_t *picture_pool_NewFromFormat(const video_format_t *fmt,
                                            unsigned count)
 {
+#ifdef __STDC_NO_VLA__
+    picture_t** picture = (picture_t**)malloc(sizeof(picture_t*) * (count ? count : 1));
+#else
     picture_t *picture[count ? count : 1];
+#endif
     unsigned i;
 
     for (i = 0; i < count; i++) {
@@ -170,17 +175,27 @@ picture_pool_t *picture_pool_NewFromFormat(const video_format_t *fmt,
     if (!pool)
         goto error;
 
+#ifdef __STDC_NO_VLA__
+    free(picture);
+#endif
     return pool;
 
 error:
     while (i > 0)
         picture_Release(picture[--i]);
+#ifdef __STDC_NO_VLA__
+	free(picture);
+#endif
     return NULL;
 }
 
 picture_pool_t *picture_pool_Reserve(picture_pool_t *master, unsigned count)
 {
-    picture_t *picture[count ? count : 1];
+#ifdef __STDC_NO_VLA__
+	picture_t** picture = (picture_t**)malloc(sizeof(picture_t*) * (count ? count : 1));
+#else
+	picture_t* picture[count ? count : 1];
+#endif
     unsigned i;
 
     for (i = 0; i < count; i++) {
@@ -192,12 +207,17 @@ picture_pool_t *picture_pool_Reserve(picture_pool_t *master, unsigned count)
     picture_pool_t *pool = picture_pool_New(count, picture);
     if (!pool)
         goto error;
-
+#ifdef __STDC_NO_VLA__
+	free(picture);
+#endif
     return pool;
 
 error:
     while (i > 0)
         picture_Release(picture[--i]);
+#ifdef __STDC_NO_VLA__
+	free(picture);
+#endif
     return NULL;
 }
 

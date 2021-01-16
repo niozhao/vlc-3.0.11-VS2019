@@ -228,7 +228,7 @@ void SegmentTimeline::updateWith(SegmentTimeline &other)
         {
             const uint64_t count = (el->t - last->t) / last->d;
             totalLength -= (last->d * (last->r + 1));
-            last->r = std::max(last->r, el->r + count);
+            last->r = (std::max)(last->r, el->r + count);
             totalLength += (last->d * (last->r + 1));
             delete el;
         }

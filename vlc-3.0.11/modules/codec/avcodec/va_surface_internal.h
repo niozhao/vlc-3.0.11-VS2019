@@ -32,7 +32,11 @@
 #include <libavcodec/avcodec.h>
 #include "va.h"
 
+#if __STDC_NO_ATOMICS__ != 1
 #include <stdatomic.h>
+#else
+#include <vlc_atomic.h>
+#endif
 
 /* */
 typedef struct vlc_va_surface_t vlc_va_surface_t;

@@ -58,7 +58,7 @@ void SmoothSegmentChunk::onDownload(block_t **pp_block)
         mtime_t start, end, length;
         if(rep->getMediaPlaybackRange(&start, &end, &length))
         {
-            start = std::max(start, end - rep->getPlaylist()->timeShiftBufferDepth.Get());
+            start = (std::max)(start, end - rep->getPlaylist()->timeShiftBufferDepth.Get());
             rep->pruneByPlaybackTime(start);
         }
     }

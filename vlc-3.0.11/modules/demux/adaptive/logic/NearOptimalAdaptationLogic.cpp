@@ -174,7 +174,7 @@ unsigned NearOptimalAdaptationLogic::getMaxCurrentBw() const
     unsigned i_max_bitrate = 0;
     for(std::map<ID, NearOptimalContext>::const_iterator it = streams.begin();
                                                          it != streams.end(); ++it)
-        i_max_bitrate = std::max(i_max_bitrate, ((*it).second).last_download_rate);
+        i_max_bitrate = (std::max)(i_max_bitrate, ((*it).second).last_download_rate);
     return i_max_bitrate;
 }
 

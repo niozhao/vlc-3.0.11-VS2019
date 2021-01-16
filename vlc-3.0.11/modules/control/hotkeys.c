@@ -912,7 +912,7 @@ static int PutAction( intf_thread_t *p_intf, input_thread_t *p_input,
             if( p_input == NULL || !var_GetBool( p_input, "can-seek" ) )
                 break;
 
-            const char *varname;
+            const char *varname = "";
             int sign = +1;
             switch( i_action )
             {

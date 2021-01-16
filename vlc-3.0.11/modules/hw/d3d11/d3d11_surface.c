@@ -723,6 +723,7 @@ int D3D11OpenCPUConverter( vlc_object_t *obj )
     int err = VLC_EGENERIC;
     ID3D11Texture2D *texture = NULL;
     filter_t *p_cpu_filter = NULL;
+    filter_sys_t* p_sys = NULL;
     video_format_t fmt_staging;
 
     if ( p_filter->fmt_out.video.i_chroma != VLC_CODEC_D3D11_OPAQUE
@@ -807,7 +808,7 @@ int D3D11OpenCPUConverter( vlc_object_t *obj )
             goto done;
     }
 
-    filter_sys_t *p_sys = vlc_obj_calloc(obj, 1, sizeof(filter_sys_t));
+    p_sys = vlc_obj_calloc(obj, 1, sizeof(filter_sys_t));
     if (!p_sys) {
          err = VLC_ENOMEM;
          goto done;
@@ -836,7 +837,8 @@ done:
     }
     else
     {
-        p_sys->d3d_dev = d3d_dev;
+        if(p_sys)
+            p_sys->d3d_dev = d3d_dev;
     }
     return err;
 }

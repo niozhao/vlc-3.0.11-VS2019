@@ -667,7 +667,7 @@ void BlockDecode( demux_t *p_demux, KaxBlock *block, KaxSimpleBlock *simpleblock
                 else if ( track.i_last_dts == VLC_TS_INVALID )
                     p_block->i_dts = i_pts;
                 else
-                    p_block->i_dts = std::min( i_pts, track.i_last_dts + ( mtime_t )track.i_default_duration );
+                    p_block->i_dts = (std::min)( i_pts, track.i_last_dts + ( mtime_t )track.i_default_duration );
             }
         }
 
@@ -744,7 +744,7 @@ static int Demux( demux_t *p_demux)
         mkv_track_t &track = *p_track;
 
 
-        if( track.i_skip_until_fpos != std::numeric_limits<uint64_t>::max() ) {
+        if( track.i_skip_until_fpos != (std::numeric_limits<uint64_t>::max)() ) {
 
             uint64_t block_fpos = 0;
 
@@ -830,7 +830,7 @@ mkv_track_t::mkv_track_t(enum es_format_category_e es_cat) :
   ,i_default_duration(0)
   ,f_timecodescale(1.0)
   ,i_last_dts(VLC_TS_INVALID)
-  ,i_skip_until_fpos(std::numeric_limits<uint64_t>::max())
+  ,i_skip_until_fpos((std::numeric_limits<uint64_t>::max)())
   ,f_fps(0)
   ,p_es(NULL)
   ,i_original_rate(0)

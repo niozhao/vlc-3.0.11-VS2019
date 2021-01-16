@@ -443,7 +443,11 @@ static int Decode( decoder_t *p_dec, block_t *p_block )
     {
         unsigned int i_textsize = 7000;
         int i_total,offset;
+#ifdef __STDC_NO_VLA__
+        char* p_text = (char*)malloc((i_textsize + 1) * sizeof(char));
+#else
         char p_text[i_textsize+1];
+#endif
 
         i_total = vbi_print_page_region( &p_page, p_text, i_textsize,
                         "UTF-8", 0, 0, 0, i_first_row, p_page.columns, i_num_rows );
@@ -475,6 +479,9 @@ static int Decode( decoder_t *p_dec, block_t *p_block )
 
 #ifdef ZVBI_DEBUG
         msg_Info( p_dec, "page %x-%x(%d)\n\"%s\"", p_page.pgno, p_page.subno, i_total, &p_text[offset] );
+#endif
+#ifdef __STDC_NO_VLA__
+        free(p_text);
 #endif
     }
     else

@@ -142,8 +142,10 @@ static int Open( vlc_object_t *p_this )
     /* skip extra header data */
     if( p_sys->i_header_size > 24 )
     {
-#if (SSIZE_MAX <= INT32_MAX)
-        if( p_sys->i_header_size > SSIZE_MAX )
+//#if (SSIZE_MAX <= INT32_MAX)
+//       if( p_sys->i_header_size > SSIZE_MAX )
+#if (SIZE_MAX <= INT32_MAX)
+			if (p_sys->i_header_size > SIZE_MAX)
             goto error;
 #endif
         size_t skip = p_sys->i_header_size - 24;

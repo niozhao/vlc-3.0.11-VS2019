@@ -504,7 +504,7 @@ void IsoffMainParser::parseTimeline(Node *node, MediaSegmentTemplate *templ)
             {
                 r = Integer<int64_t>(s->getAttributeValue("r"));
                 if(r < 0)
-                    r = std::numeric_limits<unsigned>::max();
+                    r = (std::numeric_limits<unsigned>::max)();
             }
 
             if(s->hasAttribute("t"))

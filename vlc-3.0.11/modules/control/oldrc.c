@@ -141,9 +141,14 @@ VLC_FORMAT(2, 3)
 static void msg_rc( intf_thread_t *p_intf, const char *psz_fmt, ... )
 {
     va_list args;
-    char fmt_eol[strlen (psz_fmt) + 3];
+    int arraySize = strlen(psz_fmt) + 3;
+#ifdef __STDC_NO_VLA__
+    char* fmt_eol = (char*)malloc(sizeof(char) * arraySize);
+#else
+    char fmt_eol[arraySize];
+#endif
 
-    snprintf (fmt_eol, sizeof (fmt_eol), "%s\r\n", psz_fmt);
+    snprintf (fmt_eol, arraySize, "%s\r\n", psz_fmt);
     va_start( args, psz_fmt );
 
     if( p_intf->p_sys->i_socket == -1 )
@@ -151,6 +156,9 @@ static void msg_rc( intf_thread_t *p_intf, const char *psz_fmt, ... )
     else
         net_vaPrintf( p_intf, p_intf->p_sys->i_socket, fmt_eol, args );
     va_end( args );
+#ifdef __STDC_NO_VLA__
+    free(fmt_eol);
+#endif
 }
 #define msg_rc( ... ) msg_rc( p_intf, __VA_ARGS__ )
 
@@ -353,8 +361,8 @@ static int Activate( vlc_object_t *p_this )
     p_sys->p_input = NULL;
 
     /* Non-buffered stdout */
-    setvbuf( stdout, (char *)NULL, _IOLBF, 0 );
-
+    //setvbuf( stdout, (char *)NULL, _IOLBF, 0 );  //will cause assert error! exp: 2 <= buffer_size_in_bytes && buffer_size_in_bytes <= INT_MAX.
+    setvbuf(stdout, (char*)NULL, _IOLBF, 4096);
 #if VLC_WINSTORE_APP
     p_sys->b_quiet = true;
 #elif defined(_WIN32)

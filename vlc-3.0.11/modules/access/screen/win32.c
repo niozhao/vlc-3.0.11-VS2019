@@ -208,7 +208,7 @@ static block_t *CaptureBlockNew( demux_t *p_demux )
         /* Create the bitmap info header */
         p_data->bmi.bmiHeader.biSize          = sizeof(BITMAPINFOHEADER);
         p_data->bmi.bmiHeader.biWidth         = p_sys->fmt.video.i_width;
-        p_data->bmi.bmiHeader.biHeight        = - p_sys->fmt.video.i_height;
+        p_data->bmi.bmiHeader.biHeight        = 0 - p_sys->fmt.video.i_height;
         p_data->bmi.bmiHeader.biPlanes        = 1;
         p_data->bmi.bmiHeader.biBitCount      = p_sys->fmt.video.i_bits_per_pixel;
         p_data->bmi.bmiHeader.biCompression   = BI_RGB;

@@ -104,14 +104,13 @@ void (msleep)(mtime_t delay)
 
 #ifdef LIBVLC_NEED_CONDVAR
 #include <stdalign.h>
-
 static inline atomic_uint *vlc_cond_value(vlc_cond_t *cond)
 {
     /* XXX: ugly but avoids including vlc_atomic.h in vlc_threads.h */
     static_assert (sizeof (cond->value) <= sizeof (atomic_uint),
                    "Size mismatch!");
-    static_assert ((alignof (cond->value) % alignof (atomic_uint)) == 0,
-                   "Alignment mismatch");
+    //static_assert ((alignof (cond->value) % alignof (atomic_uint)) == 0,"Alignment mismatch");
+    static_assert ((alignof (unsigned) % alignof (atomic_uint)) == 0, "Alignment mismatch");
     return (atomic_uint *)&cond->value;
 }
 

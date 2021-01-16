@@ -627,7 +627,7 @@ static int Open(vlc_object_t *object)
     /* Detect the image type */
     const image_format_t *img;
 
-    const uint8_t *peek;
+    const uint8_t *peek = NULL;  //error C4703: potentially uninitialized local pointer variable 'peek' used
     ssize_t peek_size = 0;
     for (int i = 0; ; i++) {
         img = &formats[i];

@@ -283,10 +283,15 @@ int subtitles_Detect( input_thread_t *p_this, char *psz_path, const char *psz_na
         {
             if( psz_name[0] == '.' || !subtitles_Filter( psz_name ) )
                 continue;
-
+#ifdef __STDC_NO_VLA__
+			char* tmp_fname_noext = (char*)malloc(strlen(psz_name) + 1);
+            char* tmp_fname_trim = (char*)malloc(strlen(psz_name) + 1);
+            char* tmp_fname_ext = (char*)malloc(strlen(psz_name) + 1);
+#else
             char tmp_fname_noext[strlen( psz_name ) + 1];
             char tmp_fname_trim[strlen( psz_name ) + 1];
             char tmp_fname_ext[strlen( psz_name ) + 1];
+#endif
             const char *tmp;
             int i_prio = 0;
 
@@ -358,6 +363,11 @@ int subtitles_Detect( input_thread_t *p_this, char *psz_path, const char *psz_na
                 }
                 free( path );
             }
+#ifdef __STDC_NO_VLA__
+			free(tmp_fname_noext);
+            free(tmp_fname_trim);
+            free(tmp_fname_ext);
+#endif
         }
         closedir( dir );
     }

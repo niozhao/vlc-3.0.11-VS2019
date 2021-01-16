@@ -169,8 +169,10 @@ static int Open( vlc_object_t *p_this )
         /* consume chunk data */
         for( ssize_t i_req; i_chunk_size; i_chunk_size -= i_req )
         {
-#if SSIZE_MAX < UINT64_MAX
-            i_req = __MIN( SSIZE_MAX, i_chunk_size );
+//#if SSIZE_MAX < UINT64_MAX
+//            i_req = __MIN( SSIZE_MAX, i_chunk_size );
+#if SIZE_MAX < UINT64_MAX
+			i_req = __MIN(SIZE_MAX, i_chunk_size);
 #else
             i_req = i_chunk_size;
 #endif

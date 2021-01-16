@@ -604,8 +604,12 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
     vlc_object_t *owner = rtsp->owner;
     char psz_sesbuf[17];
     const char *psz_session = NULL, *psz;
-    char control[sizeof("rtsp://[]:12345") + NI_MAXNUMERICHOST
-                  + strlen( rtsp->psz_path )];
+    int charAL = sizeof("rtsp://[]:12345") + NI_MAXNUMERICHOST + strlen(rtsp->psz_path);
+#ifdef __STDC_NO_VLA__
+    char* control = NULL;
+#else
+    char control[charAL];
+#endif
     bool vod = rtsp->vod_media != NULL;
     time_t now;
 
@@ -615,6 +619,9 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
         return VLC_SUCCESS;
     else
     {
+#ifdef __STDC_NO_VLA__
+		control = (char*)malloc(sizeof(char) * charAL);
+#endif
         /* Build self-referential control URL */
         char ip[NI_MAXNUMERICHOST], *ptr;
         int port;
@@ -988,9 +995,12 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
             ses = RtspClientGet( rtsp, psz_session );
             if( ses != NULL )
             {
-                char info[ses->trackc * ( strlen( control ) + TRACK_PATH_SIZE
-                          + sizeof("url=;seq=65535;rtptime=4294967295, ")
-                                          - 1 ) + 1];
+                int charLen = ses->trackc * (strlen(control) + TRACK_PATH_SIZE + sizeof("url=;seq=65535;rtptime=4294967295, ") - 1) + 1;
+#ifdef __STDC_NO_VLA__
+                char* info = (char*)malloc(sizeof(char) * charLen);
+#else
+                char info[charLen];
+#endif
                 size_t infolen = 0;
                 RtspClientAlive(ses);
 
@@ -1056,6 +1066,9 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
                     info[infolen - 2] = '\0'; /* remove trailing ", " */
                     httpd_MsgAdd( answer, "RTP-Info", "%s", info );
                 }
+#ifdef __STDC_NO_VLA__
+                free(info);
+#endif
             }
             vlc_mutex_unlock( &rtsp->lock );
 
@@ -1187,7 +1200,13 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
         }
 
         default:
+        {
+#ifdef __STDC_NO_VLA__
+            if(control)
+                free(control);
+#endif
             return VLC_EGENERIC;
+        }
     }
 
     if( psz_session )
@@ -1208,6 +1227,11 @@ static int RtspHandler( rtsp_stream_t *rtsp, rtsp_stream_id_t *id,
     psz = httpd_MsgGet( query, "Timestamp" );
     if( psz != NULL )
         httpd_MsgAdd( answer, "Timestamp", "%s", psz );
+
+#ifdef __STDC_NO_VLA__
+    if(control)
+	   free(control);
+#endif
 
     return VLC_SUCCESS;
 }

@@ -1,4 +1,4 @@
-/*****************************************************************************
+﻿/*****************************************************************************
  * simple_preferences.cpp : "Simple preferences"
  ****************************************************************************
  * Copyright (C) 2006-2010 the VideoLAN team
@@ -60,6 +60,9 @@
 #include <vlc_modules.h>
 #include <vlc_arrays.h>
 
+ /*
+ * change file encode to utf8 & BOM to fix build error:  [error C2001: newline in constant]
+ */
 static struct {
     const char iso[6];
     const char name[34];

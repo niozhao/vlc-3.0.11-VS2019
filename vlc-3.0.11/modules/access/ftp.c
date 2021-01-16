@@ -156,7 +156,11 @@ static int ftp_SendCommand( vlc_object_t *obj, access_sys_t *sys,
                             const char *fmt, ... )
 {
     size_t fmtlen = strlen( fmt );
+#ifdef __STDC_NO_VLA__
+    char* fmtbuf = (char*)malloc(fmtlen + 3);
+#else
     char fmtbuf[fmtlen + 3];
+#endif
 
     memcpy( fmtbuf, fmt, fmtlen );
     memcpy( fmtbuf + fmtlen, "\r\n", 3 );
@@ -169,7 +173,13 @@ static int ftp_SendCommand( vlc_object_t *obj, access_sys_t *sys,
     val = vasprintf( &cmd, fmtbuf, args );
     va_end( args );
     if( unlikely(val == -1) )
+    {
+#ifdef __STDC_NO_VLA__
+        free(fmtbuf);
+#endif
         return -1;
+    }
+        
 
     if( strncmp( cmd, "PASS ", 5 ) && strncmp( cmd, "ACCT ", 5 ) )
         msg_Dbg( obj, "sending request: \"%.*s\" (%d bytes)", val-2, cmd, val );
@@ -184,6 +194,9 @@ static int ftp_SendCommand( vlc_object_t *obj, access_sys_t *sys,
     else
         val = 0;
     free( cmd );
+#ifdef __STDC_NO_VLA__
+	free(fmtbuf);
+#endif
     return val;
 }
 

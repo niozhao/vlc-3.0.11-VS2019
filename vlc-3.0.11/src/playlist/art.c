@@ -40,7 +40,11 @@
 
 static void ArtCacheCreateDir( const char *psz_dir )
 {
+#ifdef __STDC_NO_VLA__
+    char* newdir = (char*)malloc(strlen(psz_dir) + 1);
+#else
     char newdir[strlen( psz_dir ) + 1];
+#endif
     strcpy( newdir, psz_dir );
     char * psz_newdir = newdir;
     char * psz = psz_newdir;
@@ -56,6 +60,9 @@ static void ArtCacheCreateDir( const char *psz_dir )
         psz++;
     }
     vlc_mkdir( psz_dir, 0700 );
+#ifdef __STDC_NO_VLA__
+    free(newdir);
+#endif
 }
 
 static char* ArtCacheGetDirPath( const char *psz_arturl, const char *psz_artist,

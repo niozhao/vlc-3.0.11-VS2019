@@ -62,7 +62,7 @@
    And forcing users to install the right dll at the right place will not work
    Therefore, we need to dl_open and resolve the symbols */
 #ifdef USE_DL_OPENING
-#  warning DLL opening mode
+//#  warning DLL opening mode
 #  define BC_FUNC( a ) Our ## a
 #  define BC_FUNC_PSYS( a ) p_sys->Our ## a
 #else

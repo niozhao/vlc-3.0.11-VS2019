@@ -251,7 +251,7 @@ static char *config_GetAppDir (void)
     return psz_dir;
 }
 
-#warning FIXME Use known folders on Vista and above
+//#warning FIXME Use known folders on Vista and above
 char *config_GetUserDir (vlc_userdir_t type)
 {
     switch (type)

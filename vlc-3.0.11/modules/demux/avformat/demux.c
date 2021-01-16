@@ -153,7 +153,8 @@ int avformat_OpenDemux( vlc_object_t *p_this )
 {
     demux_t       *p_demux = (demux_t*)p_this;
     demux_sys_t   *p_sys;
-    AVProbeData   pd = { };
+    //AVProbeData   pd = { };
+    AVProbeData   pd;
     AVInputFormat *fmt = NULL;
     int64_t       i_start_time = -1;
     bool          b_can_seek;
@@ -331,7 +332,11 @@ int avformat_OpenDemux( vlc_object_t *p_this )
     char *psz_opts = var_InheritString( p_demux, "avformat-options" );
     unsigned nb_streams = p_sys->ic->nb_streams;
 
+#ifdef __STDC_NO_VLA__
+    AVDictionary** options = (AVDictionary**)malloc((nb_streams ? nb_streams : 1) * sizeof(AVDictionary*));
+#else
     AVDictionary *options[nb_streams ? nb_streams : 1];
+#endif
     options[0] = NULL;
     for (unsigned i = 1; i < nb_streams; i++)
         options[i] = NULL;
@@ -353,7 +358,9 @@ int avformat_OpenDemux( vlc_object_t *p_this )
     for (unsigned i = 1; i < nb_streams; i++) {
         av_dict_free(&options[i]);
     }
-
+#ifdef __STDC_NO_VLA__
+    free(options);
+#endif
     nb_streams = p_sys->ic->nb_streams; /* it may have changed */
     if( !nb_streams )
     {
@@ -441,7 +448,7 @@ int avformat_OpenDemux( vlc_object_t *p_this )
 
             get_rotation(&es_fmt, s);
 
-# warning FIXME: implement palette transmission
+//# warning FIXME: implement palette transmission
             psz_type = "video";
 
             AVRational rate;

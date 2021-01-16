@@ -785,7 +785,7 @@ static int  Open ( vlc_object_t *p_this )
     int i_val;
     char *psz_val;
     int i_qmin = 0, i_qmax = 0;
-    x264_nal_t    *nal;
+    x264_nal_t    *nal = NULL;
     int i, i_nal;
     bool fullrange = false;
 
@@ -1485,7 +1485,7 @@ static block_t *Encode( encoder_t *p_enc, picture_t *p_pict )
 {
     encoder_sys_t *p_sys = p_enc->p_sys;
     x264_picture_t pic;
-    x264_nal_t *nal;
+    x264_nal_t *nal = NULL;
     block_t *p_block;
     int i_nal=0, i_out=0, i=0;
 

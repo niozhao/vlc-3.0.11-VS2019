@@ -154,7 +154,7 @@ size_t ChunksSourceStream::Peek(const uint8_t **pp, size_t sz)
     if(!p_block)
         return 0;
     *pp = p_block->p_buffer;
-    return std::min(p_block->i_buffer, sz);
+    return (std::min)(p_block->i_buffer, sz);
 }
 
 ssize_t ChunksSourceStream::Read(uint8_t *buf, size_t size)
@@ -283,7 +283,7 @@ size_t BufferedChunksSourceStream::Peek(const uint8_t **pp, size_t sz)
     if(block_BytestreamRemaining(&bs) == 0)
         return 0;
     *pp = bs.p_block->p_buffer;
-    return std::min(bs.p_block->i_buffer, sz);
+    return (std::min)(bs.p_block->i_buffer, sz);
 }
 
 std::string BufferedChunksSourceStream::getContentType()

@@ -1047,7 +1047,7 @@ static int DirectXCreatePictureResourceYuvOverlay(vout_display_t *vd,
      * that pictures are decoded macroblock per macroblock). Instead the video
      * will be decoded in picture buffers in system memory which will then be
      * memcpy() to the overlay surface. */
-    LPDIRECTDRAWSURFACE2 front_surface;
+    LPDIRECTDRAWSURFACE2 front_surface = NULL;
     int ret = VLC_EGENERIC;
     if (allow_3buf) {
         /* Triple buffering rocks! it doesn't have any processing overhead

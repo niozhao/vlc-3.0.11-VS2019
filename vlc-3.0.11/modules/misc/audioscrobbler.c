@@ -741,7 +741,8 @@ static void *Run(void *data)
         msg_Dbg(p_intf, "Going to submit some data...");
         char *psz_submit;
         vlc_url_t *url;
-        char *psz_submit_song, *psz_submit_tmp;
+        char* psz_submit_song = NULL; 
+        char* psz_submit_tmp;
 
         if (asprintf(&psz_submit, "s=%s", p_sys->psz_auth_token) == -1)
             break;

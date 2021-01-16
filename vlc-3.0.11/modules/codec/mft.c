@@ -55,6 +55,9 @@
 #include <mferror.h>
 #include <mfobjects.h>
 
+DEFINE_GUID(IID_IMFMediaEventGenerator, 0x2CD0BD52, 0xBCD5, 0x4B89, 0xB6, 0x2C, 0xEA, 0xDC, 0x0C, 0x03, 0x1E, 0x7D);
+DEFINE_GUID(IID_IMFTransform, 0xbf94c121, 0x5b05, 0x4e6f, 0x80, 0x00, 0xba, 0x59, 0x89, 0x61, 0x41, 0x4d);
+
 static int  Open(vlc_object_t *);
 static void Close(vlc_object_t *);
 
@@ -463,6 +466,7 @@ static int AllocateInputSample(decoder_t *p_dec, DWORD stream_id, IMFSample** re
     decoder_sys_t *p_sys = p_dec->p_sys;
     MFHandle *mf = &p_sys->mf_handle;
     HRESULT hr;
+    IMFMediaBuffer* input_media_buffer = NULL;
 
     *result = NULL;
 
@@ -477,7 +481,6 @@ static int AllocateInputSample(decoder_t *p_dec, DWORD stream_id, IMFSample** re
     if (FAILED(hr))
         goto error;
 
-    IMFMediaBuffer *input_media_buffer = NULL;
     DWORD allocation_size = __MAX(input_info.cbSize, size);
     hr = mf->fptr_MFCreateMemoryBuffer(allocation_size, &input_media_buffer);
     if (FAILED(hr))

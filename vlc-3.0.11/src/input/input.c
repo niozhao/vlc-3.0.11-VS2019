@@ -1856,7 +1856,8 @@ static void ControlNav( input_thread_t *p_input, int i_type )
         return; /* The demux handled the navigation control */
 
     /* Handle Up/Down/Left/Right if the demux can't navigate */
-    vlc_viewpoint_t vp = {};
+    vlc_viewpoint_t vp;
+    vp.fov = vp.pitch = vp.roll = vp.yaw = 0.0f;
     int vol_direction = 0;
     int seek_direction = 0;
     switch( i_type )
@@ -3352,8 +3353,8 @@ static int input_SlaveSourceAdd( input_thread_t *p_input,
                                  unsigned i_flags )
 {
     vlc_value_t count;
-    const char *psz_es;
-    const char *psz_forced_demux;
+    const char *psz_es = NULL;
+    const char *psz_forced_demux = NULL;
     const bool b_can_fail = i_flags & SLAVE_ADD_CANFAIL;
     const bool b_forced = i_flags & SLAVE_ADD_FORCED;
     const bool b_set_time = i_flags & SLAVE_ADD_SET_TIME;

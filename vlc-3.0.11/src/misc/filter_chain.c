@@ -215,9 +215,16 @@ static filter_t *filter_chain_AppendInner( filter_chain_t *chain,
         /* Append the "chain" video filter to the current list.
          * This filter will be used if the requested filter fails to load.
          * It will then try to add a video converter before. */
+#ifdef __STDC_NO_VLA__
+        char* name_chained = (char*)malloc(strlen(name) + sizeof(",chain"));
+#else
         char name_chained[strlen(name) + sizeof(",chain")];
+#endif
         sprintf( name_chained, "%s,chain", name );
         filter->p_module = module_need( filter, capability, name_chained, true );
+#ifdef __STDC_NO_VLA__
+        free(name_chained);
+#endif
     }
     else
         filter->p_module = module_need( filter, capability, name, name != NULL );

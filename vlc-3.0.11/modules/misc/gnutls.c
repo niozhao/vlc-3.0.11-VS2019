@@ -122,7 +122,11 @@ static ssize_t vlc_gnutls_writev(gnutls_transport_ptr_t ptr,
         return 0;
 
     vlc_tls_t *sock = ptr;
+#ifdef __STDC_NO_VLA__
+    struct iovec* iov = (struct iovec*)malloc(sizeof(struct iovec) * iovcnt); 
+#else
     struct iovec iov[iovcnt];
+#endif
 
     for (int i = 0; i < iovcnt; i++)
     {
@@ -130,7 +134,11 @@ static ssize_t vlc_gnutls_writev(gnutls_transport_ptr_t ptr,
         iov[i].iov_len = giov[i].iov_len;
     }
 
-    return sock->writev(sock, iov, iovcnt);
+    ssize_t res = sock->writev(sock, iov, iovcnt);
+#ifdef __STDC_NO_VLA__
+    free(iov);
+#endif
+    return res;
 }
 
 static int gnutls_GetFD(vlc_tls_t *tls)

@@ -155,7 +155,11 @@ int vlc_sdp_Start(struct vlc_memstream *restrict stream,
     if (cfglen >= 128)
         return -1;
 
+#ifdef __STDC_NO_VLA__
+    char* varname = (char*)malloc(cfglen + sizeof("description"));
+#else
     char varname[cfglen + sizeof ("description")];
+#endif
     char *subvar = varname + cfglen;
 
     strcpy(varname, cfgpref);
@@ -258,10 +262,16 @@ int vlc_sdp_Start(struct vlc_memstream *restrict stream,
         vlc_memstream_printf(stream, "a=x-plgroup:%s\r\n", str);
         free(str);
     }
+#ifdef __STDC_NO_VLA__
+    free(varname);
+#endif
     return 0;
 error:
     free(str);
     if (vlc_memstream_close(stream) == 0)
         free(stream->ptr);
+#ifdef __STDC_NO_VLA__
+	free(varname);
+#endif
     return -1;
 }

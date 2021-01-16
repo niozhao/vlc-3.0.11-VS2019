@@ -189,8 +189,13 @@ static int RenderPic( filter_t *filter, picture_t *p_outpic, picture_t *src,
                           sys->decoder_caps.NumForwardRefSamples;
     HRESULT hr;
     DXVA2_VideoProcessBltParams params;
+#ifdef __STDC_NO_VLA__
+	DXVA2_VideoSample* samples = (DXVA2_VideoSample*)malloc(sizeof(DXVA2_VideoSample) * i_samples);
+    picture_t** pictures = (picture_t**)malloc(sizeof(picture_t*) * i_samples);
+#else
     DXVA2_VideoSample samples[i_samples];
     picture_t         *pictures[i_samples];
+#endif
     D3DSURFACE_DESC srcDesc, dstDesc;
     RECT area;
 
@@ -243,13 +248,26 @@ static int RenderPic( filter_t *filter, picture_t *p_outpic, picture_t *src,
                                                  &params,
                                                  samples,
                                                  i_samples, NULL );
-    if (FAILED(hr))
+    if (FAILED(hr)) 
+    {
+#ifdef __STDC_NO_VLA__
+        free(samples);
+        free(pictures);
+#endif
         return VLC_EGENERIC;
+    }
+
 
     hr = IDirect3DDevice9_StretchRect( sys->d3d_dev.dev,
                                        sys->hw_surface, NULL,
                                        p_outpic->p_sys->surface, NULL,
                                        D3DTEXF_NONE);
+
+#ifdef __STDC_NO_VLA__
+	free(samples);
+	free(pictures);
+#endif
+
     if (FAILED(hr))
         return VLC_EGENERIC;
 

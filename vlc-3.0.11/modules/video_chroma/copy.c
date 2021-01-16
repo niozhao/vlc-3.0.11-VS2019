@@ -556,8 +556,8 @@ static void SSE_SplitPlanes(uint8_t *dstu, size_t dstu_pitch,
     }
 }
 
-static void SSE_Copy420_P_to_P(picture_t *dst, const uint8_t *src[static 3],
-                               const size_t src_pitch[static 3], unsigned height,
+static void SSE_Copy420_P_to_P(picture_t *dst, const uint8_t *src[/*static */3],
+                               const size_t src_pitch[/*static */3], unsigned height,
                                const copy_cache_t *cache)
 {
     for (unsigned n = 0; n < 3; n++) {
@@ -571,8 +571,8 @@ static void SSE_Copy420_P_to_P(picture_t *dst, const uint8_t *src[static 3],
 }
 
 
-static void SSE_Copy420_SP_to_SP(picture_t *dst, const uint8_t *src[static 2],
-                                 const size_t src_pitch[static 2], unsigned height,
+static void SSE_Copy420_SP_to_SP(picture_t *dst, const uint8_t *src[/*static */2],
+                                 const size_t src_pitch[/*static */2], unsigned height,
                                  const copy_cache_t *cache)
 {
     SSE_CopyPlane(dst->p[0].p_pixels, dst->p[0].i_pitch, src[0], src_pitch[0],
@@ -583,8 +583,8 @@ static void SSE_Copy420_SP_to_SP(picture_t *dst, const uint8_t *src[static 2],
 }
 
 static void
-SSE_Copy420_SP_to_P(picture_t *dest, const uint8_t *src[static 2],
-                    const size_t src_pitch[static 2], unsigned int height,
+SSE_Copy420_SP_to_P(picture_t *dest, const uint8_t *src[/*static */2],
+                    const size_t src_pitch[/*static */2], unsigned int height,
                     uint8_t pixel_size, int bitshift, const copy_cache_t *cache)
 {
     SSE_CopyPlane(dest->p[0].p_pixels, dest->p[0].i_pitch,
@@ -597,8 +597,8 @@ SSE_Copy420_SP_to_P(picture_t *dest, const uint8_t *src[static 2],
     asm volatile ("emms");
 }
 
-static void SSE_Copy420_P_to_SP(picture_t *dst, const uint8_t *src[static 3],
-                                const size_t src_pitch[static 3],
+static void SSE_Copy420_P_to_SP(picture_t *dst, const uint8_t *src[/*static */3],
+                                const size_t src_pitch[/*static */3],
                                 unsigned height, uint8_t pixel_size,
                                 int bitshift, const copy_cache_t *cache)
 {
@@ -663,8 +663,8 @@ void CopyPacked(picture_t *dst, const uint8_t *src, const size_t src_pitch,
                   height, 0);
 }
 
-void Copy420_SP_to_SP(picture_t *dst, const uint8_t *src[static 2],
-                      const size_t src_pitch[static 2], unsigned height,
+void Copy420_SP_to_SP(picture_t *dst, const uint8_t *src[2],
+                      const size_t src_pitch[2], unsigned height,
                       const copy_cache_t *cache)
 {
     ASSERT_2PLANES;
@@ -740,8 +740,8 @@ static void SplitPlanes16(uint8_t *dstu, size_t dstu_pitch,
         SPLIT_PLANES_SHIFTL(uint16_t, 4, (-bitshift) & 0xf);
 }
 
-void Copy420_SP_to_P(picture_t *dst, const uint8_t *src[static 2],
-                     const size_t src_pitch[static 2], unsigned height,
+void Copy420_SP_to_P(picture_t *dst, const uint8_t *src[/*static */2],
+                     const size_t src_pitch[/*static */2], unsigned height,
                      const copy_cache_t *cache)
 {
     ASSERT_2PLANES;
@@ -759,8 +759,8 @@ void Copy420_SP_to_P(picture_t *dst, const uint8_t *src[static 2],
                 src[1], src_pitch[1], (height+1)/2);
 }
 
-void Copy420_16_SP_to_P(picture_t *dst, const uint8_t *src[static 2],
-                        const size_t src_pitch[static 2], unsigned height,
+void Copy420_16_SP_to_P(picture_t *dst, const uint8_t *src[/*static */2],
+                        const size_t src_pitch[/*static */2], unsigned height,
                         int bitshift, const copy_cache_t *cache)
 {
     ASSERT_2PLANES;
@@ -816,8 +816,8 @@ void Copy420_16_SP_to_P(picture_t *dst, const uint8_t *src[static 2],
     } \
 }while(0)
 
-void Copy420_P_to_SP(picture_t *dst, const uint8_t *src[static 3],
-                     const size_t src_pitch[static 3], unsigned height,
+void Copy420_P_to_SP(picture_t *dst, const uint8_t *src[/*static */3],
+                     const size_t src_pitch[/*static */3], unsigned height,
                      const copy_cache_t *cache)
 {
     ASSERT_3PLANES;
@@ -844,8 +844,8 @@ void Copy420_P_to_SP(picture_t *dst, const uint8_t *src[static 3],
     INTERLEAVE_UV();
 }
 
-void Copy420_16_P_to_SP(picture_t *dst, const uint8_t *src[static 3],
-                        const size_t src_pitch[static 3], unsigned height,
+void Copy420_16_P_to_SP(picture_t *dst, const uint8_t *src[/*static */3],
+                        const size_t src_pitch[/*static */3], unsigned height,
                         int bitshift, const copy_cache_t *cache)
 {
     ASSERT_3PLANES;
@@ -879,8 +879,8 @@ void Copy420_16_P_to_SP(picture_t *dst, const uint8_t *src[static 3],
         INTERLEAVE_UV_SHIFTL((-bitshift) & 0xf);
 }
 
-void CopyFromI420_10ToP010(picture_t *dst, const uint8_t *src[static 3],
-                           const size_t src_pitch[static 3],
+void CopyFromI420_10ToP010(picture_t *dst, const uint8_t *src[/*static */3],
+                           const size_t src_pitch[/*static */3],
                            unsigned height, const copy_cache_t *cache)
 {
     (void) cache;
@@ -920,8 +920,8 @@ void CopyFromI420_10ToP010(picture_t *dst, const uint8_t *src[static 3],
     }
 }
 
-void Copy420_P_to_P(picture_t *dst, const uint8_t *src[static 3],
-                    const size_t src_pitch[static 3], unsigned height,
+void Copy420_P_to_P(picture_t *dst, const uint8_t *src[/*static */3],
+                    const size_t src_pitch[/*static */3], unsigned height,
                     const copy_cache_t *cache)
 {
     ASSERT_3PLANES;

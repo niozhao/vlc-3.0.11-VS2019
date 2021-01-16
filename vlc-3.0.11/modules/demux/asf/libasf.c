@@ -557,8 +557,10 @@ static int ASF_ReadObject_stream_properties( stream_t *s, asf_object_t *p_obj )
     asf_object_stream_properties_t *p_sp = &p_obj->stream_properties;
     const uint8_t *p_peek;
 
-#if UINT64_MAX > SSIZE_MAX
-    if( p_sp->i_object_size > SSIZE_MAX )
+//#if UINT64_MAX > SSIZE_MAX
+//    if( p_sp->i_object_size > SSIZE_MAX )
+#if UINT64_MAX > SIZE_MAX
+		if (p_sp->i_object_size > SIZE_MAX)
     {
         msg_Err( s, "unable to peek: object size is too large" );
         return VLC_EGENERIC;

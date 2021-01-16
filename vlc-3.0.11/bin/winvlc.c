@@ -114,7 +114,7 @@ static void PrioritizeSystem32(void)
 /*
  * Export WinMain to force GNU ld to generate a .reloc section
  */
-__declspec(dllexport)
+/*__declspec(dllexport)*/
 int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
                     LPSTR lpCmdLine,
                     int nCmdShow )
@@ -179,7 +179,11 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
     if (wargv == NULL)
         return 1;
 
+#ifdef __STDC_NO_VLA__
+    char** argv = (char**)malloc(sizeof(char*) * (argc + 3));
+#elif
     char *argv[argc + 3];
+#endif
     BOOL crash_handling = TRUE;
     int j = 0;
     char *lang = NULL;
@@ -272,7 +276,9 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 #endif
     for (int i = 0; i < argc; i++)
         free (argv[i]);
-
+#ifdef __STDC_NO_VLA__
+    free(argv);
+#endif
     (void)hInstance; (void)hPrevInstance; (void)lpCmdLine; (void)nCmdShow;
     return 0;
 }

@@ -276,7 +276,7 @@ static int vlclua_node_add_subitem( lua_State *L )
                                      vlclua_sd_create_item( p_sd, L ) );
 }
 
-static const luaL_Reg vlclua_node_reg[];
+static const luaL_Reg vlclua_node_reg[3];
 
 static input_item_t *vlclua_sd_create_node( services_discovery_t *p_sd,
                                             lua_State *L )

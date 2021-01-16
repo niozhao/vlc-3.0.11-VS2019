@@ -1281,16 +1281,32 @@ static int CdTextRead( vlc_object_t *p_object, const vcddev_t *p_vcddev,
     TOCEx.Format = CDROM_READ_TOC_EX_FORMAT_CDTEXT;
 
     const int i_header_size = __MAX( 4, MINIMUM_CDROM_READ_TOC_EX_SIZE );
+#ifdef __STDC_NO_VLA__
+    uint8_t* header = (uint8_t*)malloc(i_header_size * sizeof(uint8_t));
+#else
     uint8_t header[i_header_size];
+#endif
     DWORD i_read;
     if( !DeviceIoControl( p_vcddev->h_device_handle, IOCTL_CDROM_READ_TOC_EX,
                           &TOCEx, sizeof(TOCEx), header, i_header_size, &i_read, 0 ) )
+    {
+#ifdef __STDC_NO_VLA__
+        free(header);
+#endif
         return -1;
+    }
 
     const int i_text = 2 + (header[0] << 8) + header[1];
     if( i_text <= 4 )
-        return -1;
-
+    {
+#ifdef __STDC_NO_VLA__
+		free(header);
+#endif
+		return -1;
+    }
+#ifdef __STDC_NO_VLA__
+	free(header);
+#endif
     /* Read complete CD-TEXT */
     uint8_t *p_text = calloc( 1, i_text );
     if( !p_text )

@@ -254,6 +254,7 @@ void matroska_segment_c::ParseTrackEntry( const KaxTrackEntry *m )
       this, p_track, &sys.demuxer, bSupported, 3, { }
     };
 
+    typedef DispatcherTag<258> MetaDataHandlers_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, MetaDataHandlers, MetaDataCapture )
     {
         MKV_SWITCH_INIT();
@@ -949,6 +950,7 @@ void matroska_segment_c::ParseTracks( KaxTracks *tracks )
       this, &sys.demuxer
     };
 
+    typedef DispatcherTag<954> TrackHandlers_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, TrackHandlers, struct Capture )
     {
         MKV_SWITCH_INIT();
@@ -1002,6 +1004,7 @@ void matroska_segment_c::ParseInfo( KaxInfo *info )
 
     } captures = { &sys.demuxer, this, el, m, i_upper_level };
 
+    typedef DispatcherTag<1008> InfoHandlers_tag_t;
     MKV_SWITCH_CREATE(EbmlTypeDispatcher, InfoHandlers, InfoHandlerPayload)
     {
         MKV_SWITCH_INIT();
@@ -1089,6 +1092,7 @@ void matroska_segment_c::ParseInfo( KaxInfo *info )
         }
         E_CASE( KaxChapterTranslate, trans )
         {
+            typedef DispatcherTag<1096> TranslationHandler_tag_t;
             MKV_SWITCH_CREATE( EbmlTypeDispatcher, TranslationHandler, chapter_translation_c* )
             {
                 MKV_SWITCH_INIT();
@@ -1166,6 +1170,7 @@ void matroska_segment_c::ParseChapterAtom( int i_level, KaxChapterAtom *ca, chap
         i_level, 4
     };
 
+    typedef DispatcherTag<1173> ChapterAtomHandlers_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, ChapterAtomHandlers, ChapterPayload )
     {
         MKV_SWITCH_INIT();
@@ -1379,6 +1384,7 @@ void matroska_segment_c::ParseChapters( KaxChapters *chapters )
         msg_Err( &sys.demuxer, "Error while reading chapters" );
         return;
     }
+    typedef DispatcherTag<1387> KaxChapterHandler_tag_t;
     MKV_SWITCH_CREATE( EbmlTypeDispatcher, KaxChapterHandler, matroska_segment_c )
     {
         MKV_SWITCH_INIT();
@@ -1391,6 +1397,7 @@ void matroska_segment_c::ParseChapters( KaxChapters *chapters )
 
             } data = { &vars, &vars.sys.demuxer, new chapter_edition_c };
 
+            typedef DispatcherTag<1400> KaxEditionHandler_tag_t;
             MKV_SWITCH_CREATE( EbmlTypeDispatcher, KaxEditionHandler, EditionPayload )
             {
                 MKV_SWITCH_INIT();
@@ -1516,6 +1523,7 @@ bool matroska_segment_c::TrackInit( mkv_track_t * p_tk )
         this, p_tk, &p_tk->fmt, &sys.demuxer
     };
 
+    typedef DispatcherTag<1524> TrackCodecHandlers_tag_t;
     MKV_SWITCH_CREATE( StringDispatcher, TrackCodecHandlers, HandlerPayload )
     {
         MKV_SWITCH_INIT();
@@ -1536,7 +1544,7 @@ bool matroska_segment_c::TrackInit( mkv_track_t * p_tk )
                 vars.p_fmt->i_codec       = GetFOURCC( &p_bih->biCompression );
 
                 /* Very unlikely yet possible: bug #5659*/
-                const unsigned int min_extra = std::min(GetDWLE( &p_bih->biSize ), vars.p_tk->i_extra_data);
+                const unsigned int min_extra = (std::min)(GetDWLE( &p_bih->biSize ), vars.p_tk->i_extra_data);
                 if ( min_extra > sizeof( VLC_BITMAPINFOHEADER ))
                 {
                     vars.p_fmt->i_extra = min_extra - sizeof( VLC_BITMAPINFOHEADER );

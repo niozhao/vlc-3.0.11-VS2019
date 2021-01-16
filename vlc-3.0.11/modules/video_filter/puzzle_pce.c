@@ -461,7 +461,7 @@ void puzzle_drw_complex_pce_in_plane( filter_t *p_filter, picture_t *p_pic_in, p
     piece_shape_t *ps_btm_shape =   &p_sys->ps_pieces_shapes[ps_piece->i_btm_shape][i_plane];
     piece_shape_t *ps_right_shape = &p_sys->ps_pieces_shapes[ps_piece->i_right_shape][i_plane];
     piece_shape_t *ps_left_shape =  &p_sys->ps_pieces_shapes[ps_piece->i_left_shape][i_plane];
-    piece_shape_t *ps_shape;
+    piece_shape_t* ps_shape = NULL;
 
     int32_t i_min_y = ps_top_shape->i_first_row_offset;
     int32_t i_max_y = ps_btm_shape->i_first_row_offset + ps_btm_shape->i_row_nbr - 1;

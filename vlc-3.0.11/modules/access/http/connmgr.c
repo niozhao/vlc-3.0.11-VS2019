@@ -213,8 +213,8 @@ static struct vlc_http_msg *vlc_http_request(struct vlc_http_mgr *mgr,
     if (resp != NULL)
         return resp;
 
-    struct vlc_http_conn *conn;
-    struct vlc_http_stream *stream;
+    struct vlc_http_conn *conn = NULL;
+    struct vlc_http_stream *stream = NULL;
 
     char *proxy = vlc_http_proxy_find(host, port, false);
     if (proxy != NULL)

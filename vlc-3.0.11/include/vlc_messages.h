@@ -86,7 +86,7 @@ VLC_API void vlc_vaLog(vlc_object_t *obj, int prio, const char *module,
 #define msg_Dbg(p_this, ...) \
     msg_Generic(p_this, VLC_MSG_DBG, __VA_ARGS__)
 
-extern const char vlc_module_name[];
+VLC_EXTERN const char vlc_module_name[];
 
 VLC_API const char *vlc_strerror(int);
 VLC_API const char *vlc_strerror_c(int);

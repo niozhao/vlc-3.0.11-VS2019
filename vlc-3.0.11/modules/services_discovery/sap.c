@@ -533,7 +533,11 @@ static void *Run( void *data )
     {
         vlc_restorecancel (canc);
         unsigned n = p_sd->p_sys->i_fd;
+#ifdef __STDC_NO_VLA__
+        struct pollfd* ufd = (struct pollfd*)malloc(n * sizeof(struct pollfd));
+#else
         struct pollfd ufd[n];
+#endif
 
         for (unsigned i = 0; i < n; i++)
         {
@@ -566,7 +570,9 @@ static void *Run( void *data )
                 }
             }
         }
-
+#ifdef __STDC_NO_VLA__
+        free(ufd);
+#endif
         mtime_t now = mdate();
 
         /* A 1 hour timeout correspond to the RFC Implicit timeout.
@@ -1180,6 +1186,9 @@ static sdp_t *ParseSDP (vlc_object_t *p_obj, const char *psz_sdp)
     unsigned glob_count = 1;
     int port = 0;
 
+#ifdef __STDC_NO_VLA__
+    char* line = NULL;
+#endif
     /* TODO: use iconv and charset attribute instead of EnsureUTF8 */
     while (*psz_sdp)
     {
@@ -1187,8 +1196,16 @@ static sdp_t *ParseSDP (vlc_object_t *p_obj, const char *psz_sdp)
         size_t linelen = strcspn(psz_sdp, "\n");
         if (psz_sdp[linelen] == '\0')
             goto error;
-
+#ifdef __STDC_NO_VLA__
+        if (line)
+        {
+            free(line);
+            line = NULL;
+        }   
+        line = (char*)malloc(sizeof(char) * (linelen + 1));
+#else
         char line[linelen + 1];
+#endif
         memcpy (line, psz_sdp, linelen);
         line[linelen] = '\0';
 
@@ -1463,10 +1480,18 @@ static sdp_t *ParseSDP (vlc_object_t *p_obj, const char *psz_sdp)
         }
     }
 
+#ifdef __STDC_NO_VLA__
+    if (line)
+        free(line);
+#endif
     return p_sdp;
 
 error:
     FreeSDP (p_sdp);
+#ifdef __STDC_NO_VLA__
+	if (line)
+		free(line);
+#endif
     return NULL;
 }
 

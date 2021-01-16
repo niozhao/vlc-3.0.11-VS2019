@@ -66,9 +66,10 @@ void system_Init(void)
 #if !VLC_WINSTORE_APP
 # if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
     if (GetProcAddress(GetModuleHandle(TEXT("kernel32.dll")),
-                                       "SetDefaultDllDirectories") != NULL)
+        "SetDefaultDllDirectories") != NULL)
 # endif /* FIXME: not reentrant */
-        LoadLibraryFlags = LOAD_LIBRARY_SEARCH_SYSTEM32;
+        //LoadLibraryFlags = LOAD_LIBRARY_SEARCH_SYSTEM32;   //will cause libqt_plugins.dll[need Qt5Cored.dll...] load fail!
+        LoadLibraryFlags = LOAD_LIBRARY_SEARCH_DEFAULT_DIRS;
 #endif
 }
 

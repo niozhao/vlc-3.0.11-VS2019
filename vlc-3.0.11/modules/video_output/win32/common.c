@@ -36,6 +36,7 @@
 #include <vlc_vout_display.h>
 
 #include <windows.h>
+#include <VersionHelpers.h>
 #include <assert.h>
 
 #define COBJMACROS
@@ -484,9 +485,11 @@ static void CommonChangeThumbnailClip(vout_display_t *vd, bool show)
     vout_display_sys_t *sys = vd->sys;
 
     /* Windows 7 taskbar thumbnail code */
-    OSVERSIONINFO winVer;
+    /*OSVERSIONINFO winVer;
     winVer.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
     if (!GetVersionEx(&winVer) || winVer.dwMajorVersion <= 5)
+        return;*/
+    if (!IsWindowsVistaOrGreater())  //Windows Vista is major version is 6
         return;
 
     if( FAILED(CoInitializeEx(NULL, COINIT_MULTITHREADED)) )

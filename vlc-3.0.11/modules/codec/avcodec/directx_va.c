@@ -69,7 +69,8 @@ static const int PROF_VP9_10[]      = { FF_PROFILE_VP9_2, FF_PROFILE_UNKNOWN };
 #if defined(WINAPI_FAMILY)
 # undef WINAPI_FAMILY
 #endif
-#define WINAPI_FAMILY WINAPI_PARTITION_DESKTOP
+//#define WINAPI_FAMILY WINAPI_PARTITION_DESKTOP
+#define WINAPI_FAMILY WINAPI_FAMILY_DESKTOP_APP
 
 #include <d3d9.h>
 #include <dxva2api.h>
@@ -78,7 +79,8 @@ static const int PROF_VP9_10[]      = { FF_PROFILE_VP9_2, FF_PROFILE_UNKNOWN };
 
 /* dxva2api.h GUIDs: http://msdn.microsoft.com/en-us/library/windows/desktop/ms697067(v=vs100).aspx
  * assume that they are declared in dxva2api.h */
-#define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)
+//#define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)
+#define MS_GUID DEFINE_GUID
 
 #ifdef __MINGW32__
 # include <_mingw.h>

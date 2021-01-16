@@ -104,7 +104,7 @@ tdestroy_recurse(node_t* root, void (*free_action)(void *))
 }
 
 void
-tdestroy(vrootp, freefct)
+tdestroy_1(vrootp, freefct)
        void *vrootp;
        void (*freefct)(void *);
 {

@@ -481,7 +481,7 @@ block_t * HTTPChunkBufferedSource::read(size_t readsize)
     size_t copied = 0;
     while(buffered && readsize)
     {
-        const size_t toconsume = std::min(p_head->i_buffer, readsize);
+        const size_t toconsume = (std::min)(p_head->i_buffer, readsize);
         memcpy(&p_block->p_buffer[copied], p_head->p_buffer, toconsume);
         copied += toconsume;
         readsize -= toconsume;

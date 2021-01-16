@@ -46,7 +46,7 @@
 
 #if defined(CAN_COMPILE_SSE2) || defined(HAVE_SSE2_INTRINSICS)
 
-__attribute__ ((__target__ ("sse2")))
+/*__attribute__ ((__target__ ("sse2")))*/
 static inline const uint8_t * startcode_FindAnnexB_SSE2( const uint8_t *p, const uint8_t *end )
 {
     /* First align to 16 */
@@ -64,7 +64,7 @@ static inline const uint8_t * startcode_FindAnnexB_SSE2( const uint8_t *p, const
     if( alignedend > p )
     {
 #ifdef CAN_COMPILE_SSE2
-        asm volatile(
+        asm volatile(    //reference: http://yiiyee.cn/blog/2013/08/26/asm/
             "pxor   %%xmm1, %%xmm1\n"
             ::: "xmm1"
         );
@@ -116,7 +116,7 @@ static inline const uint8_t * startcode_FindAnnexB_SSE2( const uint8_t *p, const
 static inline const uint8_t * startcode_FindAnnexB( const uint8_t *p, const uint8_t *end )
 {
 #if defined(CAN_COMPILE_SSE2) || defined(HAVE_SSE2_INTRINSICS)
-    if (vlc_CPU_SSE2())
+    if (/*vlc_CPU_SSE2()*/true)
         return startcode_FindAnnexB_SSE2(p, end);
 #endif
     const uint8_t *a = p + 4 - ((intptr_t)p & 3);

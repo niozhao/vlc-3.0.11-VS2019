@@ -303,7 +303,7 @@ httpd_FileCallBack(httpd_callback_sys_t *p_sys, httpd_client_t *cl,
                     httpd_message_t *answer, const httpd_message_t *query)
 {
     httpd_file_t *file = (httpd_file_t*)p_sys;
-    uint8_t **pp_body, *p_body;
+    uint8_t **pp_body, *p_body = NULL;
     int *pi_body, i_body;
 
     if (!answer || !query )
@@ -1682,7 +1682,12 @@ auth_failed:
 
 static void httpdLoop(httpd_host_t *host)
 {
-    struct pollfd ufd[host->nfd + host->i_client];
+    int arraySize = host->nfd + host->i_client;
+#ifdef __STDC_NO_VLA__
+    struct pollfd* ufd = (struct pollfd*)malloc(arraySize * sizeof(struct pollfd));
+#else
+    struct pollfd ufd[arraySize];
+#endif
     unsigned nfd;
     for (nfd = 0; nfd < host->nfd; nfd++) {
         ufd[nfd].fd = host->fds[nfd];
@@ -1715,7 +1720,7 @@ static void httpdLoop(httpd_host_t *host)
         }
 
         struct pollfd *pufd = ufd + nfd;
-        assert (pufd < ufd + (sizeof (ufd) / sizeof (ufd[0])));
+        assert (pufd < ufd + arraySize);
 
         pufd->fd = vlc_tls_GetFD(cl->sock);
         pufd->events = pufd->revents = 0;
@@ -2033,6 +2038,10 @@ static void httpdLoop(httpd_host_t *host)
     }
 
     vlc_restorecancel(canc);
+
+#ifdef __STDC_NO_VLA__
+    free(ufd);
+#endif
 }
 
 static void* httpd_HostThread(void *data)
