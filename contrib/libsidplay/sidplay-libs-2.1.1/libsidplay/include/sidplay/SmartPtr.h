@@ -209,19 +209,29 @@ class SmartPtr_sidtt : public SmartPtrBase_sidtt<T>
 
 	void setBuffer(T* buffer, ulint_smartpt bufferLen)
 	{
-		if ( bufferLen >= 1 )
+		T* tmpBuffer;
+		T* tmpEnd;
+		ulint_smartpt tmpLen;
+		bool tmpStatus;
+		if (bufferLen >= 1)
 		{
-			pBufCurrent = ( bufBegin = buffer );
-			bufEnd = bufBegin + bufferLen;
-			bufLen = bufferLen;
-			status = true;
+			tmpBuffer = buffer;
+			tmpEnd = tmpBuffer + bufferLen;
+			tmpLen = bufferLen;
+			tmpStatus = true;
 		}
 		else
 		{
-			pBufCurrent = bufBegin = bufEnd = 0;
-			bufLen = 0;
-			status = false;
+			tmpBuffer = NULL;
+			tmpEnd = NULL;
+			tmpLen = 0;
+			tmpStatus = false;
 		}
+		SmartPtrBase_sidtt<T>::pBufCurrent = tmpBuffer;
+		SmartPtrBase_sidtt<T>::bufBegin = tmpBuffer;
+		SmartPtrBase_sidtt<T>::bufEnd = tmpEnd;
+		SmartPtrBase_sidtt<T>::bufLen = tmpLen;
+		SmartPtrBase_sidtt<T>::status = tmpStatus;
 	}
 };
 

@@ -23,19 +23,19 @@
 /* #undef CAN_COMPILE_C_ALTIVEC */
 
 /* Define to 1 inline MMX assembly is available. */
-#define CAN_COMPILE_MMX 1
+//#define CAN_COMPILE_MMX 1
 
 /* Define to 1 if MMX EXT inline assembly is available. */
-#define CAN_COMPILE_MMXEXT 1
+//#define CAN_COMPILE_MMXEXT 1
 
 /* Define to 1 if SSE inline assembly is available. */
 #define CAN_COMPILE_SSE 1
 
 /* Define to 1 if SSE2 inline assembly is available. */
-#define CAN_COMPILE_SSE2 1
+//#define CAN_COMPILE_SSE2 1   disable now!
 
 /* Define to 1 if SSE3 inline assembly is available. */
-#define CAN_COMPILE_SSE3 1
+//#define CAN_COMPILE_SSE3 1   disable now!
 
 /* Define to 1 if SSE4A inline assembly is available. */
 #define CAN_COMPILE_SSE4A 1
@@ -109,7 +109,7 @@
 /* #undef HAVE_ARPA_INET_H */
 
 /* Define to 1 if you have asprintf function */
-#define HAVE_ASPRINTF 1
+//#define HAVE_ASPRINTF 1
 
 /* Define to 1 if you have the `atof' function. */
 #define HAVE_ATOF 1
@@ -118,7 +118,7 @@
 #define HAVE_ATOLL 1
 
 /* Support for __attribute__((packed)) for structs */
-#define HAVE_ATTRIBUTE_PACKED 1
+//#define HAVE_ATTRIBUTE_PACKED 1   GCC特有的语法
 
 /* Define to 1 if you have the <AudioToolbox/AudioToolbox.h> header file. */
 /* #undef HAVE_AUDIOTOOLBOX_AUDIOTOOLBOX_H */
@@ -253,13 +253,13 @@
 #define HAVE_GETTEXT 1
 
 /* Define to 1 if you have the `gettimeofday' function. */
-#define HAVE_GETTIMEOFDAY 1
+//#define HAVE_GETTIMEOFDAY 1
 
 /* Define to 1 if you have the <GL/wglew.h> header file. */
 #define HAVE_GL_WGLEW_H 1
 
 /* Define to 1 if you have gmtime_r function */
-#define HAVE_GMTIME_R 1
+//#define HAVE_GMTIME_R 1
 
 /* Define if you have the iconv() function and it works. */
 #define HAVE_ICONV 1
@@ -274,10 +274,11 @@
 /* #undef HAVE_IF_NAMEINDEX */
 
 /* Define to 1 if you have if_nametoindex function */
-/* #undef HAVE_IF_NAMETOINDEX */
+#define HAVE_IF_NAMETOINDEX 1
 
 /* Define to 1 if you have inet_pton function */
 /* #undef HAVE_INET_PTON */
+#define HAVE_INET_PTON 1
 
 /* Define to 1 if you have the <interface/mmal/mmal.h> header file. */
 /* #undef HAVE_INTERFACE_MMAL_MMAL_H */
@@ -391,7 +392,7 @@
 #define HAVE_MAD_H 1
 
 /* Define to 1 if the system has the type `max_align_t'. */
-#define HAVE_MAX_ALIGN_T 1
+//#define HAVE_MAX_ALIGN_T 1
 
 /* Define to 1 if you have the `memalign' function. */
 /* #undef HAVE_MEMALIGN */
@@ -409,7 +410,7 @@
 /* #undef HAVE_MMAP */
 
 /* Define to 1 if MMX intrinsics are available. */
-#define HAVE_MMX_INTRINSICS 1
+#define HAVE_MMX_INTRINSICS 
 
 /* Define to 1 if you have the <mpcdec/mpcdec.h> header file. */
 /* #undef HAVE_MPCDEC_MPCDEC_H */
@@ -500,7 +501,7 @@
 /* #undef HAVE_SCSIREQ_IN_SYS_SCSIIO_H */
 
 /* Define to 1 if you have the <search.h> header file. */
-#define HAVE_SEARCH_H 1
+//#define HAVE_SEARCH_H 1
 
 /* Define to 1 if you have the `sendmsg' function. */
 /* #undef HAVE_SENDMSG */
@@ -512,7 +513,7 @@
 #define HAVE_SETLOCALE 1
 
 /* Define to 1 if you have the sincos function. */
-#define HAVE_SINCOS 1
+//#define HAVE_SINCOS 1
 
 /* Define to 1 if you have the <SLES/OpenSLES.h> header file. */
 /* #undef HAVE_SLES_OPENSLES_H */
@@ -536,7 +537,7 @@
 #define HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the `strcasecmp' function. */
-#define HAVE_STRCASECMP 1
+//#define HAVE_STRCASECMP 1
 
 /* Define to 1 if you have the `strcasestr' function. */
 /* #undef HAVE_STRCASESTR */
@@ -555,7 +556,7 @@
 #define HAVE_STRICMP 1
 
 /* Define to 1 if you have the <strings.h> header file. */
-#define HAVE_STRINGS_H 1
+//#define HAVE_STRINGS_H 1
 
 /* Define to 1 if you have the <string.h> header file. */
 #define HAVE_STRING_H 1
@@ -585,7 +586,7 @@
 #define HAVE_STRTOF 1
 
 /* Define to 1 if you have the `strtok_r' function. */
-#define HAVE_STRTOK_R 1
+//#define HAVE_STRTOK_R 1
 
 /* Define to 1 if you have the `strtoll' function. */
 #define HAVE_STRTOLL 1
@@ -595,6 +596,7 @@
 
 /* Define to 1 if the system has the type `struct pollfd'. */
 /* #undef HAVE_STRUCT_POLLFD */
+#define HAVE_STRUCT_POLLFD 1
 
 /* Define to 1 if the system has the type `struct timespec'. */
 #define HAVE_STRUCT_TIMESPEC 1
@@ -645,7 +647,7 @@
 /* #undef HAVE_THREADS_H */
 
 /* Defined to 1 if C11 _Thread_local storage qualifier is supported */
-#define HAVE_THREAD_LOCAL 1
+//#define HAVE_THREAD_LOCAL 1
 
 /* Define if libtiger is available. */
 /* #undef HAVE_TIGER */
@@ -655,6 +657,7 @@
 
 /* Define to 1 if you have the `timespec_get' function. */
 /* #undef HAVE_TIMESPEC_GET */
+#define HAVE_TIMESPEC_GET 1
 
 /* Define to 1 if vlc is built against Tizen SDK */
 /* #undef HAVE_TIZEN_SDK */
@@ -675,7 +678,7 @@
 /* #undef HAVE_VALGRIND_VALGRIND_H */
 
 /* Define to 1 if you have vasprintf function */
-#define HAVE_VASPRINTF 1
+//#define HAVE_VASPRINTF 1
 
 /* Define to 1 if you have the <VideoToolbox/VideoToolbox.h> header file. */
 /* #undef HAVE_VIDEOTOOLBOX_VIDEOTOOLBOX_H */
@@ -884,7 +887,7 @@
 /* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is
    supported directly.  */
-#define restrict __restrict
+#define restrict //__restrict
 /* Work around a bug in Sun C++: it does not support _Restrict or
    __restrict__, even though the corresponding Sun C compiler ends up with
    "#define restrict _Restrict" or "#define restrict __restrict__" in the
@@ -906,7 +909,7 @@
 
 /* Define to `int' if <stddef.h> does not define. */
 /* #undef ssize_t */
-
+#include "compat.h"
 #include <vlc_fixups.h>
 
 

@@ -18,6 +18,7 @@
 #include "Waveform.hpp"
 #include <algorithm>
 #include "BeatDetect.hpp"
+#include <functional>
 
 Waveform::Waveform(int samples)
 : RenderItem(),samples(samples), points(samples), pointContext(samples)
@@ -50,9 +51,9 @@ void Waveform::Draw(RenderContext &context)
 			}
 			else glPointSize(context.texsize <= 512 ? 1 : context.texsize/512);
 
+			float* value1 = (float*)malloc(sizeof(float) * samples);
+			float* value2 = (float*)malloc(sizeof(float) * samples);
 
-			float value1[samples];
-			float value2[samples];
 			context.beatDetect->pcm->getPCM( value1, samples, 0, spectrum, smoothing, 0);
 			context.beatDetect->pcm->getPCM( value2, samples, 1, spectrum, smoothing, 0);
 			// printf("%f\n",pcmL[0]);
@@ -76,18 +77,20 @@ void Waveform::Draw(RenderContext &context)
 				points[x] = PerPoint(points[x],waveContext);
 			}
 
-			float colors[samples][4];
-			float p[samples][2];
+			//float colors[samples][4];
+			//float p[samples][2];
+			float* colors = (float*)malloc(sizeof(float) * 4 * samples);
+			float* p = (float*)malloc(sizeof(float) * 2 * samples);
 
 			for(int x=0;x< samples;x++)
 			{
-			  colors[x][0] = points[x].r;
-			  colors[x][1] = points[x].g;
-			  colors[x][2] = points[x].b;
-			  colors[x][3] = points[x].a * masterAlpha;
+			  colors[x * 4 + 0] = points[x].r;
+			  colors[x * 4 + 1] = points[x].g;
+			  colors[x * 4 + 2] = points[x].b;
+			  colors[x * 4 + 3] = points[x].a * masterAlpha;
 
-			  p[x][0] = points[x].x;
-			  p[x][1] = -(points[x].y-1);
+			  p[x * 2 + 0] = points[x].x;
+			  p[x * 2 + 1] = -(points[x].y-1);
 
 			}
 
@@ -108,7 +111,10 @@ void Waveform::Draw(RenderContext &context)
 #endif
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 			//  glPopMatrix();
-
+			free(colors);
+			free(p);
+			free(value1);
+			free(value2);
    }
 
 

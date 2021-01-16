@@ -27,6 +27,8 @@ struct DIR
     char                *name;  /* null-terminated char string */
 };
 
+extern int errno;
+
 DIR *opendir(const char *name)
 {
     DIR *dir = 0;

@@ -18,7 +18,6 @@
 * See 'LICENSE.txt' included within this release
 *
 */
-
 #include "RenderItemMatcher.hpp"
 #include "RenderItemMergeFunction.hpp"
 #include "fatal.h"
@@ -62,7 +61,6 @@
 pthread_mutex_t preset_mutex;
 #endif
 #endif
-
 
 
 projectM::~projectM()
@@ -179,7 +177,7 @@ void projectM::readConfig (const std::string & configFile )
     _settings.presetDuration = config.read<int> ( "Preset Duration", 15 );
 
     #ifdef LINUX
-    _settings.presetURL = config.read<string> ( "Preset Path", CMAKE_INSTALL_PREFIX "/share/projectM/presets" );
+    _settings.presetURL = config.read<string> ( "Preset Path",  "/share/projectM/presets" );
     #endif
 
     #ifdef __APPLE__
@@ -188,7 +186,7 @@ void projectM::readConfig (const std::string & configFile )
     #endif
 
     #ifdef WIN32
-    _settings.presetURL = config.read<string> ( "Preset Path", CMAKE_INSTALL_PREFIX "/share/projectM/presets" );
+    _settings.presetURL = config.read<string> ( "Preset Path", "/share/projectM/presets" );
     #endif
 
     #ifdef __APPLE__
@@ -207,9 +205,9 @@ void projectM::readConfig (const std::string & configFile )
 
     #ifdef WIN32
     _settings.titleFontURL = config.read<string>
-    ( "Title Font", CMAKE_INSTALL_PREFIX  "/share/projectM/fonts/Vera.ttf" );
+    ( "Title Font",   "/share/projectM/fonts/Vera.ttf" );
     _settings.menuFontURL = config.read<string>
-    ( "Menu Font", CMAKE_INSTALL_PREFIX  "/share/projectM/fonts/VeraMono.ttf" );
+    ( "Menu Font",   "/share/projectM/fonts/VeraMono.ttf" );
     #endif
 
 
@@ -861,7 +859,7 @@ void projectM::switchPreset(std::auto_ptr<Preset> & targetPreset) {
     {
         bool atEndPosition = false;
 
-        int newSelectedIndex;
+        int newSelectedIndex = 0;
 
 
         if (*m_presetPos == m_presetChooser->end()) // Case: preset not selected

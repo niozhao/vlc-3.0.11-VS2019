@@ -82,7 +82,7 @@ static inline int OSXCall_clock_gettime(clockid_t clock_id, struct timespec * ts
 {
 #if defined(__SRT_OSX_CLOCK_GETTIME_AVAILABILITY) \
    && (__SRT_OSX_CLOCK_GETTIME_AVAILABILITY == 1)
-   if (&clock_gettime != NULL)
+   if (__builtin_available(macOS 10.12, iOS 10.0, tvOS 10.0, *))
    {
       return clock_gettime(clock_id, ts);
    }
@@ -95,7 +95,7 @@ static inline int OSXCall_clock_getres(clockid_t clock_id, struct timespec * ts)
 {
 #if defined(__SRT_OSX_CLOCK_GETTIME_AVAILABILITY) \
    && (__SRT_OSX_CLOCK_GETTIME_AVAILABILITY == 1)
-   if (&clock_getres != NULL)
+   if (__builtin_available(macOS 10.12, iOS 10.0, tvOS 10.0, *))
    {
       return clock_getres(clock_id, ts);
    }

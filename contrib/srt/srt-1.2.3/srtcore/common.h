@@ -62,6 +62,16 @@ modified by
    // #include <winsock2.h>
    //#include <windows.h>
 #endif
+
+#ifndef _PID_T_SRT
+#define	_PID_T_SRT
+#ifndef _WIN64
+typedef int	pid_t;
+#else
+typedef __int64	pid_t;
+#endif	
+#endif
+
 #include <pthread.h>
 #include "udt.h"
 #include "utilities.h"

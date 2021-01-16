@@ -154,7 +154,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(SolutionDir)include/contrib;$(SolutionDir)contrib/srt/common/win;$(SolutionDir)contrib/srt/common;$(SolutionDir)include/util;$(SolutionDir)contrib/srt/haicrypt;$(SolutionDir)include/contrib/pthread;$(SolutionDir)include/mingw32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include/contrib;./srt-1.2.3/common/win;./srt-1.2.3/common;$(SolutionDir)include/util;./srt-1.2.3/haicrypt;$(SolutionDir)include/contrib/pthread;$(SolutionDir)include/mingw32</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>

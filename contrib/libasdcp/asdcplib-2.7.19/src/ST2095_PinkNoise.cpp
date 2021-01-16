@@ -30,7 +30,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 #include "ST2095_PinkNoise.h"
-
+#define M_PI 			3.14159265358979323846
 //
 // This file is full of magic numbers.  Details behind the
 // selection of these values can be found in SMPTE ST 2095-1:2015.

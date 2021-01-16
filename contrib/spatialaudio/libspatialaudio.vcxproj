@@ -144,7 +144,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>./include;./include/hrtf;./;./source/kiss_fft;$(SolutionDir)include/contrib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./spatialaudio-0.3.0/include;./spatialaudio-0.3.0/include/hrtf;./spatialaudio-0.3.0/;./spatialaudio-0.3.0/source/kiss_fft;$(SolutionDir)include/contrib</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>

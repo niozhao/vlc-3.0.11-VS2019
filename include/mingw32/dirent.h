@@ -11,7 +11,7 @@
 
 /* All the headers include this file. */
 #include <crtdefs.h>
-
+#include <direct.h>
 #include <io.h>
 
 #ifndef RC_INVOKED
@@ -60,12 +60,12 @@ typedef struct
 	char			dd_name[1];
 } DIR;
 
-DIR* __cdecl __MINGW_NOTHROW opendir (const char*);
-struct dirent* __cdecl __MINGW_NOTHROW readdir (DIR*);
-int __cdecl __MINGW_NOTHROW closedir (DIR*);
-void __cdecl __MINGW_NOTHROW rewinddir (DIR*);
-long __cdecl __MINGW_NOTHROW telldir (DIR*);
-void __cdecl __MINGW_NOTHROW seekdir (DIR*, long);
+DIR* __cdecl /*__MINGW_NOTHROW*/ opendir (const char*);
+struct dirent* __cdecl /*__MINGW_NOTHROW*/ readdir (DIR*);
+int __cdecl /*__MINGW_NOTHROW*/ closedir (DIR*);
+void __cdecl /*__MINGW_NOTHROW*/ rewinddir (DIR*);
+long __cdecl /*__MINGW_NOTHROW*/ telldir (DIR*);
+void __cdecl /*__MINGW_NOTHROW*/ seekdir (DIR*, long);
 
 
 /* wide char versions */
@@ -107,12 +107,12 @@ typedef struct
 	wchar_t			dd_name[1];
 } _WDIR;
 
-_WDIR* __cdecl __MINGW_NOTHROW _wopendir (const wchar_t*);
-struct _wdirent* __cdecl __MINGW_NOTHROW _wreaddir (_WDIR*);
-int __cdecl __MINGW_NOTHROW _wclosedir (_WDIR*);
-void __cdecl __MINGW_NOTHROW _wrewinddir (_WDIR*);
-long __cdecl __MINGW_NOTHROW _wtelldir (_WDIR*);
-void __cdecl __MINGW_NOTHROW _wseekdir (_WDIR*, long);
+_WDIR* __cdecl /*__MINGW_NOTHROW*/ _wopendir (const wchar_t*);
+struct _wdirent* __cdecl /*__MINGW_NOTHROW*/ _wreaddir (_WDIR*);
+int __cdecl /*__MINGW_NOTHROW*/ _wclosedir (_WDIR*);
+void __cdecl /*__MINGW_NOTHROW*/ _wrewinddir (_WDIR*);
+long __cdecl /*__MINGW_NOTHROW*/ _wtelldir (_WDIR*);
+void __cdecl /*__MINGW_NOTHROW*/ _wseekdir (_WDIR*, long);
 
 
 #ifdef	__cplusplus

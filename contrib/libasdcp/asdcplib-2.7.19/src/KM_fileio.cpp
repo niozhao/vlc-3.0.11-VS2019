@@ -652,7 +652,7 @@ Kumu::GetExecutablePath(const std::string& default_path)
 
 #if defined(KM_WIN32)
   DWORD size = X_BUFSIZE;
-  DWORD rc = GetModuleFileName(0, path, size);
+  DWORD rc = GetModuleFileNameA(0, path, size); 
   success = ( rc != 0 );
 #elif defined(KM_MACOSX)
   uint32_t size = X_BUFSIZE;

@@ -6,7 +6,6 @@ includedir=${prefix}/include
 Name: srt
 Description: SRT library set
 Version: @SRT_VERSION@
-Libs: -L${libdir} -l@TARGET_srt@ @IFNEEDED_LINK_HAICRYPT@ @IFNEEDED_SRTBASE@ @IFNEEDED_SRT_LDFLAGS@
-Libs.private: @SRT_LIBS_PRIVATE@
 Cflags: -I${includedir} -I${includedir}/srt
-Requires.private: @SSL_REQUIRED_MODULES@
+Libs:  -L${libdir} -l@TARGET_srt@ @IFNEEDED_LINK_HAICRYPT@ @IFNEEDED_SRTBASE@ @IFNEEDED_SRT_LDFLAGS@  @SRT_LIBS_PRIVATE@
+Requires:   @SSL_REQUIRED_MODULES@

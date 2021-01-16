@@ -57,6 +57,8 @@
 #define inline
 #endif /** WIN32 */
 
+typedef int pid_t;
+
 #include "dlldefs.h"
 #include "event.h"
 #include "fatal.h"
@@ -84,6 +86,8 @@ class MasterRenderItemMerge;
 #pragma warning (disable:4244)
 #pragma warning (disable:4305)
 #endif /** WIN32 */
+
+
 
 #ifdef MACOS2
 #define inline

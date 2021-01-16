@@ -10,9 +10,9 @@
 
 #ifndef _OFF64_T_DEFINED
 #define _OFF64_T_DEFINED
-  __MINGW_EXTENSION typedef long long _off64_t;
+/*  __MINGW_EXTENSION */typedef long long _off64_t;
 #if !defined(NO_OLDNAMES) || defined(_POSIX)
-  __MINGW_EXTENSION typedef long long off64_t;
+/*  __MINGW_EXTENSION */typedef long long off64_t;
 #endif
 #endif /*_OFF64_T_DEFINED */
 

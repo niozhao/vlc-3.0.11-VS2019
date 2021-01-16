@@ -128,32 +128,36 @@ void Shape::Draw(RenderContext &context)
 				glEnableClientState(GL_COLOR_ARRAY);
 				glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-				float colors[sides+2][4];
-				float tex[sides+2][2];
-				float points[sides+2][2];
+// 				float colors[sides+2][4];
+// 				float tex[sides+2][2];
+// 				float points[sides+2][2];
+
+				float* colors = (float*)malloc(sizeof(float) * (sides + 2) * 4);
+				float* tex = (float*)malloc(sizeof(float) * (sides + 2) * 2 );
+				float* points = (float*)malloc(sizeof(float) * (sides + 2) * 2);
 
 				//Define the center point of the shape
-				colors[0][0] = r;
-				colors[0][1] = g;
-				colors[0][2] = b;
-				colors[0][3] = a * masterAlpha;
-			  	   tex[0][0] = 0.5;
-				   tex[0][1] = 0.5;
-				points[0][0] = xval;
-				points[0][1] = yval;
+				colors[0 * 4 + 0] = r;
+				colors[0 * 4 + 1] = g;
+				colors[0 * 4 + 2] = b;
+				colors[0 * 4 + 3] = a * masterAlpha;
+			  	   tex[0 * 2 + 0] = 0.5;
+				   tex[0 * 2 + 1] = 0.5;
+				points[0 * 2 + 0] = xval;
+				points[0 * 2 + 1] = yval;
 
 				for ( int i=1;i< sides+2;i++)
 				{
-				  colors[i][0]= r2;
-				  colors[i][1]=g2;
-				  colors[i][2]=b2;
-				  colors[i][3]=a2 * masterAlpha;
+				  colors[i * 4 + 0]= r2;
+				  colors[i * 4 + 1]=g2;
+				  colors[i * 4 + 2]=b2;
+				  colors[i * 4 + 3]=a2 * masterAlpha;
 
 				  t = (i-1)/(float) sides;
-				  tex[i][0] =0.5f + 0.5f*cosf(t*3.1415927f*2 +  tex_ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)/ tex_zoom;
-				  tex[i][1] =  0.5f + 0.5f*sinf(t*3.1415927f*2 +  tex_ang + 3.1415927f*0.25f)/ tex_zoom;
-				  points[i][0]=temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
-				  points[i][1]=temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
+				  tex[i * 2 + 0] =0.5f + 0.5f*cosf(t*3.1415927f*2 +  tex_ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)/ tex_zoom;
+				  tex[i * 2 + 1] =  0.5f + 0.5f*sinf(t*3.1415927f*2 +  tex_ang + 3.1415927f*0.25f)/ tex_zoom;
+				  points[i * 2 + 0]=temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
+				  points[i * 2 + 1]=temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
 
 
 				}
@@ -179,7 +183,9 @@ void Shape::Draw(RenderContext &context)
 					glBindTexture( GL_TEXTURE_2D, renderTarget->textureID[0] );
 				}
 */
-
+				free(points);
+				free(colors);
+				free(tex);
 			}
 			else
 			{//Untextured (use color values)
@@ -189,28 +195,31 @@ void Shape::Draw(RenderContext &context)
 			  glEnableClientState(GL_COLOR_ARRAY);
 			  glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
-			  float colors[sides+2][4];
-			  float points[sides+2][2];
+			  //float colors[sides+2][4];
+			  //float points[sides+2][2];
+
+			  float* colors = (float*)malloc(sizeof(float) * (sides + 2) * 4);
+			  float* points = (float*)malloc(sizeof(float) * (sides + 2) * 2);
 
 			  //Define the center point of the shape
-			  colors[0][0]=r;
-			  colors[0][1]=g;
-			  colors[0][2]=b;
-			  colors[0][3]=a * masterAlpha;
-			  points[0][0]=xval;
-			  points[0][1]=yval;
+			  colors[0 * 4 + 0]=r;
+			  colors[0 * 4 + 1]=g;
+			  colors[0 * 4 + 2]=b;
+			  colors[0 * 4 + 3]=a * masterAlpha;
+			  points[0 * 2 + 0]=xval;
+			  points[0 * 2 + 1]=yval;
 
 
 
 			  for ( int i=1;i< sides+2;i++)
 			    {
-			      colors[i][0]=r2;
-			      colors[i][1]=g2;
-			      colors[i][2]=b2;
-			      colors[i][3]=a2 * masterAlpha;
+			      colors[i * 4 + 0]=r2;
+			      colors[i * 4 + 1]=g2;
+			      colors[i * 4 + 2]=b2;
+			      colors[i * 4 + 3]=a2 * masterAlpha;
 			      t = (i-1)/(float) sides;
-			      points[i][0]=temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
-			      points[i][1]=temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
+			      points[i * 2 + 0]=temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
+			      points[i * 2 + 1]=temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
 
 			    }
 
@@ -221,21 +230,24 @@ void Shape::Draw(RenderContext &context)
 			  glDrawArrays(GL_TRIANGLE_FAN,0,sides+2);
 			  //draw first n-1 triangular pieces
 
+			  free(colors);
+			  free(points);
 			}
 			if (thickOutline==1)  glLineWidth(context.texsize < 512 ? 1 : 2*context.texsize/512);
 
 			glEnableClientState(GL_VERTEX_ARRAY);
 			glDisableClientState(GL_COLOR_ARRAY);
 
-			float points[sides+1][2];
+			//float points[sides+1][2];
+			float* points = (float*)malloc(sizeof(float) * (sides + 1) * 2);
 
 			glColor4f( border_r, border_g, border_b, border_a * masterAlpha);
 
 			for ( int i=0;i< sides;i++)
 			{
 				t = (i-1)/(float) sides;
-				points[i][0]= temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
-				points[i][1]=  temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
+				points[i * 2 + 0]= temp_radius*cosf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)*(context.aspectCorrect ? context.aspectRatio : 1.0)+xval;
+				points[i * 2 + 1]=  temp_radius*sinf(t*3.1415927f*2 +  ang + 3.1415927f*0.25f)+yval;
 
 			}
 
@@ -244,7 +256,7 @@ void Shape::Draw(RenderContext &context)
 
 			if (thickOutline==1)  glLineWidth(context.texsize < 512 ? 1 : context.texsize/512);
 
-
+			free(points);
 
 
 }
@@ -267,7 +279,8 @@ void MotionVectors::Draw(RenderContext &context)
 	  {
 	int size = x_num * y_num ;
 
-	float points[size][2];
+	//float points[size][2];
+	float* points = (float*)malloc(sizeof(float) * size * 2);
 
 	for (int x=0;x<(int)x_num;x++)
 	{
@@ -277,13 +290,14 @@ void MotionVectors::Draw(RenderContext &context)
 			lx = x_offset+x*intervalx;
 			ly = y_offset+y*intervaly;
 
-			points[(x * (int)y_num) + y][0] = lx;
-			points[(x * (int)y_num) + y][1] = ly;
+			points[((x * (int)y_num) + y) * 2 + 0] = lx;
+			points[((x * (int)y_num) + y) * 2 + 1] = ly;
 		}
 	}
 
 	glVertexPointer(2,GL_FLOAT,0,points);
 	glDrawArrays(GL_POINTS,0,size);
+	free(points);
 	  }
 }
 
