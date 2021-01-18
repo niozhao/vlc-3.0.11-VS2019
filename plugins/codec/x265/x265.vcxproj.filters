@@ -33,7 +33,4 @@
       <Filter>Source Files\modules\codec</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\..\..\..\FFmpeg_VS2017\msvc\lib\x64\libx265d.lib" />
-  </ItemGroup>
 </Project>
