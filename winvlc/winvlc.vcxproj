@@ -118,6 +118,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)include\x64;$(SolutionDir)include\util;$(Solutiondir)vlc-3.0.11\include;$(SolutionDir)include/mingw32</AdditionalIncludeDirectories>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
