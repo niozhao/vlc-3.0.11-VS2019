@@ -71,8 +71,12 @@ int net_Socket (vlc_object_t *p_this, int family, int socktype,
      * Accepts only IPv6 connections on IPv6 sockets.
      * If possible, we should open two sockets, but it is not always possible.
      */
-    if (family == AF_INET6)
-        setsockopt (fd, IPPROTO_IPV6, IPV6_V6ONLY, &(int){ 1 }, sizeof (int));
+    if (family == AF_INET6) {
+        int res = setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, &(int){ 1 }, sizeof(int));
+		if (!res)
+            msg_Warn(p_this, "socket Accepts only IPv6 connections on IPv6 sockets.");
+    }
+        
 #endif
 
 #if defined (_WIN32)

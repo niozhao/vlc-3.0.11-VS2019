@@ -56,12 +56,12 @@
 # endif
 #endif
 
-#ifndef SOL_IP
+//#ifndef SOL_IP
 # define SOL_IP IPPROTO_IP
-#endif
-#ifndef SOL_IPV6
+//#endif
+//#ifndef SOL_IPV6
 # define SOL_IPV6 IPPROTO_IPV6
-#endif
+//#endif
 #ifndef IPPROTO_IPV6
 # define IPPROTO_IPV6 41 /* IANA */
 #endif
@@ -178,8 +178,19 @@ static int net_ListenSingle (vlc_object_t *obj, const char *host, int port,
 
 #ifdef IPV6_V6ONLY
         /* Try dual-mode IPv6 if available. */
-        if (ptr->ai_family == AF_INET6)
-            setsockopt (fd, SOL_IPV6, IPV6_V6ONLY, &(int){ 0 }, sizeof (int));
+        if (ptr->ai_family == AF_INET6) {
+            //why SOL_IPV6 ? in linux SOL_IPV6 is 41, but in win10 ws2def.h : #define SOL_IPV6   (SOL_SOCKET-5)  and SOL_SOCKET is 0xffff. set this option will failed, errorMsg is "invalid parameter".
+            //now change it's define value to 41!
+            int res = setsockopt(fd, SOL_IPV6, IPV6_V6ONLY, &(int){ 0 }, sizeof(int));  
+            if (res) {
+                int errorCode = WSAGetLastError(); 
+                msg_Warn(obj, "setsockopt SOL_IPV6  IPV6_V6ONLY error: %s ,Accepts only IPv6 connections on IPv6 sockets.", vlc_strerror_c(net_errno));
+            }
+            else {
+                msg_Warn(obj, "set socket ok on IPv6 address or an IPv4 address");
+            }
+        }
+            
 #endif
         fd = net_SetupDgramSocket( obj, fd, ptr );
         if( fd == -1 )

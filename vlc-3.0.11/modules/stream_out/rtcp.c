@@ -37,9 +37,9 @@
 
 #include <assert.h>
 
-#ifndef SOL_IP
+//#ifndef SOL_IP
 # define SOL_IP IPPROTO_IP
-#endif
+//#endif
 
 /*
  * NOTE on RTCP implementation:
