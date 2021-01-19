@@ -31,7 +31,9 @@
 #endif
 
 #ifdef HAVE_TFIND
-static /*__thread */struct
+
+static __declspec(thread) struct   //MSVC
+//static /*__thread */struct   // GCC compiler
 {
     const void **tab;
     size_t count;
@@ -53,7 +55,8 @@ static void list_nodes(const void *node, const VISIT which, const int depth)
     list.count++;
 }
 
-static /*__thread */const void *smallest;
+static __declspec(thread) const void* smallest;
+//static /*__thread */const void *smallest;
 
 static int cmp_smallest(const void *a, const void *b)
 {
