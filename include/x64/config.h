@@ -863,6 +863,8 @@
 /* Define to '0x0502' for Windows XP SP2 APIs. */
 /* #undef _WIN32_WINNT */
 
+#define _WIN32_WINNT _WIN32_WINNT_WIN7
+
 /* POSIX and XPG 7th edition */
 #define _XOPEN_SOURCE 700
 
