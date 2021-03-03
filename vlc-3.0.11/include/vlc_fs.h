@@ -39,6 +39,8 @@ struct iovec;
 #  undef lseek
 #  define lseek _lseeki64
 # endif
+#  undef lseek
+#  define lseek _lseeki64
 #endif
 
 #ifdef __ANDROID__

@@ -153,8 +153,7 @@ int avformat_OpenDemux( vlc_object_t *p_this )
 {
     demux_t       *p_demux = (demux_t*)p_this;
     demux_sys_t   *p_sys;
-    //AVProbeData   pd = { };
-    AVProbeData   pd;
+    AVProbeData   pd = { 0 };
     AVInputFormat *fmt = NULL;
     int64_t       i_start_time = -1;
     bool          b_can_seek;
