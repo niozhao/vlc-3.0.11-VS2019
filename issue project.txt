@@ -1,0 +1,20 @@
+plugins/video_chroma/i420_nv12
+plugins/video_chroma/i420_10_p010
+plugins/video_chroma/i420_rgb_mmx
+i420_yuy2_mmx
+i422_yuy2_mmx
+
+
+plugins/access/dcp    error LNK2005: __report_gsfailure already defined in libmingw32.a(lib64_libmingw32_a-gs_support.o)   fix!
+plugins/codec/avcodec 同上 fix!
+codec/crystalhd      CAN_COMPILE_SSE2 支持；vlc_CPU_SSE2()支持   目前都disable掉了。http://yiiyee.cn/blog/2013/08/26/asm/
+codec/libass(done!) & schroedinger(fix!) & demux/mkv (fix!) & Lua (fix!)    MSVCRTD.lib(gs_report.obj) : error LNK2005: __report_gsfailure already defined in libmingw32.a(lib64_libmingw32_a-gs_support.o)
+
+services_discovery upnp  link error:  __imp__timezone __imp__daylight
+
+video_chroma/i420_rgb_mmx 、i420_yuy2_mmx、i422_yuy2_mmx   编译失败！！
+
+VideoFilter：  deinterlace、gradfun
+
+contrib/x265  汇编编译问题。 目前集成了FFMpeg工程下的libx265d.lib
+

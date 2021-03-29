@@ -1,0 +1,33 @@
+1:：copy empty目录及其子文件
+2：重命名目录及子文件
+3：修改工程属性，包括：
+3.1 vcxproj   【Debug|x64】
+3.1.1  修改OutputFile dll 输出目录
+3.1.2  修改 PreprocessorDefinitions
+3.1.3  ItemGroup 添加ClCompile编译项
+
+3.2  vcxproj.filters
+3.2.1  ItemGroup 下添加可能多个Filter
+3.2.2  ItemGroup 添加ClCompile编译项 并指明其filter
+
+代码：
+1：fopen  plugins_info.text
+2：每4行表示一个plugin的信息， 分别为project的名字、源文件、额外宏定义、额外lib
+3：对每个plugin做以下事情：
+3.1 解析该plugin所属filter，创建相应文件夹
+3.2 copy empty空工程文件夹及其子文件至 所属filter下
+3.3 rename 目录及其文件
+3.4 xml读取并修改vcxproj
+3.4.1 添加源文件至 ItemGroup ClCompile
+3.4.2 工程GUID最好能换一下
+3.4.3 RootNamespace 修改为工程名
+3.4.4 修改ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"
+PreprocessorDefinitions：根据工程名，添加三个宏定义，如果有额外宏定义，继续添加
+AdditionalDependencies：添加额外lib
+OutputFile：修改
+3.4.5 保存vcxproj
+3.5 xml读取并修改vcxproj.filters
+根据每一个源文件，
+   3.5.1 递归创建其filter。如果是新建的话，需要guid
+   3.5.2 添加ClCompile 项，指明源文件路径及filter
+3.5.3 爆粗vcxproj.filter
