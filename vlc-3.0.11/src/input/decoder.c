@@ -635,7 +635,7 @@ static mtime_t DecoderGetDisplayDate( decoder_t *p_dec, mtime_t i_ts )
     if( !p_owner->p_clock || i_ts <= VLC_TS_INVALID )
         return i_ts;
 
-    if( input_clock_ConvertTS( VLC_OBJECT(p_dec), p_owner->p_clock, NULL, &i_ts, NULL, INT64_MAX ) ) {
+    if( input_clock_ConvertTS( VLC_OBJECT(p_dec), p_owner->p_clock, NULL, &i_ts, NULL, INT64_MAX, p_dec->fmt_out.i_cat == VIDEO_ES, false) ) {
         msg_Err(p_dec, "Could not get display date for timestamp %"PRId64"", i_ts);
         return VLC_TS_INVALID;
     }
@@ -736,7 +736,7 @@ static void DecoderWaitUnblock( decoder_t *p_dec )
 
     for( ;; )
     {
-        if( !p_owner->b_waiting || !p_owner->b_has_data )
+        if( !p_owner->b_waiting || !p_owner->b_has_data )    //b_waiting 与 b_has_data 同时为true时，decoder线程cond wait！
             break;
         vlc_cond_wait( &p_owner->wait_request, &p_owner->lock );
     }
@@ -797,7 +797,7 @@ static void DecoderFixTs( decoder_t *p_dec, mtime_t *pi_ts0, mtime_t *pi_ts1,
             *pi_ts1 += i_es_delay;
         if( i_ts_bound != INT64_MAX )
             i_ts_bound += i_es_delay;
-        if( input_clock_ConvertTS( VLC_OBJECT(p_dec), p_clock, &i_rate, pi_ts0, pi_ts1, i_ts_bound ) ) {
+        if( input_clock_ConvertTS( VLC_OBJECT(p_dec), p_clock, &i_rate, pi_ts0, pi_ts1, i_ts_bound,p_dec->fmt_out.i_cat == VIDEO_ES,true) ) {
             const char *psz_name = module_get_name( p_dec->p_module, false );
             if( pi_ts1 != NULL )
                 msg_Err(p_dec, "Could not convert timestamps %"PRId64

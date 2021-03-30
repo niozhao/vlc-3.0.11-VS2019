@@ -631,7 +631,46 @@ static void EsOutChangePosition( es_out_t *out )
 }
 
 
-
+/*****************************************************************************
+ * Buffering 逻辑看起像是这样：
+ * 1: es_out创建时(input_EsOutNew)、改变播放位置时(EsOutChangePosition)、EsOutFrameNext时，需要buffering，置p_sys->buffering状态为true
+ *    并且执行input_DecoderStartWait() [in decoder.c], 改变decoder线程一些状态位
+ * 2：Input线程执行es_out_SetPCR 更新clock时，之后判断buffering结束了吗？
+ *   2.1 用[ipts,currentTime] 这样一对值更新clock，ipts为该帧的显示时间戳，currentTime为收到该帧的当前时间。
+ *       流媒体的ipts怎么来的你知道，视频文件的呢？第一帧pts为1，后面应该是根据帧率算出来的
+ *   2.2 什么时候执行es_out_SetPCR？ 收到一帧数据时。如在live555 demux/StreamRead里，或者一些视频解封装里。
+ *   2.3 怎样判断buffering结束？ clock中，last.i_stream[最近一次更新clock的pts] - ref.i_stream[第一次更新clock的pts]是否大于设置的cacheTime，
+ *       比如设置100ms的话，30fps的流的话，接收到4帧，buffering即结束。
+ * 3：buffering 状态有什么影响吗？
+ *    3.1 刚开始buffering时，需要decoder wait (调用input_DecoderStartWait()), 这会导致Decoder线程怎么样？
+ *        Decoder线程处于挂起状态，在cond_wait。两种情况，
+ *        3.1.1 一种是刚开始播放,会buffering，处于output线程(显示线程)初始化状态，大致流程如下
+ *              decoder线程，从fifo中取出一帧，解码，会进入ffmpeg的回调ffmpeg_GetFormat=>lavc_UpdateVideoFormat=>vout_Request=>vout_Create 创建vout线程，
+ *              并且会进行线程见同步，可能wait在vout_control_WaitEmpty;也可能进入下面第二种wait情况【第二帧解码完毕，还没来得及去显示，
+                所以有时会看到这样的现象，刚开始播放，画面在第一帧停1s左右。这时因为，buffering时间(cacheTime)设置比较大，Input线程还在buffering，
+                Decoder线程解码第一帧，显示，解码第二帧后，进入wait... 等待buffering结束，继续运行。】
+ *        3.1.2 一种是已经播放了，现在执行快进操作(EsOutChangePosition=>input_DecoderStartWait())被调用，会buffering。这时decoder线程wait在DecoderWaitUnblock()函数,
+ *              每次成功解码后都会进入DecoderWaitUnblock()函数判断，需要挂起线程，wait吗。
+ *              只要b_waiting 与 b_has_data 同时为true，decoder线程便会条件等待cond wait。
+ *              b_waiting 在input_DecoderStartWait时为true，input_DecoderStopWait时为false。
+ *              b_has_data 在decoder线程初始化及input_DecoderStartWait时为false，在成功解码出第二帧时为true
+ *              等待的条件p_owner->wait_request，什么时候出现？ 在input_DecoderStopWait调用时。
+ *              所以这种情况，Input线程读数据并送入fifo，Decoder线程在成功解码2帧后挂起,等待buffering结束。
+ *    3.2 在buffering刚刚结束时 (调用EsOutDecodersStopBuffering得知)， p_sys->b_buffering置为false，同时会进入input_DecoderWait逻辑等待decoder线程状态变化，
+ *        从而导致Input线程等待，这样它不会更新clock，不会read下一帧数据，也不会向fifo中送数据，所以可能导致下几帧的systemtime不对。比如在播放rtsp，虽然我们线程暂停没有调用socket recv去读数据，
+ *        但其实数据已在OS内核中，线程恢复后去recv，将会立马得到结果，导致几帧的system time很接近，而不是33ms左右(30fps)。
+ *        3.2.1 input_DecoderWait中逻辑，如果decoder线程b_has_data为false，也即decoder没有数据时，读取数据流的线程Input线程便会wait。
+ *              什么时候b_has_data为true呢？
+ *              看DecoderPlayVideo()中逻辑，是成功解码两帧时，解码成功第一帧时置p_owner->b_first为false，从而成功解码出第二帧时可将b_has_data置为true
+ *              ，从而Input线程继续运行，读流。这样说来，buffering完成后，便不再向fifo送数据，而decoder至少要有2帧数据，也就是这两帧需要在buffering过程中
+ *              送入fifo，传递给decoder，否则buffering完成后就没机会了。那buffering时间也就是cacheTime不应少于66ms？
+ *        3.2.3  vlc逻辑是对的，只要cacheTime大于0即可。
+ *               Input线程，读第一帧，接着SetPCR，计算buffering结束没的过程中，clock两个相差为0，必小于cacheTime，送入fifo一帧；读第二帧时继续SetPCR
+ *               ，clock两个相差大致为30左右，若cacheTime小于30，停止buffering，Input线程wait，但也没关系这个第二帧会送入fifo。decoder解码两帧后，解锁
+ *               Input线程。那如果送入的两帧巧合没有关键帧，无法解码成功呢，照这个逻辑，Input线程是要永远wait的，但实际并没有一直wait，why？
+ *        3.2.3  原来input_DecoderWait中有这种死锁情况判断(if( p_owner->b_idle && vlc_fifo_IsEmpty( p_owner->p_fifo ) ),意思是，decoder线程现在空闲并且无待解码数据，那也就
+ *               不可能再成功解码出帧了),一旦发生这种情况，不要wait了，直接break，退出循环，从而Input线程得以继续读流，放入fifo，让Decoder线程解码。
+ *****************************************************************************/
 static void EsOutDecodersStopBuffering( es_out_t *out, bool b_forced )
 {
     es_out_sys_t *p_sys = out->p_sys;
@@ -707,8 +746,22 @@ static void EsOutDecodersStopBuffering( es_out_t *out, bool b_forced )
     const mtime_t i_wakeup_delay = 10*1000; /* FIXME CLEANUP thread wake up time*/
     const mtime_t i_current_date = p_sys->b_paused ? p_sys->i_pause_date : mdate();
 
-    input_clock_ChangeSystemOrigin( p_sys->p_pgrm->p_clock, true,
-                                    i_current_date + i_wakeup_delay - i_buffering_duration );
+    /*****************************************************************************
+    * input_clock_ChangeSystemOrigin的意义
+    * buffering结束，InputThread恢复运行时调用，表示：当前这个时间点mdate()，想要显示哪一帧
+    * 比如
+    * 1: 刚开时播放时，缓冲结束，应该在mdate()这个时间点播放第一帧。而updateClock时第一帧用的信息是[stream1,system1]，所以是需要修改ref的
+    *    怎么修改？  目的就是用修改过后的ref计算出 stream1 的帧播放时间为mdate就行。
+    *    所以公式：system1 = mdate() - (stream1 - stream1)
+    * 2：播放进行seek操作，比如seek10分钟，默认缓冲1s，这些时间断都会updateClock，比如当前clock的ref为[s1,t1],缓冲结束后，应该从第10分钟
+    *    处开始播放，假设第10分钟的帧i_stream为s10，s10应该在mdate()点播放，则s1应该在 mdate() - (s10 - s1)
+    *    所以t1 = mdate() - (s10 - s1)    i_preroll_duration表征的就是s10-s1， seek多长。
+    *    
+    * 因为clock现在自动调整网络jitter以及decoder latency，convertTS时不会再加上i_pts_delay,所以这里不能减去i_pts_delay。
+    * 
+    *****************************************************************************/
+    input_clock_ChangeSystemOrigin(p_sys->p_pgrm->p_clock, true, i_current_date + i_wakeup_delay - (i_buffering_duration - p_sys->i_pts_delay));
+    
 
     for( int i = 0; i < p_sys->i_es; i++ )
     {

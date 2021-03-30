@@ -87,6 +87,12 @@ void    input_clock_ChangePause( input_clock_t *, bool b_paused, mtime_t i_date 
 void    input_clock_GetSystemOrigin( input_clock_t *, mtime_t *pi_system, mtime_t *pi_delay );
 
 /**
+ * change the ref to the current frame, correlation to input_clock_ChangeSystemOrigin()
+ * after call input_clock_ChangeSystemOrigin,means, we want current frame display at current system time: mdate()
+ */
+void    input_clock_ShiftRef(input_clock_t*, mtime_t newRefStream);
+
+/**
  * This function allows rebasing the original system value date (a valid
  * reference point must have been set).
  * When using the absolute mode, it will create a discontinuity unless
@@ -109,7 +115,7 @@ void    input_clock_ChangeSystemOrigin( input_clock_t *, bool b_absolute, mtime_
  * Otherwise it will return VLC_SUCCESS.
  */
 int input_clock_ConvertTS( vlc_object_t *, input_clock_t *, int *pi_rate,
-                           mtime_t *pi_ts0, mtime_t *pi_ts1, mtime_t i_ts_bound );
+                           mtime_t *pi_ts0, mtime_t *pi_ts1, mtime_t i_ts_bound, bool bVideoES, bool bUpdateLatency);
 
 /**
  * This function returns the current rate.
