@@ -21,6 +21,7 @@ getdelim
 getline
 getpid
 gettimeofday
+gettimecount
 gmtime_r
 localtime_r
 memrchr

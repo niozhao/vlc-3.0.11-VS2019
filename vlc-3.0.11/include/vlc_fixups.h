@@ -260,6 +260,8 @@ int timespec_get(struct timespec *, int);
 #ifndef HAVE_GETTIMEOFDAY
 struct timezone;
 int gettimeofday(struct timeval *, struct timezone *);
+__int64 gettimecount(); //in micro second
+
 #endif
 
 /* unistd.h */
