@@ -556,7 +556,7 @@ int InitVideoDec( vlc_object_t *obj )
     p_context->get_buffer2 = lavc_GetFrame;
     p_context->opaque = p_dec;
 
-    int i_thread_count = var_InheritInteger( p_dec, "avcodec-threads" );
+    int i_thread_count = var_InheritInteger( p_dec, "avcodec-threads" );   //app can use 1 thread to decrease decode delay! "avcodec-threads=1"
     if( i_thread_count <= 0 )
     {
         i_thread_count = vlc_GetCPUCount();

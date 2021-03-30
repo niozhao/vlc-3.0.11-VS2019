@@ -479,6 +479,7 @@ int playlist_AddExt( playlist_t *p_playlist, const char * psz_uri,
     input_item_t *p_input = input_item_New( psz_uri, psz_name );
     if( !p_input )
         return VLC_ENOMEM;
+    input_item_AddOption(p_input, "avcodec-threads=1", VLC_INPUT_OPTION_UNIQUE | VLC_INPUT_OPTION_TRUSTED);
     input_item_AddOptions( p_input, i_options, ppsz_options, i_option_flags );
     int i_ret = playlist_AddInput( p_playlist, p_input, play_now, b_playlist );
     input_item_Release( p_input );
