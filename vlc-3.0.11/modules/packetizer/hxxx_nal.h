@@ -228,6 +228,29 @@ static inline uint8_t *hxxx_bsfw_ep3b_to_rbsp( uint8_t *p, uint8_t *end, void *p
     return p;
 }
 
+/* vlc_bits's bs_t backward callback for stripping emulation prevention three bytes */
+static inline uint8_t *hxxx_bsbw_ep3b_to_rbsp( uint8_t *p, uint8_t *start, size_t i_count )
+{
+    if(p - start < i_count)
+        return p;  //error!
+    if(p - start < 3) //there is no possible "0x00,0x00,0x03" before this p!
+        return p - i_count;
+    for(int i = 0; i < i_count; i++)
+    {
+        if(--p <= start)
+            return p;
+        if(p - start >= 2)
+        {
+            if(*p == 0x03 && (!*(p - 1)) && (!*(p - 2)))
+            {
+                //find
+                --p;
+            }
+        }
+    }
+    return p;
+}
+
 #if 0
 /* Discards emulation prevention three bytes */
 static inline uint8_t * hxxx_ep3b_to_rbsp(const uint8_t *p_src, size_t i_src, size_t *pi_ret)

@@ -31,6 +31,8 @@
 #include <vlc_es.h>
 #include <limits.h>
 
+#define ArraySize(a) (sizeof(a)/sizeof(a[0]))
+
 /* H264 Level limits from Table A-1 */
 typedef struct
 {
@@ -263,6 +265,367 @@ void h264_release_sps( h264_sequence_parameter_set_t *p_sps )
 }
 
 #define H264_CONSTRAINT_SET_FLAG(N) (0x80 >> N)
+
+bool h264_write_sps_no_decoder_delay_flag(block_t *p_src_sps, block_t** pout)
+{
+    const uint8_t *p_buffer = p_src_sps->p_buffer;
+    size_t i_buffer = p_src_sps->i_buffer;
+
+    if( !hxxx_strip_AnnexB_startcode( &p_buffer, &i_buffer ) )  //过滤 0x00/0x00/0x00/0x01,p_buffer后移4位，p_src_sps未变
+    {
+        return false;
+    }
+
+    //从原始数据copy一份出来，确保原始数据不被改变
+    uint8_t *p_dup_buffer = (uint8_t *)malloc(i_buffer);
+    memset(p_dup_buffer,0,i_buffer);
+    memcpy(p_dup_buffer,p_buffer,i_buffer);
+
+    bs_t bs;
+    bs_init_writable( &bs, p_dup_buffer, i_buffer );
+
+    unsigned i_bitflow = 0;
+    if( true )
+    {
+        bs.p_fwpriv = &i_bitflow; \
+        bs.pf_forward = hxxx_bsfw_ep3b_to_rbsp;  /* Does the emulated 3bytes conversion to rbsp */ \
+    }
+    else
+      (void) i_bitflow;
+    const int i_nal_type = bs_read( &bs, 8 ) & 0x1f;
+    if(i_nal_type != H264_NAL_SPS)
+    {
+        free(p_dup_buffer);
+        return false;
+    }
+
+    //下面解析部分从h264_parse_sequence_parameter_set_rbsp()copy来
+    bs_t *p_bs = &bs;
+    h264_sequence_parameter_set_t local_sps;
+    h264_sequence_parameter_set_t* p_sps = &local_sps;
+
+    int i_tmp;
+    int i_profile_idc = bs_read( p_bs, 8 );
+    p_sps->i_profile = i_profile_idc;
+    p_sps->i_constraint_set_flags = bs_read( p_bs, 8 );
+    p_sps->i_level = bs_read( p_bs, 8 );
+    /* sps id */
+    uint32_t i_sps_id = bs_read_ue( p_bs );
+    if( i_sps_id > H264_SPS_ID_MAX )
+    {
+        free(p_dup_buffer);
+        return false;
+    }
+    p_sps->i_id = i_sps_id;
+
+    if( i_profile_idc == PROFILE_H264_HIGH ||
+        i_profile_idc == PROFILE_H264_HIGH_10 ||
+        i_profile_idc == PROFILE_H264_HIGH_422 ||
+        i_profile_idc == PROFILE_H264_HIGH_444 || /* Old one, no longer on spec */
+        i_profile_idc == PROFILE_H264_HIGH_444_PREDICTIVE ||
+        i_profile_idc == PROFILE_H264_CAVLC_INTRA ||
+        i_profile_idc == PROFILE_H264_SVC_BASELINE ||
+        i_profile_idc == PROFILE_H264_SVC_HIGH ||
+        i_profile_idc == PROFILE_H264_MVC_MULTIVIEW_HIGH ||
+        i_profile_idc == PROFILE_H264_MVC_STEREO_HIGH ||
+        i_profile_idc == PROFILE_H264_MVC_MULTIVIEW_DEPTH_HIGH ||
+        i_profile_idc == PROFILE_H264_MVC_ENHANCED_MULTIVIEW_DEPTH_HIGH ||
+        i_profile_idc == PROFILE_H264_MFC_HIGH )
+    {
+        /* chroma_format_idc */
+        p_sps->i_chroma_idc = bs_read_ue( p_bs );
+        if( p_sps->i_chroma_idc == 3 )
+            p_sps->b_separate_colour_planes_flag = bs_read1( p_bs );
+        else
+            p_sps->b_separate_colour_planes_flag = 0;
+        /* bit_depth_luma_minus8 */
+        p_sps->i_bit_depth_luma = bs_read_ue( p_bs ) + 8;
+        /* bit_depth_chroma_minus8 */
+        p_sps->i_bit_depth_chroma = bs_read_ue( p_bs ) + 8;
+        /* qpprime_y_zero_transform_bypass_flag */
+        bs_skip( p_bs, 1 );
+        /* seq_scaling_matrix_present_flag */
+        i_tmp = bs_read( p_bs, 1 );
+        if( i_tmp )
+        {
+            for( int i = 0; i < ((3 != p_sps->i_chroma_idc) ? 8 : 12); i++ )
+            {
+                /* seq_scaling_list_present_flag[i] */
+                i_tmp = bs_read( p_bs, 1 );
+                if( !i_tmp )
+                    continue;
+                const int i_size_of_scaling_list = (i < 6 ) ? 16 : 64;
+                /* scaling_list (...) */
+                int i_lastscale = 8;
+                int i_nextscale = 8;
+                for( int j = 0; j < i_size_of_scaling_list; j++ )
+                {
+                    if( i_nextscale != 0 )
+                    {
+                        /* delta_scale */
+                        i_tmp = bs_read_se( p_bs );
+                        i_nextscale = ( i_lastscale + i_tmp + 256 ) % 256;
+                        /* useDefaultScalingMatrixFlag = ... */
+                    }
+                    /* scalinglist[j] */
+                    i_lastscale = ( i_nextscale == 0 ) ? i_lastscale : i_nextscale;
+                }
+            }
+        }
+    }
+    else
+    {
+        p_sps->i_chroma_idc = 1; /* Not present == inferred to 4:2:0 */
+        p_sps->i_bit_depth_luma = 8;
+        p_sps->i_bit_depth_chroma = 8;
+    }
+
+    /* Skip i_log2_max_frame_num */
+    p_sps->i_log2_max_frame_num = bs_read_ue( p_bs );
+    if( p_sps->i_log2_max_frame_num > 12)
+        p_sps->i_log2_max_frame_num = 12;
+    /* Read poc_type */
+    p_sps->i_pic_order_cnt_type = bs_read_ue( p_bs );
+    if( p_sps->i_pic_order_cnt_type == 0 )
+    {
+        /* skip i_log2_max_poc_lsb */
+        p_sps->i_log2_max_pic_order_cnt_lsb = bs_read_ue( p_bs );
+        if( p_sps->i_log2_max_pic_order_cnt_lsb > 12 )
+            p_sps->i_log2_max_pic_order_cnt_lsb = 12;
+    }
+    else if( p_sps->i_pic_order_cnt_type == 1 )
+    {
+        p_sps->i_delta_pic_order_always_zero_flag = bs_read( p_bs, 1 );
+        p_sps->offset_for_non_ref_pic = bs_read_se( p_bs );
+        p_sps->offset_for_top_to_bottom_field = bs_read_se( p_bs );
+        p_sps->i_num_ref_frames_in_pic_order_cnt_cycle = bs_read_ue( p_bs );
+        if( p_sps->i_num_ref_frames_in_pic_order_cnt_cycle > 255 )
+        {
+            free(p_dup_buffer);
+            return false;
+        }
+        for( int i=0; i<p_sps->i_num_ref_frames_in_pic_order_cnt_cycle; i++ )
+            p_sps->offset_for_ref_frame[i] = bs_read_se( p_bs );
+    }
+    /* i_num_ref_frames */
+    bs_read_ue( p_bs );
+    /* b_gaps_in_frame_num_value_allowed */
+    bs_skip( p_bs, 1 );
+
+    /* Read size */
+    p_sps->pic_width_in_mbs_minus1 = bs_read_ue( p_bs );
+    p_sps->pic_height_in_map_units_minus1 = bs_read_ue( p_bs );
+
+    /* b_frame_mbs_only */
+    p_sps->frame_mbs_only_flag = bs_read( p_bs, 1 );
+    if( !p_sps->frame_mbs_only_flag )
+        p_sps->mb_adaptive_frame_field_flag = bs_read( p_bs, 1 );
+
+    /* b_direct8x8_inference */
+    bs_skip( p_bs, 1 );
+
+    /* crop */
+    if( bs_read1( p_bs ) ) /* frame_cropping_flag */
+    {
+        p_sps->frame_crop.left_offset = bs_read_ue( p_bs );
+        p_sps->frame_crop.right_offset = bs_read_ue( p_bs );
+        p_sps->frame_crop.top_offset = bs_read_ue( p_bs );
+        p_sps->frame_crop.bottom_offset = bs_read_ue( p_bs );
+    }
+
+    /* vui */
+    i_tmp = bs_read( p_bs, 1 );
+    if(!i_tmp)
+    {
+        bs_rollback(p_bs,1);
+        //now ,write 100000000111100011000001100111 to buffer, at this buffer point!，覆盖后面
+        uint8_t addBits[] = {1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,1,0,0,0,0,0,1,1,0,0,1,1,1};
+        bs_t* newS = bs_overwrite_and_realloc(p_bs,ArraySize(addBits),addBits);
+        //数据copy回去
+        int spsBodyLength = newS->p_end - newS->p_start;
+        block_t *p_out = block_Alloc( 4 + spsBodyLength );
+        if( p_out == NULL )
+        {
+            free(p_dup_buffer);
+            free(newS);
+            return false;
+        }
+        block_CopyProperties( p_out, p_src_sps );
+        uint8_t startCode[4] = {0x00,0x00,0x00,0x01};
+        memcpy( p_out->p_buffer, startCode, 4 );
+        memcpy( ((uint8_t*)p_out->p_buffer) + 4, newS->p_start, spsBodyLength );
+        *pout = p_out;
+        free(newS->p_start);
+        free(newS);
+        free(p_dup_buffer);
+        return true;
+    }
+    else
+    {
+        p_sps->vui.b_valid = true;
+        /* read the aspect ratio part if any */
+        i_tmp = bs_read( p_bs, 1 );
+        if( i_tmp )
+        {
+            static const struct { int w, h; } sar[17] =
+            {
+                { 0,   0 }, { 1,   1 }, { 12, 11 }, { 10, 11 },
+                { 16, 11 }, { 40, 33 }, { 24, 11 }, { 20, 11 },
+                { 32, 11 }, { 80, 33 }, { 18, 11 }, { 15, 11 },
+                { 64, 33 }, { 160,99 }, {  4,  3 }, {  3,  2 },
+                {  2,  1 },
+            };
+            int i_sar = bs_read( p_bs, 8 );
+            int w, h;
+
+            if( i_sar < 17 )
+            {
+                w = sar[i_sar].w;
+                h = sar[i_sar].h;
+            }
+            else if( i_sar == 255 )
+            {
+                w = bs_read( p_bs, 16 );
+                h = bs_read( p_bs, 16 );
+            }
+            else
+            {
+                w = 0;
+                h = 0;
+            }
+
+            if( w != 0 && h != 0 )
+            {
+                p_sps->vui.i_sar_num = w;
+                p_sps->vui.i_sar_den = h;
+            }
+            else
+            {
+                p_sps->vui.i_sar_num = 1;
+                p_sps->vui.i_sar_den = 1;
+            }
+        }
+
+        /* overscan */
+        i_tmp = bs_read( p_bs, 1 );
+        if ( i_tmp )
+            bs_read( p_bs, 1 );
+
+        /* video signal type */
+        i_tmp = bs_read( p_bs, 1 );
+        if( i_tmp )
+        {
+            bs_read( p_bs, 3 );
+            p_sps->vui.colour.b_full_range = bs_read( p_bs, 1 );
+            /* colour desc */
+            i_tmp = bs_read( p_bs, 1 );
+            if ( i_tmp )
+            {
+                p_sps->vui.colour.i_colour_primaries = bs_read( p_bs, 8 );
+                p_sps->vui.colour.i_transfer_characteristics = bs_read( p_bs, 8 );
+                p_sps->vui.colour.i_matrix_coefficients = bs_read( p_bs, 8 );
+            }
+            else
+            {
+                p_sps->vui.colour.i_colour_primaries = HXXX_PRIMARIES_UNSPECIFIED;
+                p_sps->vui.colour.i_transfer_characteristics = HXXX_TRANSFER_UNSPECIFIED;
+                p_sps->vui.colour.i_matrix_coefficients = HXXX_MATRIX_UNSPECIFIED;
+            }
+        }
+
+        /* chroma loc info */
+        i_tmp = bs_read( p_bs, 1 );
+        if( i_tmp )
+        {
+            bs_read_ue( p_bs );
+            bs_read_ue( p_bs );
+        }
+
+        /* timing info */
+        p_sps->vui.b_timing_info_present_flag = bs_read( p_bs, 1 );
+        if( p_sps->vui.b_timing_info_present_flag )
+        {
+            p_sps->vui.i_num_units_in_tick = bs_read( p_bs, 32 );
+            p_sps->vui.i_time_scale = bs_read( p_bs, 32 );
+            p_sps->vui.b_fixed_frame_rate = bs_read( p_bs, 1 );
+        }
+
+        /* Nal hrd & VC1 hrd parameters */
+        p_sps->vui.b_hrd_parameters_present_flag = false;
+        for ( int i=0; i<2; i++ )
+        {
+            i_tmp = bs_read( p_bs, 1 );
+            if( i_tmp )
+            {
+                p_sps->vui.b_hrd_parameters_present_flag = true;
+                uint32_t count = bs_read_ue( p_bs ) + 1;
+                if( count > 31 )
+                    return false;
+                bs_read( p_bs, 4 );
+                bs_read( p_bs, 4 );
+                for( uint32_t j = 0; j < count; j++ )
+                {
+                    if( bs_remain( p_bs ) < 23 )
+                        return false;
+                    bs_read_ue( p_bs );
+                    bs_read_ue( p_bs );
+                    bs_read( p_bs, 1 );
+                }
+                bs_read( p_bs, 5 );
+                p_sps->vui.i_cpb_removal_delay_length_minus1 = bs_read( p_bs, 5 );
+                p_sps->vui.i_dpb_output_delay_length_minus1 = bs_read( p_bs, 5 );
+                bs_read( p_bs, 5 );
+            }
+        }
+
+        if( p_sps->vui.b_hrd_parameters_present_flag )
+            bs_read( p_bs, 1 ); /* low delay hrd */
+
+        /* pic struct info */
+        p_sps->vui.b_pic_struct_present_flag = bs_read( p_bs, 1 );
+
+        p_sps->vui.b_bitstream_restriction_flag = bs_read( p_bs, 1 );
+        if( p_sps->vui.b_bitstream_restriction_flag )
+        {
+            bs_read( p_bs, 1 ); /* motion vector pic boundaries */
+            bs_read_ue( p_bs ); /* max bytes per pic */
+            bs_read_ue( p_bs ); /* max bits per mb */
+            bs_read_ue( p_bs ); /* log2 max mv h */
+            bs_read_ue( p_bs ); /* log2 max mv v */
+            p_sps->vui.i_max_num_reorder_frames = bs_read_ue( p_bs );
+            bs_read_ue( p_bs ); /* max dec frame buffering */
+        }
+        else
+        {
+            bs_rollback(p_bs,1);
+            //now, write 111100011000001100111 to buffer, at this buffer point!,覆盖后面
+            uint8_t addBits[] = {1,1,1,1,0,0,0,1,1,0,0,0,0,0,1,1,0,0,1,1,1};
+            bs_t* newS = bs_overwrite_and_realloc(p_bs,ArraySize(addBits),addBits);
+            //数据copy回去
+            int spsBodyLength = newS->p_end - newS->p_start;
+            block_t *p_out = block_Alloc( 4 + spsBodyLength );
+            if( p_out == NULL )
+            {
+                free(p_dup_buffer);
+                free(newS);
+                return false;
+            }
+            block_CopyProperties( p_out, p_src_sps );
+            uint8_t startCode[4] = {0x00,0x00,0x00,0x01};
+            memcpy( p_out->p_buffer, startCode, 4 );
+            memcpy( ((uint8_t*)p_out->p_buffer) + 4, newS->p_start, spsBodyLength );
+            *pout = p_out;
+            free(newS->p_start);
+            free(newS);
+            free(p_dup_buffer);
+            return true;
+        }
+    }
+
+    free(p_dup_buffer);
+    return false;
+
+}
 
 static bool h264_parse_sequence_parameter_set_rbsp( bs_t *p_bs,
                                                     h264_sequence_parameter_set_t *p_sps )

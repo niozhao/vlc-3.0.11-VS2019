@@ -63,6 +63,12 @@ static inline void bs_init( bs_t *s, const void *p_data, size_t i_data )
     s->b_read_only = true;
 }
 
+static inline void bs_init_writable( bs_t *s, const void *p_data, size_t i_data )
+{
+    bs_write_init( s, (void*) p_data, i_data );
+    s->b_read_only = false;
+}
+
 static inline int bs_pos( const bs_t *s )
 {
     return( 8 * ( s->p - s->p_start ) + 8 - s->i_left );
@@ -183,6 +189,16 @@ static inline void bs_skip( bs_t *s, ssize_t i_count )
     }
 }
 
+static inline void bs_rollback(bs_t *s, ssize_t i_count)
+{
+    s->i_left += i_count;
+
+    const int i_bytes = (s->i_left - 1) / 8;
+    s->p -= i_bytes;  //回滚需要测试“0x03”，待refine
+    s->i_left -= 8 * i_bytes;
+
+}
+
 static inline void bs_write( bs_t *s, int i_count, uint32_t i_bits )
 {
     if( s->b_read_only )
@@ -212,6 +228,48 @@ static inline void bs_write( bs_t *s, int i_count, uint32_t i_bits )
             s->i_left = 8;
         }
     }
+}
+
+static inline bs_t * bs_overwrite_and_realloc(bs_t *s,const int bit_count, uint8_t* bit_array)
+{
+    //write bits in s at this point(p/i_left), if s->p space is not enough, realloc buf and return the new bs_t
+    uint8_t* srcCurPos = s->p;
+    int srcLeft = s->i_left;
+
+    int addBitsCursor = 0;
+    int totoalBitCount = (s->p_end - s->p_start) * 8 - bs_remain( s ) + bit_count;
+    int totalSize = (totoalBitCount + 7) >> 3;  //向上取整
+
+    uint8_t* newData = (uint8_t*)malloc(totalSize);
+    memset(newData,0,totalSize);
+
+    if(bs_remain(s) % 8 != 0) {   //没有完整读取完一个字节，则填充完这个字节
+        int alignThisByte = 0;
+        for (int i = 0; i < s->i_left; i++) {
+            alignThisByte = (alignThisByte << 1) + bit_array[addBitsCursor++];
+        }
+        bs_write(s, s->i_left, alignThisByte);
+    }
+    int alreadyReadedByteSize = (s->p_end - s->p_start) - bs_remain(s)/8;
+    memcpy(newData,s->p_start,alreadyReadedByteSize);
+    bs_t* p_newS = (bs_t*)malloc(sizeof(bs_t));
+    bs_init_writable( p_newS, newData, totalSize);
+    p_newS->p += (s->p-s->p_start);
+    p_newS->i_left = s->i_left;
+    int stillNeedCopyBit = bit_count - addBitsCursor;
+    while(stillNeedCopyBit > 0){
+        int bitValue = 0;   //最多write32位
+        int thisTimeWriteCounts = 0;
+        for(; addBitsCursor < bit_count && thisTimeWriteCounts < 32; addBitsCursor++){
+            bitValue = (bitValue << 1) + bit_array[addBitsCursor];
+            thisTimeWriteCounts++;
+        }
+        bs_write(p_newS, thisTimeWriteCounts, bitValue);
+        stillNeedCopyBit = bit_count - addBitsCursor;
+    }
+    p_newS->p = p_newS->p_start + (srcCurPos - s->p_start);
+    p_newS->i_left = srcLeft;
+    return p_newS;
 }
 
 static inline bool bs_aligned( bs_t *s )

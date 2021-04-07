@@ -82,6 +82,7 @@ h264_picture_parameter_set_t *  h264_decode_pps( const uint8_t *, size_t, bool )
 
 void h264_release_sps( h264_sequence_parameter_set_t * );
 void h264_release_pps( h264_picture_parameter_set_t * );
+bool h264_write_sps_no_decoder_delay_flag(block_t *p_src_sps, block_t** pout);
 
 struct h264_sequence_parameter_set_t
 {
