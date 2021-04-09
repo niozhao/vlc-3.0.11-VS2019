@@ -322,6 +322,8 @@ void picture_Release( picture_t *p_picture )
  *****************************************************************************/
 void plane_CopyPixels( plane_t *p_dst, const plane_t *p_src )
 {
+    if (!p_dst->p_pixels)
+        return;
     const unsigned i_width  = __MIN( p_dst->i_visible_pitch,
                                      p_src->i_visible_pitch );
     const unsigned i_height = __MIN( p_dst->i_lines, p_src->i_lines );
