@@ -748,8 +748,12 @@ static block_t *ParseNALBlock( decoder_t *p_dec, bool *pb_ts_used, block_t *p_fr
                 {
                     msg_Dbg( p_dec, "h264_write_sps_no_decoder_delay_flag() failed!");
                 }
-                if(bNeedPutOldSPS)
-                    PutSPS( p_dec, p_frag );
+                if (bNeedPutOldSPS)
+                {
+                    PutSPS(p_dec, p_frag);
+                    if(p_newSPSBlock)
+                        block_Release(p_newSPSBlock);
+                }
                 else
                     block_Release( p_frag );
                 p_sys->b_new_sps = true;

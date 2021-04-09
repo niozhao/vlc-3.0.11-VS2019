@@ -837,6 +837,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libasdcp", "contrib\libasdc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pthread_lib", "contrib\pthread-win32\pthread_lib.2015.vcxproj", "{A063DFAD-6995-4E1A-AFFF-E43DC11E95B1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winapp", "winapp\winapp.vcxproj", "{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Itanium = Debug|Itanium
@@ -4663,6 +4665,16 @@ Global
 		{A063DFAD-6995-4E1A-AFFF-E43DC11E95B1}.Release|x64.Build.0 = Release|x64
 		{A063DFAD-6995-4E1A-AFFF-E43DC11E95B1}.Release|x86.ActiveCfg = Release|Win32
 		{A063DFAD-6995-4E1A-AFFF-E43DC11E95B1}.Release|x86.Build.0 = Release|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Debug|Itanium.ActiveCfg = Debug|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Debug|x64.ActiveCfg = Debug|x64
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Debug|x64.Build.0 = Debug|x64
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Debug|x86.ActiveCfg = Debug|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Debug|x86.Build.0 = Debug|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Release|Itanium.ActiveCfg = Release|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Release|x64.ActiveCfg = Release|x64
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Release|x64.Build.0 = Release|x64
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Release|x86.ActiveCfg = Release|Win32
+		{1540DE38-FAF8-46CF-9832-1AA3C1590BEF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
