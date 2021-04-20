@@ -1199,12 +1199,12 @@ static int ThreadDisplayPicture(vout_thread_t *vout, mtime_t *deadline)
     const mtime_t date = mdate();
     const mtime_t render_delay = vout_chrono_GetHigh(&vout->p->render) + VOUT_MWAIT_TOLERANCE;
 
-    bool drop_next_frame = frame_by_frame;
+    bool need_show_next_frame = frame_by_frame;
     mtime_t date_next = VLC_TS_INVALID;
     if (!paused && vout->p->displayed.next) {
         date_next = vout->p->displayed.next->date - render_delay;
         if (date_next /* + 0 FIXME */ <= date)
-            drop_next_frame = true;
+            need_show_next_frame = true;     //已经来不及了，这帧快去显示吧
     }
 
     /* FIXME/XXX we must redisplay the last decoded picture (because
@@ -1216,14 +1216,14 @@ static int ThreadDisplayPicture(vout_thread_t *vout, mtime_t *deadline)
      *
      * So it will be done later.
      */
-    bool refresh = false;
+    bool refresh_current = false;
 
     mtime_t date_refresh = VLC_TS_INVALID;
     if (vout->p->displayed.date > VLC_TS_INVALID) {
         date_refresh = vout->p->displayed.date + VOUT_REDISPLAY_DELAY - render_delay;
-        refresh = date_refresh <= date;
+        refresh_current = date_refresh <= date;    //再次显示当前显示的帧
     }
-    bool force_refresh = !drop_next_frame && refresh;
+    bool force_refresh = !need_show_next_frame && refresh_current;
 
     if (!frame_by_frame) {
         if (date_refresh != VLC_TS_INVALID)
@@ -1232,11 +1232,11 @@ static int ThreadDisplayPicture(vout_thread_t *vout, mtime_t *deadline)
             *deadline = date_next;
     }
 
-    if (!first && !refresh && !drop_next_frame) {
+    if (!first && !refresh_current && !need_show_next_frame) {
         return VLC_EGENERIC;
     }
 
-    if (drop_next_frame) {
+    if (need_show_next_frame) {
         picture_Release(vout->p->displayed.current);
         vout->p->displayed.current = vout->p->displayed.next;
         vout->p->displayed.next    = NULL;
