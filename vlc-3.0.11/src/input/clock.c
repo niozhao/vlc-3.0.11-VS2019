@@ -206,8 +206,6 @@ struct input_clock_t
 
     int continuous_late_count;    //if this value large than 66 , reset clock.
 
-    int continuous_early_count;    //if this value large than 15 , reset clock.
-
     /* Reference point */
     clock_point_t ref;             //means: frame ref.i_stream will show at time point ref.i_system
     bool          b_has_reference;
@@ -524,6 +522,21 @@ void input_clock_Reset( input_clock_t *cl )
 }
 
 /*****************************************************************************
+ * input_clock_Reset_No_Locker:
+ * Be attention, no lock here, see header file
+ *****************************************************************************/
+void input_clock_Reset_No_Locker(input_clock_t* cl)
+{
+	cl->b_has_reference = false;
+	cl->ref = clock_point_Create(VLC_TS_INVALID, VLC_TS_INVALID);
+	cl->b_has_external_clock = false;
+	cl->i_ts_max = VLC_TS_INVALID;
+
+	cl->clock_points.i_index = 0;
+	memset(cl->clock_points.values, 0, sizeof(cl->clock_points.values));
+}
+
+/*****************************************************************************
  * input_clock_ChangeRate:
  *****************************************************************************/
 void input_clock_ChangeRate( input_clock_t *cl, int i_rate )
@@ -668,10 +681,9 @@ int input_clock_ConvertTS_new(vlc_object_t* p_object, input_clock_t* cl,
             char* thisStatus = toString(cl);
 			msg_Err(p_object, "convert stream to system time continuous late(2 second)!algorithm error, reset clock,current clock:%s", thisStatus);
             if (thisStatus) free(thisStatus);
-            input_clock_Reset(cl);
+            input_clock_Reset_No_Locker(cl);
             cl->continuous_late_count = 0;
         }
-        cl->continuous_early_count = 0;
     }
     else if (*pi_ts0 - curNow > 5 * 1000 * 1000)  
     {
@@ -681,16 +693,13 @@ int input_clock_ConvertTS_new(vlc_object_t* p_object, input_clock_t* cl,
 		msg_Err(p_object, "convert stream to system time continuous early!algorithm error, reset clock,current clock:%s", thisStatus);
 		if (thisStatus) free(thisStatus);
 
-        if (cl->continuous_early_count++ > 2)
-		{
-			input_clock_Reset(cl);
-			cl->continuous_early_count = 0;
-		}
+        *pi_ts0 = curNow + 10 * 1000;
+        input_clock_Reset_No_Locker(cl);
+
         cl->continuous_late_count = 0;
     }
     else
     {
-        cl->continuous_early_count = 0;
         cl->continuous_late_count = 0;
     }
 

@@ -66,6 +66,14 @@ void    input_clock_Update( input_clock_t *, vlc_object_t *p_log,
 void    input_clock_Reset( input_clock_t * );
 
 /**
+ *   private
+ *   the locker is not support Reentrant in android platform
+ *   this function is not protected under locker, so just can be called in those functions
+ *   who already protected by cl->lock
+ */
+void    input_clock_Reset_No_Locker(input_clock_t*);
+
+/**
  * This functions will return a deadline used to control the reading speed.
  */
 mtime_t input_clock_GetWakeup( input_clock_t * );
