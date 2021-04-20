@@ -777,6 +777,14 @@ static mtime_t mdate_perf (void)
     return (d.quot * 1000000) + ((d.rem * 1000000) / clk.perf.freq.QuadPart);
 }
 
+mtime_t mdate_count(void)
+{
+	struct timeval tp;
+	gettimeofday(&tp, NULL);
+	return (mtime_t)tp.tv_sec * INT64_C(1000000) +
+		(mtime_t)tp.tv_usec;
+}
+
 static mtime_t mdate_wall (void)
 {
     FILETIME ts;

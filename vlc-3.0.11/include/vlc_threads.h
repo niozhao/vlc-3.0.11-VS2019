@@ -802,6 +802,8 @@ VLC_API unsigned long vlc_thread_id(void) VLC_USED;
  */
 VLC_API mtime_t mdate(void);
 
+VLC_API mtime_t mdate_count(void);
+
 /**
  * Waits until a deadline.
  *
