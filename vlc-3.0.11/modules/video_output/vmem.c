@@ -262,6 +262,9 @@ static void Prepare(vout_display_t *vd, picture_t *pic, subpicture_t *subpic)
         picture_Release(locked);
     }
 
+    if(sys->pic_opaque)
+        *((mtime_t*)sys->pic_opaque) = pic->date;
+
     if (sys->unlock != NULL)
         sys->unlock(sys->opaque, sys->pic_opaque, planes);
 
