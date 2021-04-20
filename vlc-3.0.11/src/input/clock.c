@@ -230,6 +230,7 @@ struct input_clock_t
         unsigned i_index;   //next insert position
     }clock_points;
     decoder_latency_statistics stat;
+    mtime_t i_previous_video_frame_display_time;  //in system time
 };
 
 
@@ -239,7 +240,7 @@ static mtime_t ClockSystemToStream( input_clock_t *, mtime_t i_system );
 
 static mtime_t ClockGetTsOffset( input_clock_t * );
 static mtime_t getDecoderLatency(input_clock_t* cl);
-static void updateDecoderLatency(input_clock_t* cl, mtime_t i_stream);
+static void updateDecoderLatency(input_clock_t* cl, mtime_t i_stream, mtime_t minValue);
 static mtime_t getNetworkJitter(input_clock_t* cl);
 
 char* toString(input_clock_t* cl)
@@ -297,6 +298,8 @@ input_clock_t *input_clock_New( int i_rate )
     
     latencyStatisInit(&cl->stat);
 
+    cl->i_previous_video_frame_display_time = VLC_TS_INVALID;
+
     return cl;
 }
 
@@ -347,6 +350,7 @@ void input_clock_Update_new(input_clock_t* cl, vlc_object_t* p_log,
         cl->i_next_drift_update = VLC_TS_INVALID;
         AvgReset(&cl->drift);
         latencyStatisInit(&cl->stat);
+        cl->i_previous_video_frame_display_time = VLC_TS_INVALID;
 
         /* Feed synchro with a new reference point. */
         cl->b_has_reference = true;
@@ -446,6 +450,7 @@ void input_clock_Update( input_clock_t *cl, vlc_object_t *p_log,
         cl->i_next_drift_update = VLC_TS_INVALID;
         AvgReset( &cl->drift );
         latencyStatisInit(&cl->stat);
+        cl->i_previous_video_frame_display_time = VLC_TS_INVALID;
 
         /* Feed synchro with a new reference point. */
         cl->b_has_reference = true;
@@ -603,8 +608,19 @@ int input_clock_ConvertTS_new(vlc_object_t* p_object, input_clock_t* cl,
 	}
 
 	/* calculate decoder latency*/
-    if(bVideoES && bUpdateLatency)
-	    updateDecoderLatency(cl, *pi_ts0);  //use current stream time to update decoder latency
+    if (bVideoES && bUpdateLatency) 
+    {
+        mtime_t leastDecoderDelayTime = 0;
+        if (cl->i_previous_video_frame_display_time != VLC_TS_INVALID)
+        {
+			const mtime_t i_ts_delay_part = ClockGetTsOffset(cl) + getNetworkJitter(cl);
+			mtime_t tmp = ClockStreamToSystem(cl, *pi_ts0 + AvgGet(&cl->drift));
+            // cl->i_previous_video_frame_display_time + 10*1000 = tmp + i_ts_delay_part + leastDecoderDelayTime   计算这帧的显示时间应该在上帧显示时间之后,我们就设为后10ms吧
+            leastDecoderDelayTime = cl->i_previous_video_frame_display_time + 10 * 1000 - tmp - i_ts_delay_part;
+        }
+        
+		updateDecoderLatency(cl, *pi_ts0, leastDecoderDelayTime);  //use current stream time to update decoder latency
+    }
 
 	/* */
 	const mtime_t i_ts_buffering = cl->i_buffering_duration * cl->i_rate / INPUT_RATE_DEFAULT;
@@ -618,6 +634,11 @@ int input_clock_ConvertTS_new(vlc_object_t* p_object, input_clock_t* cl,
 		if (*pi_ts0 > cl->i_ts_max)
 			cl->i_ts_max = *pi_ts0;
 		*pi_ts0 += i_ts_delay;
+
+        if (bVideoES && bUpdateLatency)
+        {
+            cl->i_previous_video_frame_display_time = *pi_ts0;
+        }
 	}
 
 	/* XXX we do not update i_ts_max on purpose */
@@ -1028,7 +1049,7 @@ static void AvgRescale( average_t *p_avg, int i_divider )
     p_avg->i_residue = i_tmp % p_avg->i_divider;
 }
 
-static void updateDecoderLatency(input_clock_t* cl,const mtime_t i_stream)
+static void updateDecoderLatency(input_clock_t* cl,const mtime_t i_stream, mtime_t minValue)
 {
     bool bFind = false;
     mtime_t the_i_system = 0;
@@ -1060,10 +1081,12 @@ static void updateDecoderLatency(input_clock_t* cl,const mtime_t i_stream)
     mtime_t thisLatency = current + 500 - the_i_system;  //mdate() precision is ms,+ 500 to make thisLatency not zero
     if (thisLatency < 0)
         thisLatency = 500;
-    mtime_t latency_changed = __MIN(thisLatency, current + 500 - cl->stat.i_last_time);
-    //char buf[1024] = {0};
-    //snprintf(buf, 1024, "updateDecoderLatency, input istream:%lld, get system:%lld, current:%lld, thisLatency:%lld, latency_changed:%lld, jitter:%lld, latency:%lld\n", i_stream, the_i_system, current, thisLatency, latency_changed, getNetworkJitter(cl),getDecoderLatency(cl));
-    //OutputDebugStringA(buf);
+    //cl->stat.i_last_time: 不能使用该方法，存在B帧时，存在解码delay，输入一帧，但解码出之前输入的帧，这时靠比较decoder上次完成的时间来计算解码delay是不正确的。
+    //mtime_t latency_changed = __MIN(thisLatency, current + 500 - cl->stat.i_last_time); 
+    mtime_t latency_changed = __MAX(thisLatency, minValue);  //确保计算出的显示时间，大于上一帧的显示时间。
+	//char buf[1024] = { 0 };
+	//snprintf(buf, 1024, "updateDecoderLatency, input istream:%lld, get system:%lld, current:%lld, thisLatency:%lld, latency_changed:%lld,minValue:%lld, jitter:%lld, latency:%lld\n", i_stream, the_i_system, current, thisLatency, latency_changed, minValue, getNetworkJitter(cl), getDecoderLatency(cl));
+	//OutputDebugStringA(buf);
 
     {
 		decoder_latency_statistics* statics = &cl->stat;
