@@ -438,8 +438,12 @@ static int VoutDisplayCreateRender(vout_display_t *vd)
         v_src_change.i_width = v_dst_cmp.i_width;
         v_src_change.i_height = v_dst_cmp.i_height;
 		bool b_need_convert = memcmp(&v_src_change, &v_dst_cmp, sizeof(v_src)) != 0;
-		if (!b_need_convert)
+        if (!b_need_convert) 
+        {
+			msg_Dbg(vd, "no filter needed to adapt decoder %4.4s to display %4.4s",
+				(const char*)&v_src.i_chroma, (const char*)&v_dst.i_chroma);
 			return 0;
+        }
     }
 
     msg_Dbg(vd, "A filter to adapt decoder %4.4s to display %4.4s is needed",
