@@ -280,7 +280,6 @@ input_clock_t *input_clock_New( int i_rate )
     AvgInit( &cl->drift, 10 );
 
     cl->continuous_late_count = 0;
-    cl->continuous_early_count = 0;
     cl->late.i_index = 0;
     for( int i = 0; i < INPUT_CLOCK_LATE_COUNT; i++ )
         cl->late.pi_value[i] = 0;
