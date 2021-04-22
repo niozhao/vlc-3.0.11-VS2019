@@ -42,6 +42,10 @@
 #include <mmsystem.h>
 #endif
 
+#if !(defined(__WIN32__) || defined(_WIN32)) || defined(__MINGW32__)
+#include <sys/time.h>
+#endif
+
 /*** Static mutex and condition variable ***/
 static CRITICAL_SECTION super_mutex;
 static CONDITION_VARIABLE super_variable;
