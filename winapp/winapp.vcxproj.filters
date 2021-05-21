@@ -27,30 +27,27 @@
     <ClInclude Include="winapp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VLCPlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SurfacePool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderThread.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SurfaceData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winapp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VLCPlayer.cpp">
+    <ClCompile Include="BufferPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FourccHelp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SurfacePool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RenderThread.cpp">
+    <ClCompile Include="VlcDecoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DFormatHelp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="renderThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

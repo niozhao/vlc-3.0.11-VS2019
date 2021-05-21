@@ -114,16 +114,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vlc-3.0.11\include;$(SolutionDir)include\x64;$(SolutionDir)include\util;$(Solutiondir)vlc-3.0.11\include;$(SolutionDir)include/mingw32</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;_NO_OLDNAMES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)vlc-3.0.11\include;$(SolutionDir)include\x64;$(SolutionDir)include\util;$(Solutiondir)vlc-3.0.11\include;$(SolutionDir)include/mingw32;./;$(Solutiondir)include\contrib\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(OutDir)vlc/$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libvlc.lib;libvlccore.lib;d3d9.lib;libcompat.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libvlc.lib;libvlccore.lib;d3d9.lib;libcompat.lib;libavutil.a;libswscale.a;libmingwex.a;libgcc.a;libmingw32.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)libs\$(Platform)\;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,18 +144,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="RenderThread.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="SurfaceData.h" />
-    <ClInclude Include="SurfacePool.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="VLCPlayer.h" />
     <ClInclude Include="winapp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RenderThread.cpp" />
+    <ClCompile Include="BufferPool.cpp" />
+    <ClCompile Include="D3DFormatHelp.cpp" />
+    <ClCompile Include="FourccHelp.cpp" />
+    <ClCompile Include="renderThread.cpp" />
     <ClCompile Include="SurfacePool.cpp" />
-    <ClCompile Include="VLCPlayer.cpp" />
+    <ClCompile Include="VlcDecoder.cpp" />
     <ClCompile Include="winapp.cpp" />
   </ItemGroup>
   <ItemGroup>

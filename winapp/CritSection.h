@@ -1,5 +1,6 @@
 #ifndef CRITSECTION_H
 #define CRITSECTION_H
+#include <windows.h>
 
 class ThreadSection
 {
