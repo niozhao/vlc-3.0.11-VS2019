@@ -285,6 +285,27 @@ static void *EventThread( void *p_this )
             MouseReleased( p_event, MOUSE_BUTTON_RIGHT );
             break;
 
+		case WM_XBUTTONDOWN:
+        {
+            int i_key = 0;
+            int fwKeys = GET_KEYSTATE_WPARAM(msg.wParam);
+			int fwButton = GET_XBUTTON_WPARAM(msg.wParam);
+            if (fwButton == XBUTTON1)
+                i_key = KEY_MOUSEXBUTTON1;  //back
+            else if (fwButton == XBUTTON2) 
+                i_key = KEY_MOUSEXBUTTON2;  //forward
+            if (i_key)
+            {
+                //msg_Warn(vd, "receive xbutton: %d",i_key);
+                vout_display_SendEventKey(vd, i_key);
+            }
+            break;
+        }
+		case WM_XBUTTONUP:
+            //msg_Warn(vd, "receive WM_XBUTTONUP");
+			MouseReleased(p_event, MOUSE_BUTTON_X);
+			break;
+
         case WM_KEYDOWN:
         case WM_SYSKEYDOWN:
         {

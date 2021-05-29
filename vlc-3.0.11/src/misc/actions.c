@@ -542,6 +542,9 @@ int libvlc_InternalActionsInit (libvlc_int_t *libvlc)
     add_wheel_mapping (&as->map, KEY_MOUSEWHEELUP, KEY_MOUSEWHEELDOWN,
                          var_InheritInteger (obj, "hotkeys-y-wheel-mode"));
 
+	add_mapping(&as->map, KEY_MOUSEXBUTTON1, ACTIONID_NAV_LEFT);   //back
+    add_mapping(&as->map, KEY_MOUSEXBUTTON2, ACTIONID_NAV_RIGHT);  //forward
+
     libvlc_priv(libvlc)->actions = as;
     var_AddCallback (obj, "key-pressed", vlc_key_to_action, &as->map);
     var_AddCallback (obj, "global-key-pressed", vlc_key_to_action,
